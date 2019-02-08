@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		584B11955CF1CF6E4B542C49 /* Pods_GetawayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5303C3641943857252CB9C5 /* Pods_GetawayTests.framework */; };
 		D7E6973CAB97F2983931328A /* Pods_Getaway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F0614271172E0FA62F7063 /* Pods_Getaway.framework */; };
+		E1247BC8220E30FB00C33555 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1247BC7220E30FB00C33555 /* GoogleService-Info.plist */; };
+		E1247BCB220E31C600C33555 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BCA220E31C600C33555 /* LoginViewController.swift */; };
+		E1247BCD220E321F00C33555 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BCC220E321F00C33555 /* MapViewController.swift */; };
+		E1247BD4220E353500C33555 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1247BD2220E353500C33555 /* MapView.storyboard */; };
 		E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA941D220D4B4200A71626 /* AppDelegate.swift */; };
 		E1EA9420220D4B4200A71626 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA941F220D4B4200A71626 /* ViewController.swift */; };
 		E1EA9423220D4B4200A71626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EA9421220D4B4200A71626 /* Main.storyboard */; };
@@ -17,9 +21,6 @@
 		E1EA942B220D4B4200A71626 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EA9429220D4B4200A71626 /* LaunchScreen.storyboard */; };
 		E1EA9436220D4B4200A71626 /* GetawayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA9435220D4B4200A71626 /* GetawayTests.swift */; };
 		E1EA9441220D4B4200A71626 /* GetawayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA9440220D4B4200A71626 /* GetawayUITests.swift */; };
-		E1EA944F220D4BB400A71626 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1EA944E220D4BB400A71626 /* GoogleService-Info.plist */; };
-		E1EA9450220D4BB400A71626 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1EA944E220D4BB400A71626 /* GoogleService-Info.plist */; };
-		E1EA9451220D4BB400A71626 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1EA944E220D4BB400A71626 /* GoogleService-Info.plist */; };
 		E39ACD4BA11EB9ED2CD8E323 /* Pods_GetawayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6A29FDB16EAFEE5FE8B9A9 /* Pods_GetawayUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,10 @@
 		958E78E1FD300BC236CF508C /* Pods-Getaway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Getaway.debug.xcconfig"; path = "Target Support Files/Pods-Getaway/Pods-Getaway.debug.xcconfig"; sourceTree = "<group>"; };
 		B5303C3641943857252CB9C5 /* Pods_GetawayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetawayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE277663F218C865F6700E97 /* Pods-Getaway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Getaway.release.xcconfig"; path = "Target Support Files/Pods-Getaway/Pods-Getaway.release.xcconfig"; sourceTree = "<group>"; };
+		E1247BC7220E30FB00C33555 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E1247BCA220E31C600C33555 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E1247BCC220E321F00C33555 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E1247BD3220E353500C33555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapView.storyboard; sourceTree = "<group>"; };
 		E1EA941A220D4B4200A71626 /* Getaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Getaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA941D220D4B4200A71626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1EA941F220D4B4200A71626 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +67,6 @@
 		E1EA943C220D4B4200A71626 /* GetawayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetawayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA9440220D4B4200A71626 /* GetawayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetawayUITests.swift; sourceTree = "<group>"; };
 		E1EA9442220D4B4200A71626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1EA944E220D4BB400A71626 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3618D2E4A72E87E9F1E75A6 /* Pods-GetawayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetawayUITests.debug.xcconfig"; path = "Target Support Files/Pods-GetawayUITests/Pods-GetawayUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F8F0614271172E0FA62F7063 /* Pods_Getaway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Getaway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,7 +119,6 @@
 				F3618D2E4A72E87E9F1E75A6 /* Pods-GetawayUITests.debug.xcconfig */,
 				4E58AB42D8F5AFE1E08EC223 /* Pods-GetawayUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -148,9 +151,12 @@
 				E1EA941F220D4B4200A71626 /* ViewController.swift */,
 				E1EA9421220D4B4200A71626 /* Main.storyboard */,
 				E1EA9427220D4B4200A71626 /* Assets.xcassets */,
+				E1247BD2220E353500C33555 /* MapView.storyboard */,
 				E1EA9429220D4B4200A71626 /* LaunchScreen.storyboard */,
-				E1EA944E220D4BB400A71626 /* GoogleService-Info.plist */,
+				E1247BCA220E31C600C33555 /* LoginViewController.swift */,
+				E1247BCC220E321F00C33555 /* MapViewController.swift */,
 				E1EA942C220D4B4200A71626 /* Info.plist */,
+				E1247BC7220E30FB00C33555 /* GoogleService-Info.plist */,
 				E1EA9424220D4B4200A71626 /* Getaway.xcdatamodeld */,
 			);
 			path = Getaway;
@@ -283,8 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1EA942B220D4B4200A71626 /* LaunchScreen.storyboard in Resources */,
-				E1EA944F220D4BB400A71626 /* GoogleService-Info.plist in Resources */,
+				E1247BC8220E30FB00C33555 /* GoogleService-Info.plist in Resources */,
 				E1EA9428220D4B4200A71626 /* Assets.xcassets in Resources */,
+				E1247BD4220E353500C33555 /* MapView.storyboard in Resources */,
 				E1EA9423220D4B4200A71626 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +300,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1EA9450220D4BB400A71626 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1EA9451220D4BB400A71626 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,8 +410,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1247BCB220E31C600C33555 /* LoginViewController.swift in Sources */,
 				E1EA9420220D4B4200A71626 /* ViewController.swift in Sources */,
 				E1EA9426220D4B4200A71626 /* Getaway.xcdatamodeld in Sources */,
+				E1247BCD220E321F00C33555 /* MapViewController.swift in Sources */,
 				E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +450,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E1247BD2220E353500C33555 /* MapView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1247BD3220E353500C33555 /* Base */,
+			);
+			name = MapView.storyboard;
+			sourceTree = "<group>";
+		};
 		E1EA9421220D4B4200A71626 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
