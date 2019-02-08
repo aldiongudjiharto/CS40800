@@ -7,210 +7,257 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E1EA93DF220D476200A71626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA93DE220D476200A71626 /* AppDelegate.swift */; };
-		E1EA93E1220D476200A71626 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA93E0220D476200A71626 /* ViewController.swift */; };
-		E1EA93E4220D476200A71626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EA93E2220D476200A71626 /* Main.storyboard */; };
-		E1EA93E7220D476200A71626 /* Get_Away.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1EA93E5220D476200A71626 /* Get_Away.xcdatamodeld */; };
-		E1EA93E9220D476300A71626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1EA93E8220D476300A71626 /* Assets.xcassets */; };
-		E1EA93EC220D476300A71626 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EA93EA220D476300A71626 /* LaunchScreen.storyboard */; };
-		E1EA93F7220D476300A71626 /* Get_AwayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA93F6220D476300A71626 /* Get_AwayTests.swift */; };
-		E1EA9402220D476300A71626 /* Get_AwayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA9401220D476300A71626 /* Get_AwayUITests.swift */; };
-		E1EA9410220D491D00A71626 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1EA940F220D491D00A71626 /* GoogleService-Info.plist */; };
+		584B11955CF1CF6E4B542C49 /* Pods_GetawayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5303C3641943857252CB9C5 /* Pods_GetawayTests.framework */; };
+		D7E6973CAB97F2983931328A /* Pods_Getaway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F0614271172E0FA62F7063 /* Pods_Getaway.framework */; };
+		E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA941D220D4B4200A71626 /* AppDelegate.swift */; };
+		E1EA9420220D4B4200A71626 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA941F220D4B4200A71626 /* ViewController.swift */; };
+		E1EA9423220D4B4200A71626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EA9421220D4B4200A71626 /* Main.storyboard */; };
+		E1EA9426220D4B4200A71626 /* Getaway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1EA9424220D4B4200A71626 /* Getaway.xcdatamodeld */; };
+		E1EA9428220D4B4200A71626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1EA9427220D4B4200A71626 /* Assets.xcassets */; };
+		E1EA942B220D4B4200A71626 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EA9429220D4B4200A71626 /* LaunchScreen.storyboard */; };
+		E1EA9436220D4B4200A71626 /* GetawayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA9435220D4B4200A71626 /* GetawayTests.swift */; };
+		E1EA9441220D4B4200A71626 /* GetawayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA9440220D4B4200A71626 /* GetawayUITests.swift */; };
+		E1EA944F220D4BB400A71626 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1EA944E220D4BB400A71626 /* GoogleService-Info.plist */; };
+		E1EA9450220D4BB400A71626 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1EA944E220D4BB400A71626 /* GoogleService-Info.plist */; };
+		E1EA9451220D4BB400A71626 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1EA944E220D4BB400A71626 /* GoogleService-Info.plist */; };
+		E39ACD4BA11EB9ED2CD8E323 /* Pods_GetawayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D6A29FDB16EAFEE5FE8B9A9 /* Pods_GetawayUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E1EA93F3220D476300A71626 /* PBXContainerItemProxy */ = {
+		E1EA9432220D4B4200A71626 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E1EA93D3220D476200A71626 /* Project object */;
+			containerPortal = E1EA9412220D4B4200A71626 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E1EA93DA220D476200A71626;
-			remoteInfo = "Get Away";
+			remoteGlobalIDString = E1EA9419220D4B4200A71626;
+			remoteInfo = Getaway;
 		};
-		E1EA93FE220D476300A71626 /* PBXContainerItemProxy */ = {
+		E1EA943D220D4B4200A71626 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E1EA93D3220D476200A71626 /* Project object */;
+			containerPortal = E1EA9412220D4B4200A71626 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E1EA93DA220D476200A71626;
-			remoteInfo = "Get Away";
+			remoteGlobalIDString = E1EA9419220D4B4200A71626;
+			remoteInfo = Getaway;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E1EA93DB220D476200A71626 /* Getaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Getaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1EA93DE220D476200A71626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1EA93E0220D476200A71626 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E1EA93E3220D476200A71626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E1EA93E6220D476200A71626 /* Get_Away.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Get_Away.xcdatamodel; sourceTree = "<group>"; };
-		E1EA93E8220D476300A71626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E1EA93EB220D476300A71626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E1EA93ED220D476300A71626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1EA93F2220D476300A71626 /* GetawayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetawayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1EA93F6220D476300A71626 /* Get_AwayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get_AwayTests.swift; sourceTree = "<group>"; };
-		E1EA93F8220D476300A71626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1EA93FD220D476300A71626 /* GetawayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetawayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1EA9401220D476300A71626 /* Get_AwayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get_AwayUITests.swift; sourceTree = "<group>"; };
-		E1EA9403220D476300A71626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1EA940F220D491D00A71626 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4E58AB42D8F5AFE1E08EC223 /* Pods-GetawayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetawayUITests.release.xcconfig"; path = "Target Support Files/Pods-GetawayUITests/Pods-GetawayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		51041E1901E20FFD7D495523 /* Pods-GetawayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetawayTests.release.xcconfig"; path = "Target Support Files/Pods-GetawayTests/Pods-GetawayTests.release.xcconfig"; sourceTree = "<group>"; };
+		654A9A267089494C69DE84B9 /* Pods-GetawayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetawayTests.debug.xcconfig"; path = "Target Support Files/Pods-GetawayTests/Pods-GetawayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D6A29FDB16EAFEE5FE8B9A9 /* Pods_GetawayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetawayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		958E78E1FD300BC236CF508C /* Pods-Getaway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Getaway.debug.xcconfig"; path = "Target Support Files/Pods-Getaway/Pods-Getaway.debug.xcconfig"; sourceTree = "<group>"; };
+		B5303C3641943857252CB9C5 /* Pods_GetawayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetawayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE277663F218C865F6700E97 /* Pods-Getaway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Getaway.release.xcconfig"; path = "Target Support Files/Pods-Getaway/Pods-Getaway.release.xcconfig"; sourceTree = "<group>"; };
+		E1EA941A220D4B4200A71626 /* Getaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Getaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1EA941D220D4B4200A71626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E1EA941F220D4B4200A71626 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1EA9422220D4B4200A71626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E1EA9425220D4B4200A71626 /* Getaway.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Getaway.xcdatamodel; sourceTree = "<group>"; };
+		E1EA9427220D4B4200A71626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E1EA942A220D4B4200A71626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E1EA942C220D4B4200A71626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1EA9431220D4B4200A71626 /* GetawayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetawayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1EA9435220D4B4200A71626 /* GetawayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetawayTests.swift; sourceTree = "<group>"; };
+		E1EA9437220D4B4200A71626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1EA943C220D4B4200A71626 /* GetawayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetawayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1EA9440220D4B4200A71626 /* GetawayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetawayUITests.swift; sourceTree = "<group>"; };
+		E1EA9442220D4B4200A71626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1EA944E220D4BB400A71626 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F3618D2E4A72E87E9F1E75A6 /* Pods-GetawayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetawayUITests.debug.xcconfig"; path = "Target Support Files/Pods-GetawayUITests/Pods-GetawayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8F0614271172E0FA62F7063 /* Pods_Getaway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Getaway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E1EA93D8220D476200A71626 /* Frameworks */ = {
+		E1EA9417220D4B4200A71626 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E6973CAB97F2983931328A /* Pods_Getaway.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1EA93EF220D476300A71626 /* Frameworks */ = {
+		E1EA942E220D4B4200A71626 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584B11955CF1CF6E4B542C49 /* Pods_GetawayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1EA93FA220D476300A71626 /* Frameworks */ = {
+		E1EA9439220D4B4200A71626 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39ACD4BA11EB9ED2CD8E323 /* Pods_GetawayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E1EA93D2220D476200A71626 = {
+		9F8814F330EC9D1AC6520994 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E1EA93DD220D476200A71626 /* Get Away */,
-				E1EA93F5220D476300A71626 /* Get AwayTests */,
-				E1EA9400220D476300A71626 /* Get AwayUITests */,
-				E1EA93DC220D476200A71626 /* Products */,
+				F8F0614271172E0FA62F7063 /* Pods_Getaway.framework */,
+				B5303C3641943857252CB9C5 /* Pods_GetawayTests.framework */,
+				7D6A29FDB16EAFEE5FE8B9A9 /* Pods_GetawayUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1496F99431AF340D08F96A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				958E78E1FD300BC236CF508C /* Pods-Getaway.debug.xcconfig */,
+				CE277663F218C865F6700E97 /* Pods-Getaway.release.xcconfig */,
+				654A9A267089494C69DE84B9 /* Pods-GetawayTests.debug.xcconfig */,
+				51041E1901E20FFD7D495523 /* Pods-GetawayTests.release.xcconfig */,
+				F3618D2E4A72E87E9F1E75A6 /* Pods-GetawayUITests.debug.xcconfig */,
+				4E58AB42D8F5AFE1E08EC223 /* Pods-GetawayUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E1EA9411220D4B4200A71626 = {
+			isa = PBXGroup;
+			children = (
+				E1EA941C220D4B4200A71626 /* Getaway */,
+				E1EA9434220D4B4200A71626 /* GetawayTests */,
+				E1EA943F220D4B4200A71626 /* GetawayUITests */,
+				E1EA941B220D4B4200A71626 /* Products */,
+				D1496F99431AF340D08F96A9 /* Pods */,
+				9F8814F330EC9D1AC6520994 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		E1EA93DC220D476200A71626 /* Products */ = {
+		E1EA941B220D4B4200A71626 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E1EA93DB220D476200A71626 /* Getaway.app */,
-				E1EA93F2220D476300A71626 /* GetawayTests.xctest */,
-				E1EA93FD220D476300A71626 /* GetawayUITests.xctest */,
+				E1EA941A220D4B4200A71626 /* Getaway.app */,
+				E1EA9431220D4B4200A71626 /* GetawayTests.xctest */,
+				E1EA943C220D4B4200A71626 /* GetawayUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E1EA93DD220D476200A71626 /* Get Away */ = {
+		E1EA941C220D4B4200A71626 /* Getaway */ = {
 			isa = PBXGroup;
 			children = (
-				E1EA93DE220D476200A71626 /* AppDelegate.swift */,
-				E1EA93E0220D476200A71626 /* ViewController.swift */,
-				E1EA93E2220D476200A71626 /* Main.storyboard */,
-				E1EA93E8220D476300A71626 /* Assets.xcassets */,
-				E1EA93EA220D476300A71626 /* LaunchScreen.storyboard */,
-				E1EA93ED220D476300A71626 /* Info.plist */,
-				E1EA940F220D491D00A71626 /* GoogleService-Info.plist */,
-				E1EA93E5220D476200A71626 /* Get_Away.xcdatamodeld */,
+				E1EA941D220D4B4200A71626 /* AppDelegate.swift */,
+				E1EA941F220D4B4200A71626 /* ViewController.swift */,
+				E1EA9421220D4B4200A71626 /* Main.storyboard */,
+				E1EA9427220D4B4200A71626 /* Assets.xcassets */,
+				E1EA9429220D4B4200A71626 /* LaunchScreen.storyboard */,
+				E1EA944E220D4BB400A71626 /* GoogleService-Info.plist */,
+				E1EA942C220D4B4200A71626 /* Info.plist */,
+				E1EA9424220D4B4200A71626 /* Getaway.xcdatamodeld */,
 			);
-			path = "Get Away";
+			path = Getaway;
 			sourceTree = "<group>";
 		};
-		E1EA93F5220D476300A71626 /* Get AwayTests */ = {
+		E1EA9434220D4B4200A71626 /* GetawayTests */ = {
 			isa = PBXGroup;
 			children = (
-				E1EA93F6220D476300A71626 /* Get_AwayTests.swift */,
-				E1EA93F8220D476300A71626 /* Info.plist */,
+				E1EA9435220D4B4200A71626 /* GetawayTests.swift */,
+				E1EA9437220D4B4200A71626 /* Info.plist */,
 			);
-			path = "Get AwayTests";
+			path = GetawayTests;
 			sourceTree = "<group>";
 		};
-		E1EA9400220D476300A71626 /* Get AwayUITests */ = {
+		E1EA943F220D4B4200A71626 /* GetawayUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E1EA9401220D476300A71626 /* Get_AwayUITests.swift */,
-				E1EA9403220D476300A71626 /* Info.plist */,
+				E1EA9440220D4B4200A71626 /* GetawayUITests.swift */,
+				E1EA9442220D4B4200A71626 /* Info.plist */,
 			);
-			path = "Get AwayUITests";
+			path = GetawayUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E1EA93DA220D476200A71626 /* Getaway */ = {
+		E1EA9419220D4B4200A71626 /* Getaway */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E1EA9406220D476300A71626 /* Build configuration list for PBXNativeTarget "Getaway" */;
+			buildConfigurationList = E1EA9445220D4B4200A71626 /* Build configuration list for PBXNativeTarget "Getaway" */;
 			buildPhases = (
-				E1EA93D7220D476200A71626 /* Sources */,
-				E1EA93D8220D476200A71626 /* Frameworks */,
-				E1EA93D9220D476200A71626 /* Resources */,
+				E2EC8E689775F913251151E4 /* [CP] Check Pods Manifest.lock */,
+				E1EA9416220D4B4200A71626 /* Sources */,
+				E1EA9417220D4B4200A71626 /* Frameworks */,
+				E1EA9418220D4B4200A71626 /* Resources */,
+				59F5ECCA359F7C5B8909B3D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Getaway;
-			productName = "Get Away";
-			productReference = E1EA93DB220D476200A71626 /* Getaway.app */;
+			productName = Getaway;
+			productReference = E1EA941A220D4B4200A71626 /* Getaway.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E1EA93F1220D476300A71626 /* GetawayTests */ = {
+		E1EA9430220D4B4200A71626 /* GetawayTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E1EA9409220D476300A71626 /* Build configuration list for PBXNativeTarget "GetawayTests" */;
+			buildConfigurationList = E1EA9448220D4B4200A71626 /* Build configuration list for PBXNativeTarget "GetawayTests" */;
 			buildPhases = (
-				E1EA93EE220D476300A71626 /* Sources */,
-				E1EA93EF220D476300A71626 /* Frameworks */,
-				E1EA93F0220D476300A71626 /* Resources */,
+				7A23C49D4C8D8C1408EDA59C /* [CP] Check Pods Manifest.lock */,
+				E1EA942D220D4B4200A71626 /* Sources */,
+				E1EA942E220D4B4200A71626 /* Frameworks */,
+				E1EA942F220D4B4200A71626 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E1EA93F4220D476300A71626 /* PBXTargetDependency */,
+				E1EA9433220D4B4200A71626 /* PBXTargetDependency */,
 			);
 			name = GetawayTests;
-			productName = "Get AwayTests";
-			productReference = E1EA93F2220D476300A71626 /* GetawayTests.xctest */;
+			productName = GetawayTests;
+			productReference = E1EA9431220D4B4200A71626 /* GetawayTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E1EA93FC220D476300A71626 /* GetawayUITests */ = {
+		E1EA943B220D4B4200A71626 /* GetawayUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E1EA940C220D476300A71626 /* Build configuration list for PBXNativeTarget "GetawayUITests" */;
+			buildConfigurationList = E1EA944B220D4B4200A71626 /* Build configuration list for PBXNativeTarget "GetawayUITests" */;
 			buildPhases = (
-				E1EA93F9220D476300A71626 /* Sources */,
-				E1EA93FA220D476300A71626 /* Frameworks */,
-				E1EA93FB220D476300A71626 /* Resources */,
+				B8D4C40164BA72646BF3DB64 /* [CP] Check Pods Manifest.lock */,
+				E1EA9438220D4B4200A71626 /* Sources */,
+				E1EA9439220D4B4200A71626 /* Frameworks */,
+				E1EA943A220D4B4200A71626 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E1EA93FF220D476300A71626 /* PBXTargetDependency */,
+				E1EA943E220D4B4200A71626 /* PBXTargetDependency */,
 			);
 			name = GetawayUITests;
-			productName = "Get AwayUITests";
-			productReference = E1EA93FD220D476300A71626 /* GetawayUITests.xctest */;
+			productName = GetawayUITests;
+			productReference = E1EA943C220D4B4200A71626 /* GetawayUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E1EA93D3220D476200A71626 /* Project object */ = {
+		E1EA9412220D4B4200A71626 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Avinash Singh";
 				TargetAttributes = {
-					E1EA93DA220D476200A71626 = {
+					E1EA9419220D4B4200A71626 = {
 						CreatedOnToolsVersion = 10.1;
 					};
-					E1EA93F1220D476300A71626 = {
+					E1EA9430220D4B4200A71626 = {
 						CreatedOnToolsVersion = 10.1;
-						TestTargetID = E1EA93DA220D476200A71626;
+						TestTargetID = E1EA9419220D4B4200A71626;
 					};
-					E1EA93FC220D476300A71626 = {
+					E1EA943B220D4B4200A71626 = {
 						CreatedOnToolsVersion = 10.1;
-						TestTargetID = E1EA93DA220D476200A71626;
+						TestTargetID = E1EA9419220D4B4200A71626;
 					};
 				};
 			};
-			buildConfigurationList = E1EA93D6220D476200A71626 /* Build configuration list for PBXProject "Getaway" */;
+			buildConfigurationList = E1EA9415220D4B4200A71626 /* Build configuration list for PBXProject "Getaway" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -218,101 +265,196 @@
 				en,
 				Base,
 			);
-			mainGroup = E1EA93D2220D476200A71626;
-			productRefGroup = E1EA93DC220D476200A71626 /* Products */;
+			mainGroup = E1EA9411220D4B4200A71626;
+			productRefGroup = E1EA941B220D4B4200A71626 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E1EA93DA220D476200A71626 /* Getaway */,
-				E1EA93F1220D476300A71626 /* GetawayTests */,
-				E1EA93FC220D476300A71626 /* GetawayUITests */,
+				E1EA9419220D4B4200A71626 /* Getaway */,
+				E1EA9430220D4B4200A71626 /* GetawayTests */,
+				E1EA943B220D4B4200A71626 /* GetawayUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E1EA93D9220D476200A71626 /* Resources */ = {
+		E1EA9418220D4B4200A71626 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1EA93EC220D476300A71626 /* LaunchScreen.storyboard in Resources */,
-				E1EA9410220D491D00A71626 /* GoogleService-Info.plist in Resources */,
-				E1EA93E9220D476300A71626 /* Assets.xcassets in Resources */,
-				E1EA93E4220D476200A71626 /* Main.storyboard in Resources */,
+				E1EA942B220D4B4200A71626 /* LaunchScreen.storyboard in Resources */,
+				E1EA944F220D4BB400A71626 /* GoogleService-Info.plist in Resources */,
+				E1EA9428220D4B4200A71626 /* Assets.xcassets in Resources */,
+				E1EA9423220D4B4200A71626 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1EA93F0220D476300A71626 /* Resources */ = {
+		E1EA942F220D4B4200A71626 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1EA9450220D4BB400A71626 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1EA93FB220D476300A71626 /* Resources */ = {
+		E1EA943A220D4B4200A71626 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1EA9451220D4BB400A71626 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		59F5ECCA359F7C5B8909B3D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Getaway/Pods-Getaway-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Getaway/Pods-Getaway-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A23C49D4C8D8C1408EDA59C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GetawayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8D4C40164BA72646BF3DB64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GetawayUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2EC8E689775F913251151E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Getaway-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		E1EA93D7220D476200A71626 /* Sources */ = {
+		E1EA9416220D4B4200A71626 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1EA93E1220D476200A71626 /* ViewController.swift in Sources */,
-				E1EA93DF220D476200A71626 /* AppDelegate.swift in Sources */,
-				E1EA93E7220D476200A71626 /* Get_Away.xcdatamodeld in Sources */,
+				E1EA9420220D4B4200A71626 /* ViewController.swift in Sources */,
+				E1EA9426220D4B4200A71626 /* Getaway.xcdatamodeld in Sources */,
+				E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1EA93EE220D476300A71626 /* Sources */ = {
+		E1EA942D220D4B4200A71626 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1EA93F7220D476300A71626 /* Get_AwayTests.swift in Sources */,
+				E1EA9436220D4B4200A71626 /* GetawayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1EA93F9220D476300A71626 /* Sources */ = {
+		E1EA9438220D4B4200A71626 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1EA9402220D476300A71626 /* Get_AwayUITests.swift in Sources */,
+				E1EA9441220D4B4200A71626 /* GetawayUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E1EA93F4220D476300A71626 /* PBXTargetDependency */ = {
+		E1EA9433220D4B4200A71626 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E1EA93DA220D476200A71626 /* Getaway */;
-			targetProxy = E1EA93F3220D476300A71626 /* PBXContainerItemProxy */;
+			target = E1EA9419220D4B4200A71626 /* Getaway */;
+			targetProxy = E1EA9432220D4B4200A71626 /* PBXContainerItemProxy */;
 		};
-		E1EA93FF220D476300A71626 /* PBXTargetDependency */ = {
+		E1EA943E220D4B4200A71626 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E1EA93DA220D476200A71626 /* Getaway */;
-			targetProxy = E1EA93FE220D476300A71626 /* PBXContainerItemProxy */;
+			target = E1EA9419220D4B4200A71626 /* Getaway */;
+			targetProxy = E1EA943D220D4B4200A71626 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E1EA93E2220D476200A71626 /* Main.storyboard */ = {
+		E1EA9421220D4B4200A71626 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E1EA93E3220D476200A71626 /* Base */,
+				E1EA9422220D4B4200A71626 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		E1EA93EA220D476300A71626 /* LaunchScreen.storyboard */ = {
+		E1EA9429220D4B4200A71626 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E1EA93EB220D476300A71626 /* Base */,
+				E1EA942A220D4B4200A71626 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -320,7 +462,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E1EA9404220D476300A71626 /* Debug */ = {
+		E1EA9443220D4B4200A71626 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -381,7 +523,7 @@
 			};
 			name = Debug;
 		};
-		E1EA9405220D476300A71626 /* Release */ = {
+		E1EA9444220D4B4200A71626 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -436,56 +578,59 @@
 			};
 			name = Release;
 		};
-		E1EA9407220D476300A71626 /* Debug */ = {
+		E1EA9446220D4B4200A71626 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 958E78E1FD300BC236CF508C /* Pods-Getaway.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN853SAZBE;
-				INFOPLIST_FILE = "Get Away/Info.plist";
+				INFOPLIST_FILE = Getaway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.singh422.Get-Away";
+				PRODUCT_BUNDLE_IDENTIFIER = com.singh422.Getaway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		E1EA9408220D476300A71626 /* Release */ = {
+		E1EA9447220D4B4200A71626 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE277663F218C865F6700E97 /* Pods-Getaway.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN853SAZBE;
-				INFOPLIST_FILE = "Get Away/Info.plist";
+				INFOPLIST_FILE = Getaway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.singh422.Get-Away";
+				PRODUCT_BUNDLE_IDENTIFIER = com.singh422.Getaway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		E1EA940A220D476300A71626 /* Debug */ = {
+		E1EA9449220D4B4200A71626 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 654A9A267089494C69DE84B9 /* Pods-GetawayTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN853SAZBE;
-				INFOPLIST_FILE = "Get AwayTests/Info.plist";
+				INFOPLIST_FILE = GetawayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.singh422.Get-AwayTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.singh422.GetawayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -493,20 +638,21 @@
 			};
 			name = Debug;
 		};
-		E1EA940B220D476300A71626 /* Release */ = {
+		E1EA944A220D4B4200A71626 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51041E1901E20FFD7D495523 /* Pods-GetawayTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN853SAZBE;
-				INFOPLIST_FILE = "Get AwayTests/Info.plist";
+				INFOPLIST_FILE = GetawayTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.singh422.Get-AwayTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.singh422.GetawayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -514,81 +660,83 @@
 			};
 			name = Release;
 		};
-		E1EA940D220D476300A71626 /* Debug */ = {
+		E1EA944C220D4B4200A71626 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3618D2E4A72E87E9F1E75A6 /* Pods-GetawayUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN853SAZBE;
-				INFOPLIST_FILE = "Get AwayUITests/Info.plist";
+				INFOPLIST_FILE = GetawayUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.singh422.Get-AwayUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.singh422.GetawayUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Get Away";
+				TEST_TARGET_NAME = Getaway;
 			};
 			name = Debug;
 		};
-		E1EA940E220D476300A71626 /* Release */ = {
+		E1EA944D220D4B4200A71626 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E58AB42D8F5AFE1E08EC223 /* Pods-GetawayUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZN853SAZBE;
-				INFOPLIST_FILE = "Get AwayUITests/Info.plist";
+				INFOPLIST_FILE = GetawayUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.singh422.Get-AwayUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.singh422.GetawayUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Get Away";
+				TEST_TARGET_NAME = Getaway;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E1EA93D6220D476200A71626 /* Build configuration list for PBXProject "Getaway" */ = {
+		E1EA9415220D4B4200A71626 /* Build configuration list for PBXProject "Getaway" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1EA9404220D476300A71626 /* Debug */,
-				E1EA9405220D476300A71626 /* Release */,
+				E1EA9443220D4B4200A71626 /* Debug */,
+				E1EA9444220D4B4200A71626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E1EA9406220D476300A71626 /* Build configuration list for PBXNativeTarget "Getaway" */ = {
+		E1EA9445220D4B4200A71626 /* Build configuration list for PBXNativeTarget "Getaway" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1EA9407220D476300A71626 /* Debug */,
-				E1EA9408220D476300A71626 /* Release */,
+				E1EA9446220D4B4200A71626 /* Debug */,
+				E1EA9447220D4B4200A71626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E1EA9409220D476300A71626 /* Build configuration list for PBXNativeTarget "GetawayTests" */ = {
+		E1EA9448220D4B4200A71626 /* Build configuration list for PBXNativeTarget "GetawayTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1EA940A220D476300A71626 /* Debug */,
-				E1EA940B220D476300A71626 /* Release */,
+				E1EA9449220D4B4200A71626 /* Debug */,
+				E1EA944A220D4B4200A71626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E1EA940C220D476300A71626 /* Build configuration list for PBXNativeTarget "GetawayUITests" */ = {
+		E1EA944B220D4B4200A71626 /* Build configuration list for PBXNativeTarget "GetawayUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1EA940D220D476300A71626 /* Debug */,
-				E1EA940E220D476300A71626 /* Release */,
+				E1EA944C220D4B4200A71626 /* Debug */,
+				E1EA944D220D4B4200A71626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -596,17 +744,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E1EA93E5220D476200A71626 /* Get_Away.xcdatamodeld */ = {
+		E1EA9424220D4B4200A71626 /* Getaway.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E1EA93E6220D476200A71626 /* Get_Away.xcdatamodel */,
+				E1EA9425220D4B4200A71626 /* Getaway.xcdatamodel */,
 			);
-			currentVersion = E1EA93E6220D476200A71626 /* Get_Away.xcdatamodel */;
-			path = Get_Away.xcdatamodeld;
+			currentVersion = E1EA9425220D4B4200A71626 /* Getaway.xcdatamodel */;
+			path = Getaway.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = E1EA93D3220D476200A71626 /* Project object */;
+	rootObject = E1EA9412220D4B4200A71626 /* Project object */;
 }

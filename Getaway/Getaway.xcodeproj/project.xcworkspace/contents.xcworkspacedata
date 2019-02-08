@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/Avinash/Desktop/Spring2019/CS408/Project/Get Away/Getaway.xcodeproj">
+      location = "self:Getaway.xcodeproj">
    </FileRef>
 </Workspace>
