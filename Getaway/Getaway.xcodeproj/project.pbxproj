@@ -15,6 +15,7 @@
 		E1EA93EC220D476300A71626 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EA93EA220D476300A71626 /* LaunchScreen.storyboard */; };
 		E1EA93F7220D476300A71626 /* Get_AwayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA93F6220D476300A71626 /* Get_AwayTests.swift */; };
 		E1EA9402220D476300A71626 /* Get_AwayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA9401220D476300A71626 /* Get_AwayUITests.swift */; };
+		E1EA9410220D491D00A71626 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1EA940F220D491D00A71626 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E1EA93DB220D476200A71626 /* Get Away.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Get Away.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1EA93DB220D476200A71626 /* Getaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Getaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA93DE220D476200A71626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1EA93E0220D476200A71626 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1EA93E3220D476200A71626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,12 +44,13 @@
 		E1EA93E8220D476300A71626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1EA93EB220D476300A71626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1EA93ED220D476300A71626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1EA93F2220D476300A71626 /* Get AwayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Get AwayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1EA93F2220D476300A71626 /* GetawayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetawayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA93F6220D476300A71626 /* Get_AwayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get_AwayTests.swift; sourceTree = "<group>"; };
 		E1EA93F8220D476300A71626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1EA93FD220D476300A71626 /* Get AwayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Get AwayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1EA93FD220D476300A71626 /* GetawayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetawayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA9401220D476300A71626 /* Get_AwayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Get_AwayUITests.swift; sourceTree = "<group>"; };
 		E1EA9403220D476300A71626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1EA940F220D491D00A71626 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +91,9 @@
 		E1EA93DC220D476200A71626 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E1EA93DB220D476200A71626 /* Get Away.app */,
-				E1EA93F2220D476300A71626 /* Get AwayTests.xctest */,
-				E1EA93FD220D476300A71626 /* Get AwayUITests.xctest */,
+				E1EA93DB220D476200A71626 /* Getaway.app */,
+				E1EA93F2220D476300A71626 /* GetawayTests.xctest */,
+				E1EA93FD220D476300A71626 /* GetawayUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +107,7 @@
 				E1EA93E8220D476300A71626 /* Assets.xcassets */,
 				E1EA93EA220D476300A71626 /* LaunchScreen.storyboard */,
 				E1EA93ED220D476300A71626 /* Info.plist */,
+				E1EA940F220D491D00A71626 /* GoogleService-Info.plist */,
 				E1EA93E5220D476200A71626 /* Get_Away.xcdatamodeld */,
 			);
 			path = "Get Away";
@@ -131,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E1EA93DA220D476200A71626 /* Get Away */ = {
+		E1EA93DA220D476200A71626 /* Getaway */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E1EA9406220D476300A71626 /* Build configuration list for PBXNativeTarget "Get Away" */;
+			buildConfigurationList = E1EA9406220D476300A71626 /* Build configuration list for PBXNativeTarget "Getaway" */;
 			buildPhases = (
 				E1EA93D7220D476200A71626 /* Sources */,
 				E1EA93D8220D476200A71626 /* Frameworks */,
@@ -143,14 +146,14 @@
 			);
 			dependencies = (
 			);
-			name = "Get Away";
+			name = Getaway;
 			productName = "Get Away";
-			productReference = E1EA93DB220D476200A71626 /* Get Away.app */;
+			productReference = E1EA93DB220D476200A71626 /* Getaway.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E1EA93F1220D476300A71626 /* Get AwayTests */ = {
+		E1EA93F1220D476300A71626 /* GetawayTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E1EA9409220D476300A71626 /* Build configuration list for PBXNativeTarget "Get AwayTests" */;
+			buildConfigurationList = E1EA9409220D476300A71626 /* Build configuration list for PBXNativeTarget "GetawayTests" */;
 			buildPhases = (
 				E1EA93EE220D476300A71626 /* Sources */,
 				E1EA93EF220D476300A71626 /* Frameworks */,
@@ -161,14 +164,14 @@
 			dependencies = (
 				E1EA93F4220D476300A71626 /* PBXTargetDependency */,
 			);
-			name = "Get AwayTests";
+			name = GetawayTests;
 			productName = "Get AwayTests";
-			productReference = E1EA93F2220D476300A71626 /* Get AwayTests.xctest */;
+			productReference = E1EA93F2220D476300A71626 /* GetawayTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E1EA93FC220D476300A71626 /* Get AwayUITests */ = {
+		E1EA93FC220D476300A71626 /* GetawayUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E1EA940C220D476300A71626 /* Build configuration list for PBXNativeTarget "Get AwayUITests" */;
+			buildConfigurationList = E1EA940C220D476300A71626 /* Build configuration list for PBXNativeTarget "GetawayUITests" */;
 			buildPhases = (
 				E1EA93F9220D476300A71626 /* Sources */,
 				E1EA93FA220D476300A71626 /* Frameworks */,
@@ -179,9 +182,9 @@
 			dependencies = (
 				E1EA93FF220D476300A71626 /* PBXTargetDependency */,
 			);
-			name = "Get AwayUITests";
+			name = GetawayUITests;
 			productName = "Get AwayUITests";
-			productReference = E1EA93FD220D476300A71626 /* Get AwayUITests.xctest */;
+			productReference = E1EA93FD220D476300A71626 /* GetawayUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +210,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E1EA93D6220D476200A71626 /* Build configuration list for PBXProject "Get Away" */;
+			buildConfigurationList = E1EA93D6220D476200A71626 /* Build configuration list for PBXProject "Getaway" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -220,9 +223,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E1EA93DA220D476200A71626 /* Get Away */,
-				E1EA93F1220D476300A71626 /* Get AwayTests */,
-				E1EA93FC220D476300A71626 /* Get AwayUITests */,
+				E1EA93DA220D476200A71626 /* Getaway */,
+				E1EA93F1220D476300A71626 /* GetawayTests */,
+				E1EA93FC220D476300A71626 /* GetawayUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1EA93EC220D476300A71626 /* LaunchScreen.storyboard in Resources */,
+				E1EA9410220D491D00A71626 /* GoogleService-Info.plist in Resources */,
 				E1EA93E9220D476300A71626 /* Assets.xcassets in Resources */,
 				E1EA93E4220D476200A71626 /* Main.storyboard in Resources */,
 			);
@@ -286,12 +290,12 @@
 /* Begin PBXTargetDependency section */
 		E1EA93F4220D476300A71626 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E1EA93DA220D476200A71626 /* Get Away */;
+			target = E1EA93DA220D476200A71626 /* Getaway */;
 			targetProxy = E1EA93F3220D476300A71626 /* PBXContainerItemProxy */;
 		};
 		E1EA93FF220D476300A71626 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E1EA93DA220D476200A71626 /* Get Away */;
+			target = E1EA93DA220D476200A71626 /* Getaway */;
 			targetProxy = E1EA93FE220D476300A71626 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -485,7 +489,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Get Away.app/Get Away";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Getaway.app/Getaway";
 			};
 			name = Debug;
 		};
@@ -506,7 +510,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Get Away.app/Get Away";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Getaway.app/Getaway";
 			};
 			name = Release;
 		};
@@ -553,7 +557,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E1EA93D6220D476200A71626 /* Build configuration list for PBXProject "Get Away" */ = {
+		E1EA93D6220D476200A71626 /* Build configuration list for PBXProject "Getaway" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1EA9404220D476300A71626 /* Debug */,
@@ -562,7 +566,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E1EA9406220D476300A71626 /* Build configuration list for PBXNativeTarget "Get Away" */ = {
+		E1EA9406220D476300A71626 /* Build configuration list for PBXNativeTarget "Getaway" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1EA9407220D476300A71626 /* Debug */,
@@ -571,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E1EA9409220D476300A71626 /* Build configuration list for PBXNativeTarget "Get AwayTests" */ = {
+		E1EA9409220D476300A71626 /* Build configuration list for PBXNativeTarget "GetawayTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1EA940A220D476300A71626 /* Debug */,
@@ -580,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E1EA940C220D476300A71626 /* Build configuration list for PBXNativeTarget "Get AwayUITests" */ = {
+		E1EA940C220D476300A71626 /* Build configuration list for PBXNativeTarget "GetawayUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E1EA940D220D476300A71626 /* Debug */,
