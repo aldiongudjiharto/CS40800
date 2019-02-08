@@ -9,14 +9,24 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        locationManager.delegate = self
+        
+        mapView.showsUserLocation = true
+        
+    if(locationManager.responds(to:#selector(CLLocationManager.requestAlwaysAuthorization))) {
+            locationManager.requestAlwaysAuthorization()
+            //or
+            //locationManager.requestWhenInUseAuthorization()
+        }
     }
     
 

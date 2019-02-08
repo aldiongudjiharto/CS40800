@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Program requires GPS to track location</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Program requires GPS to track location</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Program requires GPS to track location</string>
 </dict>
 </plist>
