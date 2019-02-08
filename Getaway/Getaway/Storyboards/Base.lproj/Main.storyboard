@@ -50,7 +50,7 @@
                 <viewControllerPlaceholder storyboardName="MapView" id="z1h-fl-lcl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LE-f3-ZgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="-378"/>
+            <point key="canvasLocation" x="1044" y="-483"/>
         </scene>
     </scenes>
 </document>

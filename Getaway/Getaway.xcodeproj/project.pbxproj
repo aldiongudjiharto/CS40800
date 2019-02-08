@@ -14,7 +14,6 @@
 		E1247BCD220E321F00C33555 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BCC220E321F00C33555 /* MapViewController.swift */; };
 		E1247BD4220E353500C33555 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1247BD2220E353500C33555 /* MapView.storyboard */; };
 		E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA941D220D4B4200A71626 /* AppDelegate.swift */; };
-		E1EA9420220D4B4200A71626 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA941F220D4B4200A71626 /* ViewController.swift */; };
 		E1EA9423220D4B4200A71626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EA9421220D4B4200A71626 /* Main.storyboard */; };
 		E1EA9426220D4B4200A71626 /* Getaway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1EA9424220D4B4200A71626 /* Getaway.xcdatamodeld */; };
 		E1EA9428220D4B4200A71626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1EA9427220D4B4200A71626 /* Assets.xcassets */; };
@@ -55,7 +54,6 @@
 		E1247BD3220E353500C33555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapView.storyboard; sourceTree = "<group>"; };
 		E1EA941A220D4B4200A71626 /* Getaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Getaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA941D220D4B4200A71626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1EA941F220D4B4200A71626 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1EA9422220D4B4200A71626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1EA9425220D4B4200A71626 /* Getaway.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Getaway.xcdatamodel; sourceTree = "<group>"; };
 		E1EA9427220D4B4200A71626 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +120,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E1247BD5220E3B9400C33555 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1247BCA220E31C600C33555 /* LoginViewController.swift */,
+				E1247BCC220E321F00C33555 /* MapViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E1247BD6220E3BA800C33555 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E1EA9421220D4B4200A71626 /* Main.storyboard */,
+				E1247BD2220E353500C33555 /* MapView.storyboard */,
+				E1EA9429220D4B4200A71626 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		E1EA9411220D4B4200A71626 = {
 			isa = PBXGroup;
 			children = (
@@ -148,13 +165,9 @@
 			isa = PBXGroup;
 			children = (
 				E1EA941D220D4B4200A71626 /* AppDelegate.swift */,
-				E1EA941F220D4B4200A71626 /* ViewController.swift */,
-				E1EA9421220D4B4200A71626 /* Main.storyboard */,
+				E1247BD6220E3BA800C33555 /* Storyboards */,
 				E1EA9427220D4B4200A71626 /* Assets.xcassets */,
-				E1247BD2220E353500C33555 /* MapView.storyboard */,
-				E1EA9429220D4B4200A71626 /* LaunchScreen.storyboard */,
-				E1247BCA220E31C600C33555 /* LoginViewController.swift */,
-				E1247BCC220E321F00C33555 /* MapViewController.swift */,
+				E1247BD5220E3B9400C33555 /* ViewControllers */,
 				E1EA942C220D4B4200A71626 /* Info.plist */,
 				E1247BC7220E30FB00C33555 /* GoogleService-Info.plist */,
 				E1EA9424220D4B4200A71626 /* Getaway.xcdatamodeld */,
@@ -411,7 +424,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1247BCB220E31C600C33555 /* LoginViewController.swift in Sources */,
-				E1EA9420220D4B4200A71626 /* ViewController.swift in Sources */,
 				E1EA9426220D4B4200A71626 /* Getaway.xcdatamodeld in Sources */,
 				E1247BCD220E321F00C33555 /* MapViewController.swift in Sources */,
 				E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */,
