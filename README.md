@@ -1,15 +1,15 @@
 # CS40800 - Team 12
 
 
-------Get Away----
+## ----Get Away----
 
 
 Team members:  
--Aldio Ngudjiharto
--Avinash Singh
--Daniel Larken
--Dhriti Chawla
--Stefany Felicia Gunawan Go
+- Aldio Ngudjiharto
+- Avinash Singh
+- Daniel Larken
+- Dhriti Chawla
+- Stefany Felicia Gunawan Go
 
 Project Coordinator: 
--Pongthip Srivarangkul 
+- Pongthip Srivarangkul 
