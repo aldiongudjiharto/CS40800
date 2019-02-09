@@ -26,7 +26,7 @@
                                 <rect key="frame" x="93" y="95" width="188" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="Public"/>
+                                    <segment title="Global"/>
                                     <segment title="Friends"/>
                                     <segment title="Mine"/>
                                 </segments>

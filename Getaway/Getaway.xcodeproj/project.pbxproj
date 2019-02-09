@@ -15,6 +15,7 @@
 		E1247BD8220E437900C33555 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1247BD7220E437900C33555 /* GoogleService-Info.plist */; };
 		E1247BDA220E493700C33555 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1247BD9220E493700C33555 /* CoreLocation.framework */; };
 		E1247BDC220E493D00C33555 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1247BDB220E493D00C33555 /* MapKit.framework */; };
+		E1247BDE220E551000C33555 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BDD220E551000C33555 /* SignInViewController.swift */; };
 		E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA941D220D4B4200A71626 /* AppDelegate.swift */; };
 		E1EA9423220D4B4200A71626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EA9421220D4B4200A71626 /* Main.storyboard */; };
 		E1EA9426220D4B4200A71626 /* Getaway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1EA9424220D4B4200A71626 /* Getaway.xcdatamodeld */; };
@@ -56,6 +57,7 @@
 		E1247BD7220E437900C33555 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E1247BD9220E493700C33555 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E1247BDB220E493D00C33555 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E1247BDD220E551000C33555 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E1EA941A220D4B4200A71626 /* Getaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Getaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA941D220D4B4200A71626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1EA9422220D4B4200A71626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				E1247BCA220E31C600C33555 /* LoginViewController.swift */,
 				E1247BCC220E321F00C33555 /* MapViewController.swift */,
+				E1247BDD220E551000C33555 /* SignInViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				E1247BCB220E31C600C33555 /* LoginViewController.swift in Sources */,
 				E1EA9426220D4B4200A71626 /* Getaway.xcdatamodeld in Sources */,
 				E1247BCD220E321F00C33555 /* MapViewController.swift in Sources */,
+				E1247BDE220E551000C33555 /* SignInViewController.swift in Sources */,
 				E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -31,25 +31,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             //or
             //locationManager.requestWhenInUseAuthorization()
         }
+        updateAnnotations()
+        
     }
     
     @IBAction func mapSelectionChanged(_ sender: Any) {
-        
+        updateAnnotations()
+    }
+    
+    func updateAnnotations() {
         switch mapSelectionSegmentedControl.selectedSegmentIndex {
-            case 0:
-                displayPublicAnnotations()
-            case 1:
-                displayFriendsAnnotations()
-            case 3:
-                displayPersonalAnnotations()
-            default:
-                break
+        case 0:
+            displayGlobalAnnotations()
+        case 1:
+            displayFriendsAnnotations()
+        case 2:
+            displayPersonalAnnotations()
+        default:
+            break
         }
     }
     
     
     
-    func displayPublicAnnotations() {
+    func displayGlobalAnnotations() {
         print("public")
     }
     
