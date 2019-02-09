@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Maps-->
+        <!--Map View Controller-->
         <scene sceneID="gd9-pt-L0X">
             <objects>
                 <viewController id="fYT-Zw-Wr3" customClass="MapViewController" customModule="Getaway" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SSS-Gx-BLf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Maps" id="ZfM-3y-9TH"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-map-marker-50" selectedImage="icons8-map-marker-50" id="ZfM-3y-9TH"/>
                     <connections>
                         <outlet property="mapSelectionSegmentedControl" destination="38O-6d-a8t" id="mmF-n7-6PR"/>
                         <outlet property="mapView" destination="4LO-fY-lx2" id="6iX-w1-guE"/>
@@ -46,9 +46,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xC8-fs-u5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121" y="219"/>
+            <point key="canvasLocation" x="3705" y="233"/>
         </scene>
-        <!--Friends-->
+        <!--View Controller-->
         <scene sceneID="JpG-0W-UO8">
             <objects>
                 <viewController id="vUC-d9-1ca" sceneMemberID="viewController">
@@ -58,13 +58,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="K5g-Nq-jIh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Friends" id="k50-Jr-6YQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-friends-80" selectedImage="icons8-friends-80" id="k50-Jr-6YQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFa-rD-cPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3010" y="-17"/>
+            <point key="canvasLocation" x="4430" y="-270"/>
         </scene>
-        <!--My profile-->
+        <!--Profile View Controller-->
         <scene sceneID="lLy-hJ-YvQ">
             <objects>
                 <viewController id="VaN-n9-Cxu" customClass="ProfileViewController" customModule="Getaway" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,14 +106,14 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4zJ-Hl-ecE" kind="push" id="Hi8-B8-vmv"/>
+                                    <segue destination="4zJ-Hl-ecE" kind="showDetail" id="43H-gq-8Pv"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xje-HM-YCx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My profile" id="TsJ-Ex-9zs"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-user-50" selectedImage="icons8-user-50" id="TsJ-Ex-9zs"/>
                     <connections>
                         <outlet property="myBio" destination="eJ4-r2-8ax" id="BC0-m8-w5x"/>
                         <outlet property="myName" destination="W8n-3f-tWP" id="OLf-Yj-217"/>
@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xht-Ev-sA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1712.8" y="-1163.0541871921182"/>
+            <point key="canvasLocation" x="3705" y="-1431"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uqh-co-cg8">
@@ -150,10 +150,9 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvl-SP-UDF">
-                                <rect key="frame" x="22" y="56" width="67" height="30"/>
+                                <rect key="frame" x="22" y="56" width="33" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94243847150000004" green="0.81598767270000006" blue="0.12569655860000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Go back">
+                                <state key="normal" backgroundImage="icons8-back-arrow-50">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -165,9 +164,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gso-9F-2DY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2646" y="-1462"/>
+            <point key="canvasLocation" x="4606" y="-1431"/>
         </scene>
-        <!--Chats-->
+        <!--View Controller-->
         <scene sceneID="5EI-h8-Q1c">
             <objects>
                 <viewController id="HFS-Ps-LyB" sceneMemberID="viewController">
@@ -177,11 +176,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xHi-Pl-4x6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Chats" id="kb0-ZK-sSA"/>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-chat-bubble-50" selectedImage="icons8-chat-bubble-50" id="kb0-ZK-sSA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9SX-9U-CBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2362" y="-699"/>
+            <point key="canvasLocation" x="3705" y="-741"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TCK-qR-Jkj">
@@ -204,4 +203,11 @@
             <point key="canvasLocation" x="702" y="-352"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-back-arrow-50" width="37.5" height="37.5"/>
+        <image name="icons8-chat-bubble-50" width="37.5" height="37.5"/>
+        <image name="icons8-friends-80" width="60" height="60"/>
+        <image name="icons8-map-marker-50" width="37.5" height="37.5"/>
+        <image name="icons8-user-50" width="37.5" height="37.5"/>
+    </resources>
 </document>
