@@ -14,7 +14,6 @@ final class LocationAnnotation: NSObject, MKAnnotation{
     var coordinate: CLLocationCoordinate2D
     var title: String?
     var subtitle: String?
-    
     init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?) {
         self.coordinate = coordinate
         self.title = title
@@ -54,9 +53,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func updateAnnotations() {
+        removeAllAnnotations()
         switch mapSelectionSegmentedControl.selectedSegmentIndex {
         case 0:
             displayGlobalAnnotations()
+            displayFriendsAnnotations()
+            displayPersonalAnnotations()
         case 1:
             displayFriendsAnnotations()
         case 2:
@@ -87,13 +89,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     }
     
+    func removeAllAnnotations() {
+        let annotations = mapView.annotations.filter {
+            $0 !== self.mapView.userLocation
+        }
+        mapView.removeAnnotations(annotations)
+    }
+    
     
     func addAnnotationUsingCoordinate(lat : CLLocationDegrees, long : CLLocationDegrees, title: String?, subtitle: String?){
         
   
-        let public1Coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-        let public1Annotation = LocationAnnotation(coordinate: public1Coordinate, title: title, subtitle: subtitle)
-        mapView.addAnnotation(public1Annotation)
+        let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        let annotation = LocationAnnotation(coordinate: coordinate, title: title, subtitle: subtitle)
+        
+        mapView.addAnnotation(annotation)
         
     }
     
@@ -119,10 +129,11 @@ extension MapViewController : MKMapViewDelegate {
             locationAnnotation.animatesWhenAdded = true
             locationAnnotation.titleVisibility = .adaptive
             locationAnnotation.subtitleVisibility = .adaptive
-            
+       
             return locationAnnotation
         }
         
         return nil
     }
 }
+
