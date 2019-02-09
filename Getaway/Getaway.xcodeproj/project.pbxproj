@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		584B11955CF1CF6E4B542C49 /* Pods_GetawayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5303C3641943857252CB9C5 /* Pods_GetawayTests.framework */; };
+		D46A7F72220E779100683694 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46A7F71220E779100683694 /* ProfileViewController.swift */; };
 		D7E6973CAB97F2983931328A /* Pods_Getaway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F0614271172E0FA62F7063 /* Pods_Getaway.framework */; };
 		E1247BCB220E31C600C33555 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BCA220E31C600C33555 /* LoginViewController.swift */; };
 		E1247BCD220E321F00C33555 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BCC220E321F00C33555 /* MapViewController.swift */; };
@@ -51,6 +52,7 @@
 		958E78E1FD300BC236CF508C /* Pods-Getaway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Getaway.debug.xcconfig"; path = "Target Support Files/Pods-Getaway/Pods-Getaway.debug.xcconfig"; sourceTree = "<group>"; };
 		B5303C3641943857252CB9C5 /* Pods_GetawayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetawayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE277663F218C865F6700E97 /* Pods-Getaway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Getaway.release.xcconfig"; path = "Target Support Files/Pods-Getaway/Pods-Getaway.release.xcconfig"; sourceTree = "<group>"; };
+		D46A7F71220E779100683694 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E1247BCA220E31C600C33555 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E1247BCC220E321F00C33555 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E1247BD3220E353500C33555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapView.storyboard; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				E1247BCA220E31C600C33555 /* LoginViewController.swift */,
 				E1247BCC220E321F00C33555 /* MapViewController.swift */,
 				E1247BDD220E551000C33555 /* SignInViewController.swift */,
+				D46A7F71220E779100683694 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46A7F72220E779100683694 /* ProfileViewController.swift in Sources */,
 				E1247BCB220E31C600C33555 /* LoginViewController.swift in Sources */,
 				E1EA9426220D4B4200A71626 /* Getaway.xcdatamodeld in Sources */,
 				E1247BCD220E321F00C33555 /* MapViewController.swift in Sources */,
