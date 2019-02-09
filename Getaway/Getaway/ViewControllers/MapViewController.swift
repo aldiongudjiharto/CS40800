@@ -9,6 +9,19 @@
 import UIKit
 import MapKit
 
+
+final class LocationAnnotation: NSObject, MKAnnotation{
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    
+    init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?) {
+        self.coordinate = coordinate
+        self.title = title
+        self.subtitle = subtitle
+    }
+}
+
 class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapSelectionSegmentedControl: UISegmentedControl!
@@ -25,6 +38,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         
         mapView.showsUserLocation = true
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
     if(locationManager.responds(to:#selector(CLLocationManager.requestAlwaysAuthorization))) {
             locationManager.requestAlwaysAuthorization()
@@ -56,15 +70,34 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func displayGlobalAnnotations() {
         print("public")
+        addAnnotationUsingCoordinate(lat: 22.5726, long: 88.3639, title: "Kolkata", subtitle: "GlobalUser1")
+        addAnnotationUsingCoordinate(lat: 28.7041, long: 77.1025, title: "Delhi", subtitle: "GlobalUser2")
     }
     
     func displayFriendsAnnotations() {
         print("friends")
+        addAnnotationUsingCoordinate(lat: 40.4637, long: 3.7492, title: "Spain", subtitle: "FriendUser1")
+        addAnnotationUsingCoordinate(lat: 40.2672, long: -86.1349, title: "Indiana", subtitle: "FriendUser2")
     }
     
     func displayPersonalAnnotations() {
         print("mine")
+        
+        addAnnotationUsingCoordinate(lat: 37.3688, long: -122.0363, title: "Sunnyvale", subtitle: "Personal")
+
     }
+    
+    
+    func addAnnotationUsingCoordinate(lat : CLLocationDegrees, long : CLLocationDegrees, title: String?, subtitle: String?){
+        
+  
+        let public1Coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+        let public1Annotation = LocationAnnotation(coordinate: public1Coordinate, title: title, subtitle: subtitle)
+        mapView.addAnnotation(public1Annotation)
+        
+    }
+    
+    
     
     
 
@@ -78,4 +111,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     */
 
+}
+
+extension MapViewController : MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let locationAnnotation = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier) as? MKMarkerAnnotationView{
+            locationAnnotation.animatesWhenAdded = true
+            locationAnnotation.titleVisibility = .adaptive
+            locationAnnotation.subtitleVisibility = .adaptive
+            
+            return locationAnnotation
+        }
+        
+        return nil
+    }
 }
