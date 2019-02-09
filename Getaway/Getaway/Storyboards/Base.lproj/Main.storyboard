@@ -50,8 +50,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gQE-Wo-Z0R">
-                                <rect key="frame" x="10" y="287" width="355" height="238.33333333333337"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="gQE-Wo-Z0R">
+                                <rect key="frame" x="10" y="183" width="355" height="315"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kb7-ls-JDS">
                                         <rect key="frame" x="113" y="0.0" width="129" height="29"/>
@@ -59,18 +59,19 @@
                                             <segment title="Sign In"/>
                                             <segment title="Register"/>
                                         </segments>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="signInSelectorClicked:" destination="Rmw-Qx-P4b" eventType="valueChanged" id="EFL-zr-fKT"/>
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAs-fi-2bx">
-                                        <rect key="frame" x="151.66666666666666" y="58.000000000000007" width="51.666666666666657" height="20.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="146.66666666666666" y="110.00000000000003" width="61.666666666666657" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yEH-gd-qLx">
-                                        <rect key="frame" x="78" y="108.33333333333331" width="199" height="130"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yEH-gd-qLx">
+                                        <rect key="frame" x="78" y="215" width="199" height="100"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAm-4t-qdy">
                                                 <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
@@ -93,7 +94,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T56-xB-1n7">
-                                                <rect key="frame" x="0.0" y="50" width="199" height="30"/>
+                                                <rect key="frame" x="0.0" y="35" width="199" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLn-PU-zbO">
                                                         <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="30"/>
@@ -110,7 +111,9 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dk-R0-yau">
-                                                <rect key="frame" x="0.0" y="100" width="199" height="30"/>
+                                                <rect key="frame" x="0.0" y="69.999999999999943" width="199" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.86415155440000002" green="0.86415155440000002" blue="0.86415155440000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Sign In"/>
                                                 <connections>
                                                     <action selector="signInButtonClicked:" destination="Rmw-Qx-P4b" eventType="touchUpInside" id="Vy7-xS-5mY"/>
