@@ -22,11 +22,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="38O-6d-a8t">
+                                <rect key="frame" x="93" y="95" width="188" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Public"/>
+                                    <segment title="Friends"/>
+                                    <segment title="Mine"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapSelectionChanged:" destination="fYT-Zw-Wr3" eventType="valueChanged" id="hfD-w0-nfg"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SSS-Gx-BLf"/>
                     </view>
                     <connections>
+                        <outlet property="mapSelectionSegmentedControl" destination="38O-6d-a8t" id="mmF-n7-6PR"/>
                         <outlet property="mapView" destination="4LO-fY-lx2" id="6iX-w1-guE"/>
                     </connections>
                 </viewController>

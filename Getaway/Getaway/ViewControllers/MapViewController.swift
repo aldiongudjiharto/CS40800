@@ -11,8 +11,12 @@ import MapKit
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var mapSelectionSegmentedControl: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
+    
+    
     let locationManager = CLLocationManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,35 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             //locationManager.requestWhenInUseAuthorization()
         }
     }
+    
+    @IBAction func mapSelectionChanged(_ sender: Any) {
+        
+        switch mapSelectionSegmentedControl.selectedSegmentIndex {
+            case 0:
+                displayPublicAnnotations()
+            case 1:
+                displayFriendsAnnotations()
+            case 3:
+                displayPersonalAnnotations()
+            default:
+                break
+        }
+    }
+    
+    
+    
+    func displayPublicAnnotations() {
+        print("public")
+    }
+    
+    func displayFriendsAnnotations() {
+        print("friends")
+    }
+    
+    func displayPersonalAnnotations() {
+        print("mine")
+    }
+    
     
 
     /*
