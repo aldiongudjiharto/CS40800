@@ -140,7 +140,7 @@
                         <outlet property="signInButton" destination="8Dk-R0-yau" id="jC4-X5-99d"/>
                         <outlet property="signInLabel" destination="pAs-fi-2bx" id="Ak4-5t-hzO"/>
                         <outlet property="signInSelector" destination="kb7-ls-JDS" id="hzI-pi-oed"/>
-                        <segue destination="01X-U0-S57" kind="show" identifier="goHome" id="7fr-WU-lQ9"/>
+                        <segue destination="z1h-fl-lcl" kind="show" identifier="goHome" id="gox-3q-LNb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKo-Pb-EHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,4 +180,7 @@
             <point key="canvasLocation" x="1044" y="-483"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gox-3q-LNb"/>
+    </inferredMetricsTieBreakers>
 </document>
