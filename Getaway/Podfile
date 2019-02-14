@@ -8,6 +8,8 @@ target 'Getaway' do
   # Pods for Getaway
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
 
   target 'GetawayTests' do
     inherit! :search_paths
