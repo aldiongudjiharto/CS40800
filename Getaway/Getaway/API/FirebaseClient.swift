@@ -12,30 +12,33 @@ import Firebase
 
 class FirebaseClient {
     
-    let userRef
+    var userRef: DatabaseReference!
+    
     
     func checkIfUserIsloggedIn() {
-        
         if Auth.auth().currentUser != nil {
+            
+            userRef = Database.database().reference().child("users")
             print("User logged in!")
-            let userRef = Database.database().reference().child("users")
+            
         }
         else {
             print("Error, User not logged in")
         }
     }
     
-    
-    func getUserDetails(){
+    func getCurrentUser(){
         
-        func getUser(user: String, success: @escaping (User) ->(), failure: @escaping (Error)->()) {
-            
-            userRef.child(user).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let userInfo = snapshot.value as? [String: Any]{
-                    success(User(userInfo: userInfo))
-                }
-            })
-        }
+    }
+    
+    
+    func getUserDetails(user: String, success: @escaping (User) ->(), failure: @escaping (Error)->()){
+        
+        userRef.child(user).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let userInfo = snapshot.value as? [String: Any]{
+                success(User(userInfo: userInfo))
+            }
+        })
         
     }
     
