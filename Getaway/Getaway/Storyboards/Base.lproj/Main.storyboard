@@ -51,7 +51,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="gQE-Wo-Z0R">
-                                <rect key="frame" x="10" y="183" width="355" height="315"/>
+                                <rect key="frame" x="10" y="183" width="355" height="427"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kb7-ls-JDS">
                                         <rect key="frame" x="113" y="0.0" width="129" height="29"/>
@@ -111,7 +111,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dk-R0-yau">
-                                                <rect key="frame" x="0.0" y="69.999999999999943" width="199" height="30"/>
+                                                <rect key="frame" x="0.0" y="70" width="199" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" red="0.86415155440000002" green="0.86415155440000002" blue="0.86415155440000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Sign In"/>
@@ -125,6 +125,13 @@
                                             <constraint firstAttribute="trailing" secondItem="QAm-4t-qdy" secondAttribute="trailing" id="OJj-UN-sBs"/>
                                         </constraints>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx5-GF-8OK">
+                                        <rect key="frame" x="107" y="397" width="141" height="30"/>
+                                        <state key="normal" title="Login with Facebook"/>
+                                        <connections>
+                                            <action selector="signInWithFacebookClicked:" destination="Rmw-Qx-P4b" eventType="touchUpInside" id="2RR-uY-Bav"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -143,6 +150,7 @@
                         <outlet property="signInButton" destination="8Dk-R0-yau" id="jC4-X5-99d"/>
                         <outlet property="signInLabel" destination="pAs-fi-2bx" id="Ak4-5t-hzO"/>
                         <outlet property="signInSelector" destination="kb7-ls-JDS" id="hzI-pi-oed"/>
+                        <outlet property="signInWithFacebook" destination="Rx5-GF-8OK" id="xxA-eK-cuw"/>
                         <segue destination="z1h-fl-lcl" kind="show" identifier="goHome" id="gox-3q-LNb"/>
                     </connections>
                 </viewController>

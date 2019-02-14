@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FacebookCore
+import FacebookLogin
 
 class SignInViewController: UIViewController {
     
@@ -20,6 +22,9 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     
     @IBOutlet weak var signInLabel: UILabel!
+    
+    
+    @IBOutlet weak var signInWithFacebook: UIButton!
     
     var isSignIn:Bool = true
     
@@ -71,9 +76,36 @@ class SignInViewController: UIViewController {
                 
             }
         }
-        
-        
     }
+    
+    
+    @IBAction func signInWithFacebookClicked(_ sender: UIButton) {
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [.publicProfile, .email], viewController: self) { (result) in
+            switch result {
+            case .success(grantedPermissions: _, declinedPermissions: _, token: _):
+                self.signIntoFirebase()
+            case .failed(let err):
+                print(err)
+                case .cancelled:
+                print("cancelled")
+            }
+        }
+    }
+    
+    fileprivate func signIntoFirebase() {
+        guard let authenticationToken = AccessToken.current?.authenticationToken else { return}
+        let credential = FacebookAuthProvider.credential(withAccessToken: authenticationToken)
+        Auth.auth().signIn(with: credential) { (user, err) in
+            if let err = err {
+                print(err)
+                return
+            }
+            print ("Successfully logged into Facebook")
+            self.performSegue(withIdentifier: "goHome", sender: self)
+        }
+    }
+    
     
     /*
     // MARK: - Navigation
