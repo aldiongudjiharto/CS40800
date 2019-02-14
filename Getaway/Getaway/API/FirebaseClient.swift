@@ -27,9 +27,10 @@ class FirebaseClient {
         }
     }
     
-    func getCurrentUser(){
+    func addUser(){
         
     }
+    
     
     
     func getUserDetails(user: String, success: @escaping (User) ->(), failure: @escaping (Error)->()){
