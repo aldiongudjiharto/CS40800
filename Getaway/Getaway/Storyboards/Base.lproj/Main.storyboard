@@ -50,8 +50,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="gQE-Wo-Z0R">
-                                <rect key="frame" x="10" y="183" width="355" height="427"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="gQE-Wo-Z0R">
+                                <rect key="frame" x="10" y="136.66666666666663" width="355" height="559"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kb7-ls-JDS">
                                         <rect key="frame" x="113" y="0.0" width="129" height="29"/>
@@ -65,7 +65,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAs-fi-2bx">
-                                        <rect key="frame" x="146.66666666666666" y="110.00000000000003" width="61.666666666666657" height="23"/>
+                                        <rect key="frame" x="146.66666666666666" y="109.99999999999999" width="61.666666666666657" height="23.000000000000014"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -126,12 +126,16 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx5-GF-8OK">
-                                        <rect key="frame" x="107" y="397" width="141" height="30"/>
+                                        <rect key="frame" x="107" y="396.99999999999994" width="141" height="30"/>
                                         <state key="normal" title="Login with Facebook"/>
                                         <connections>
                                             <action selector="signInWithFacebookClicked:" destination="Rmw-Qx-P4b" eventType="touchUpInside" id="2RR-uY-Bav"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ck6-fw-I7r">
+                                        <rect key="frame" x="78" y="509" width="199" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>

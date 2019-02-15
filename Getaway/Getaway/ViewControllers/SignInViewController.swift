@@ -12,7 +12,7 @@ import FacebookCore
 import FacebookLogin
 import GoogleSignIn
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var signInSelector: UISegmentedControl!
     
@@ -24,6 +24,7 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var signInLabel: UILabel!
     
+    @IBOutlet weak var signInWithGmail: UIButton!
     
     @IBOutlet weak var signInWithFacebook: UIButton!
     
@@ -33,6 +34,8 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
     }
     
     @IBAction func signInSelectorClicked(_ sender: UISegmentedControl) {
@@ -93,6 +96,12 @@ class SignInViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func signInWithGmailClicked(_ sender: UIButton) {
+        GIDSignIn.sharedInstance()?.uiDelegate = self
+    }
+    
     
     fileprivate func signIntoFirebase() {
         guard let authenticationToken = AccessToken.current?.authenticationToken else { return }
