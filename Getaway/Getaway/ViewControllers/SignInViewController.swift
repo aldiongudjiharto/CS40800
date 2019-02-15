@@ -94,7 +94,7 @@ class SignInViewController: UIViewController {
     }
     
     fileprivate func signIntoFirebase() {
-        guard let authenticationToken = AccessToken.current?.authenticationToken else { return}
+        guard let authenticationToken = AccessToken.current?.authenticationToken else { return }
         let credential = FacebookAuthProvider.credential(withAccessToken: authenticationToken)
         Auth.auth().signIn(with: credential) { (user, err) in
             if let err = err {
