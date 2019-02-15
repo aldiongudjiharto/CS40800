@@ -1,22 +1,19 @@
 //
-//  ProfileViewController.swift
+//  ProfileSettingsViewController.swift
 //  Getaway
 //
-//  Created by Dhriti Chawla on 2/8/19.
+//  Created by Dhriti Chawla on 2/15/19.
 //  Copyright © 2019 Avinash Singh. All rights reserved.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileSettingsViewController: UIViewController {
 
-    @IBOutlet weak var myName: UILabel!
-    @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var myUserName: UILabel!
-    @IBOutlet weak var myBio: UITextView!
-    @IBOutlet weak var bioButton: UIButton!
+    @IBOutlet weak var changeUsernameButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
-    
+    @IBOutlet weak var newUsername: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
