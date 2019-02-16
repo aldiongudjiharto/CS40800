@@ -39,8 +39,8 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        fullName.isHidden = true
+        firstName.isHidden = true
+        lastName.isHidden = true
         username.isHidden = true
     }
     
@@ -51,12 +51,14 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         if isSignIn {
             signInLabel.text = "Sign In"
             signInButton.setTitle("Sign In", for: .normal)
-            fullName.isHidden = true
+            firstName.isHidden = true
+            lastName.isHidden = true
             username.isHidden = true
         } else {
             signInLabel.text = "Register"
             signInButton.setTitle("Register", for: .normal)
-            fullName.isHidden = false
+            firstName.isHidden = false
+            lastName.isHidden = false
             username.isHidden = false
         }
     }
