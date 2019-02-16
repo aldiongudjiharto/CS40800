@@ -25,13 +25,11 @@ class FirebaseClient {
 			// Do NOT use this value to authenticate with your backend server,
 			// if you have one. Use getTokenWithCompletion:completion: instead.
 			userRef = Database.database().reference()
-			
+
 			self.userRef.child("users").child(user.uid).setValue(["email": user.email, "username": username, "firstName": firstName, "lastName": lastName])
 			// ...
-
 		}
 	}
-	
 	
 	func retrieveUserInformation(completion: @escaping ([String: String]) -> ()) {
 		let user = Auth.auth().currentUser
@@ -52,6 +50,36 @@ class FirebaseClient {
 		else{
 			completion(["" : ""])
 		}
+	}
+	
+	func checkIfUserNameIsUnique(username: String, completion: @escaping (Bool) -> ()){
+		
+		print(username)
+		let usersRef = Database.database().reference().child("users")
+		var flag = true
+		usersRef.observeSingleEvent(of: .value, with: { snapshot in
+			print(snapshot.key)
+			for child in snapshot.children {
+				let snap = child as! DataSnapshot
+				var userInfoDict = snap.value as! [String: String]
+				var userNameVal = userInfoDict["username"]!
+				if userNameVal == username {
+					flag = false
+					completion(false)
+				}
+			}
+			
+			if flag == true {
+				completion(true)
+			}
+			
+			
+		})
+		
+		
+		
+		
+		
 	}
 	
 	func addVisitedPlace(placeName: String, coordinate: CLLocationCoordinate2D){

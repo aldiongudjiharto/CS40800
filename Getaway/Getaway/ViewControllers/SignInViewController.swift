@@ -86,16 +86,26 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
             } else {
                 //Register user with firebase
 				if checkIfRegisterFieldsAreFilled() == true {
-					Auth.auth().createUser(withEmail: email, password: pass, completion: {(user, error) in
-						if let u = user {
-							
-							FirebaseClient().addUser(firstName: self.firstName.text!, lastName: self.lastName.text!, username: self.username.text!)
-							self.performSegue(withIdentifier: "goHome", sender: self)
-							
-						} else {
-                            self.displayAlert(message: error?.localizedDescription)
+					FirebaseClient().checkIfUserNameIsUnique(username: username.text!) { (userNameUnique) in
+						if userNameUnique == true {
+							Auth.auth().createUser(withEmail: email, password: pass, completion: {(user, error) in
+								if let u = user {
+									
+									FirebaseClient().addUser(firstName: self.firstName.text!, lastName: self.lastName.text!, username: self.username.text!)
+									self.performSegue(withIdentifier: "goHome", sender: self)
+									
+								} else {
+									self.displayAlert(message: error?.localizedDescription)
+								}
+							})
 						}
-					})
+						else {
+							self.displayAlert(message: "Username is already taken. Please select a new one")
+						}
+					}
+					
+
+					
 				}
 				else{
 					
@@ -106,7 +116,6 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
             }
         }
     }
-	
 	
 	func checkIfRegisterFieldsAreFilled() -> (Bool) {
         if firstName.text == "" || lastName.text == "" || username.text == "" || emailTextField.text == "" || passwordTextField.text == ""{
