@@ -10,9 +10,10 @@ import UIKit
 
 class ProfileSettingsViewController: UIViewController {
 
-    @IBOutlet weak var changeUsernameButton: UIButton!
+
     @IBOutlet weak var logoutButton: UIButton!
     
+    @IBOutlet weak var usernameButton: UIButton!
     @IBOutlet weak var newUsername: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,14 +22,13 @@ class ProfileSettingsViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func returnToTabViewController(_ sender: Any) {
+        
+        self.dismiss(animated:true) {
+            let TabViewController = self.storyboard?.instantiateViewController(withIdentifier: "TabViewController") as! UITabBarController
+            TabViewController.selectedIndex = 3
+            UIApplication.shared.keyWindow?.rootViewController = TabViewController
+        }
     }
-    */
-
 }
