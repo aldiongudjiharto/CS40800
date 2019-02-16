@@ -17,7 +17,7 @@ class FirebaseClient {
 	
 	
 	
-	func addUser(){
+	func addUser(firstName: String, lastName: String, username: String){
 		
 		let user = Auth.auth().currentUser
 		if let user = user {
@@ -26,10 +26,31 @@ class FirebaseClient {
 			// if you have one. Use getTokenWithCompletion:completion: instead.
 			userRef = Database.database().reference()
 			
-			self.userRef.child("users").child(user.uid).setValue(["email": user.email])
+			self.userRef.child("users").child(user.uid).setValue(["email": user.email, "username": username, "firstName": firstName, "lastName": lastName])
 			// ...
-			addVisitedPlace(placeName: "Italy", coordinate: CLLocationCoordinate2DMake(92.1, 100.2))
-			addVisitedPlace(placeName: "France", coordinate: CLLocationCoordinate2DMake(98.7, -1.2))
+
+		}
+	}
+	
+	
+	func retrieveUserInformation(completion: @escaping ([String: String]) -> ()) {
+		let user = Auth.auth().currentUser
+		if let user = user {
+			// The user's ID, unique to the Firebase project.
+			// Do NOT use this value to authenticate with your backend server,
+			// if you have one. Use getTokenWithCompletion:completion: instead.
+			userRef = Database.database().reference().child("users").child(user.uid)
+			
+			userRef.observeSingleEvent(of: .value, with: { snapshot in
+				print(snapshot.key)
+				let userDict = snapshot.value as! [String: String]
+				print(userDict)
+				completion(userDict)
+			})
+			
+		}
+		else{
+			completion(["" : ""])
 		}
 	}
 	
@@ -48,9 +69,11 @@ class FirebaseClient {
 			visitedRef.setValue(placeCoordinatedict)
 			// ...
 			
-			retrieveCurrentUsersVisitedPlaces()
+			
 		}
 	}
+	
+
 	
 	
 	func retrieveCurrentUsersVisitedPlaces(){

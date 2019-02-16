@@ -89,6 +89,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
 					Auth.auth().createUser(withEmail: email, password: pass, completion: {(user, error) in
 						if let u = user {
 							
+							FirebaseClient().addUser(firstName: self.firstName.text!, lastName: self.lastName.text!, username: self.username.text!)
 							self.performSegue(withIdentifier: "goHome", sender: self)
 							
 						} else {

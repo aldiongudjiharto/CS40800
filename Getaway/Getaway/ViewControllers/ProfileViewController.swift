@@ -21,6 +21,12 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		var userDict1:[String: String] = ["":""]
+		FirebaseClient().retrieveUserInformation(completion: {(userDict) in
+			userDict1 = userDict
+			print("coming here")
+			print(userDict1)
+		})
     }
     
 
