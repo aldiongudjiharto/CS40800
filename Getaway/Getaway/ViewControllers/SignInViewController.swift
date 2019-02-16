@@ -28,6 +28,11 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBOutlet weak var signInWithFacebook: UIButton!
     
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var username: UITextField!
+    
+    
     var isSignIn:Bool = true
     
     override func viewDidLoad() {
@@ -35,7 +40,8 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
 
         // Do any additional setup after loading the view.
         
-        
+        fullName.isHidden = true
+        username.isHidden = true
     }
     
     @IBAction func signInSelectorClicked(_ sender: UISegmentedControl) {
@@ -45,9 +51,13 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         if isSignIn {
             signInLabel.text = "Sign In"
             signInButton.setTitle("Sign In", for: .normal)
+            fullName.isHidden = true
+            username.isHidden = true
         } else {
             signInLabel.text = "Register"
             signInButton.setTitle("Register", for: .normal)
+            fullName.isHidden = false
+            username.isHidden = false
         }
     }
     
