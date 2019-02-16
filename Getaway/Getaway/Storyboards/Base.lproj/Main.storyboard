@@ -45,7 +45,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="Yjt-bF-bS8">
             <objects>
-                <viewController id="Rmw-Qx-P4b" customClass="SignInViewController" customModule="Getaway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rmw-Qx-P4b" customClass="SignInViewController" customModule="Getaway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jPg-dF-5v0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileSettingsViewController: UIViewController {
 
@@ -31,4 +32,15 @@ class ProfileSettingsViewController: UIViewController {
             UIApplication.shared.keyWindow?.rootViewController = TabViewController
         }
     }
+    
+    @IBAction func logUserOut(_ sender: Any) {
+        try! Auth.auth().signOut()
+        
+        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignInViewController") as UIViewController
+        // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
+        
+        self.present(viewController, animated: false, completion: nil)
+        
+    }
+    
 }
