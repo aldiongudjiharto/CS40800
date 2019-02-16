@@ -24,20 +24,20 @@ class ProfileViewController: UIViewController {
 		var userDict1:[String: String] = ["":""]
 		FirebaseClient().retrieveUserInformation(completion: {(userDict) in
 			userDict1 = userDict
-			print("coming here")
 			print(userDict1)
+            
+            self.setUserDetails(userDictionary: userDict1)
 		})
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUserDetails(userDictionary: [String: String]){
+        let fullName = "\(userDictionary["firstName"]!)" + " " +
+        "\(userDictionary["lastName"]!)"
+        print(fullName)
+        myName.text = fullName
+        myUserName.text = userDictionary["username"]!
+        
     }
-    */
 
 }
