@@ -161,6 +161,9 @@
                                 <state key="normal" title="Change username">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeUsernameFunc:" destination="4zJ-Hl-ecE" eventType="touchUpInside" id="w7o-27-GC0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7O2-Hh-iMJ">
                                 <rect key="frame" x="30" y="682" width="314" height="30"/>

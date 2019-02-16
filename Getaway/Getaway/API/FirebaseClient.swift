@@ -72,15 +72,25 @@ class FirebaseClient {
 			if flag == true {
 				completion(true)
 			}
-			
-			
+
 		})
+	}
+	
+	func editUserName(username: String, completion: @escaping (Bool) -> ()) {
 		
-		
-		
-		
+		let user = Auth.auth().currentUser
+		if let user = user {
+			self.userRef = Database.database().reference()
+			self.userRef.child("users/\(user.uid)/username").setValue(username)
+			completion(true)
+		} else{
+			completion(false)
+		}
+	
 		
 	}
+	
+	
 	
 	func addVisitedPlace(placeName: String, coordinate: CLLocationCoordinate2D){
 		
