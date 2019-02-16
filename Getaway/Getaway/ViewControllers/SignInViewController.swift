@@ -68,33 +68,38 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         if let email = emailTextField.text, let pass = passwordTextField.text {
             if isSignIn {
                 // Sign in user with firebase
-                Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
-                    if let u = user {
-                        //user is found
-                    self.performSegue(withIdentifier: "goHome", sender: self)
-                        
-                    } else {
-                        //error
-                        
+                if checkIfSignInFieldsAreFilled() == true {
+                    Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
+                        if let u = user {
+                            //user is found
+                        self.performSegue(withIdentifier: "goHome", sender: self)
+                            
+                        } else {
+                            self.displayAlert(message: error?.localizedDescription)                        }
                     }
+                } else {
+                    // Empty fields
+                    //show alert for UIField if not entered
+                    displayAlert(message: "Please make sure all the fields are filled")
                 }
                 
             } else {
                 //Register user with firebase
-				if checkIfInputFieldsAreFilled() == true {
+				if checkIfRegisterFieldsAreFilled() == true {
 					Auth.auth().createUser(withEmail: email, password: pass, completion: {(user, error) in
 						if let u = user {
 							
 							self.performSegue(withIdentifier: "goHome", sender: self)
 							
 						} else {
-							
+                            self.displayAlert(message: error?.localizedDescription)
 						}
 					})
 				}
 				else{
 					
 					//show alert for UIField if not entered
+                    displayAlert(message: "Please make sure all the fields are filled")
 				}
                 
             }
@@ -102,9 +107,27 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
     }
 	
 	
-	func checkIfInputFieldsAreFilled() -> (Bool) {
+	func checkIfRegisterFieldsAreFilled() -> (Bool) {
+        if firstName.text == "" || lastName.text == "" || username.text == "" || emailTextField.text == "" || passwordTextField.text == ""{
+            return false
+        }
 		return true
 	}
+    
+    func checkIfSignInFieldsAreFilled() -> (Bool) {
+        if emailTextField.text == "" || passwordTextField.text == ""{
+            return false
+        }
+        return true
+    }
+    
+    func displayAlert(message:String? = "Please check your credentials"){
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func signInWithFacebookClicked(_ sender: UIButton) {
         let loginManager = LoginManager()
