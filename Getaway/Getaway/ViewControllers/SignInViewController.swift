@@ -81,19 +81,30 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
                 
             } else {
                 //Register user with firebase
-                
-                Auth.auth().createUser(withEmail: email, password: pass, completion: {(user, error) in
-                    if let u = user {
-                    self.performSegue(withIdentifier: "goHome", sender: self)
-                    } else {
-                        
-                    }
-                })
+				if checkIfInputFieldsAreFilled() == true {
+					Auth.auth().createUser(withEmail: email, password: pass, completion: {(user, error) in
+						if let u = user {
+							
+							self.performSegue(withIdentifier: "goHome", sender: self)
+							
+						} else {
+							
+						}
+					})
+				}
+				else{
+					
+					//show alert for UIField if not entered
+				}
                 
             }
         }
     }
-    
+	
+	
+	func checkIfInputFieldsAreFilled() -> (Bool) {
+		return true
+	}
     
     @IBAction func signInWithFacebookClicked(_ sender: UIButton) {
         let loginManager = LoginManager()
