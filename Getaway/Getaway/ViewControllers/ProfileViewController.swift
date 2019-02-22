@@ -12,6 +12,7 @@ import Firebase
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var storageRef = Storage.storage().reference()
+    var profViewPicRef = Storage.storage().reference()
     let user = Auth.auth().currentUser
     @IBOutlet weak var myName: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
@@ -19,11 +20,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var myBio: UITextView!
     @IBOutlet weak var bioButton: UIButton!
     var imagePicker = UIImagePickerController()
-    var userRef: DatabaseReference!
-    
-    
-    
-    
+    var userRef = Database.database().reference()
+    var hasPicture = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +33,31 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             self.setUserDetails(userDictionary: userDict1)
 		})
         
+        profViewPicRef = Storage.storage().reference().child(user!.uid).child("profile_pic")
+        
+        
+        self.userRef.child("profile_pics").child(user!.uid).observeSingleEvent(of: .value) {
+            (snapshot: DataSnapshot) in
+            if snapshot.exists(){
+                print(snapshot)
+                //let databaseProfilePic = self.userRef.child("profile_pics").value(forKey: (self.user!.uid)) as? String!
+                if let snapDict = snapshot.value as? String {
+                    
+                    //here you can get data as string , int or anyway you want
+                let databaseProfilePic = snapDict
+                    let data = NSData(contentsOf: NSURL(string: databaseProfilePic)! as URL)
+                    print("\n\n\(databaseProfilePic)\n\n")
+                self.setProfilePicture(imageView: self.profileImage,imageToSet:UIImage(data: data! as Data)!)
+                    self.hasPicture = true
+                }
+            } else {
+                //this guy doesnt have a profile pic
+                print("NO DP.... HMM ...")
+            }
+            
+        }
     }
+        
     
     func setUserDetails(userDictionary: [String: String]){
         let fullName = "\(userDictionary["firstName"]!)" + " " +
@@ -49,42 +71,77 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func EditProfPicture(_ sender: Any) {
         
-        let myActionSheet = UIAlertController(title: "Profile Picture", message: "Select", preferredStyle: UIAlertController.Style.actionSheet)
-        
-        let viewPicture = UIAlertAction(title: "View Picture", style: UIAlertAction.Style.default) { (action) in
-            let imageView = sender as! UIImageView
-            let newImageView = UIImageView(image: imageView.image)
-            
-            newImageView.frame = self.view.frame
-            newImageView.backgroundColor = UIColor.black
-            newImageView.contentMode = .scaleAspectFit
-            newImageView.isUserInteractionEnabled = true
-            
-            self.view.addSubview(newImageView)
-        }
-        let photoGallery = UIAlertAction(title: "Photos", style: UIAlertAction.Style.default) { (action) in
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.savedPhotosAlbum)
-            {
-                self.imagePicker.delegate = self
-                self.imagePicker.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum
-                self.imagePicker.allowsEditing = true
-                self.present(self.imagePicker, animated: true, completion: nil)
+        let myActionSheet = UIAlertController(title: "Profile Picture", message: "Please select one of the following:", preferredStyle: UIAlertController.Style.actionSheet)
+        if (hasPicture == false){
+            //the guy has no picture currently
+            let photoGallery = UIAlertAction(title: "Photos", style: UIAlertAction.Style.default) { (action) in
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.savedPhotosAlbum)
+                {
+                    self.imagePicker.delegate = self
+                    self.imagePicker.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum
+                    self.imagePicker.allowsEditing = true
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                }
             }
-        }
-        
-        let camera = UIAlertAction(title: "Camera", style: UIAlertAction.Style.default) { (action) in
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-                self.imagePicker.delegate = self
-                self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
-                self.imagePicker.allowsEditing = true
-                self.present(self.imagePicker, animated: true, completion: nil)
+            
+            let camera = UIAlertAction(title: "Camera", style: UIAlertAction.Style.default) { (action) in
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+                    self.imagePicker.delegate = self
+                    self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
+                    self.imagePicker.allowsEditing = true
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                }
             }
+            myActionSheet.addAction(photoGallery)
+            myActionSheet.addAction(camera)
+            myActionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+            self.present(myActionSheet, animated: true, completion: nil)
+            
+        } else {
+            //the guy has a picture currently
+            let viewPicture = UIAlertAction(title: "View Picture", style: UIAlertAction.Style.default) { (action) in
+                let imageView = self.profileImage as UIImageView
+                let newImageView = UIImageView(image: imageView.image)
+                
+                newImageView.frame = self.view.frame
+                newImageView.backgroundColor = UIColor.white
+                newImageView.contentMode = .center
+                newImageView.isUserInteractionEnabled = true
+                
+                self.view.addSubview(newImageView)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
+                    // Code you want to be delayed
+//                    self.view.sendSubviebviewToBack(newImageView)
+                }
+                
+            }
+            
+            let photoGallery = UIAlertAction(title: "Photos", style: UIAlertAction.Style.default) { (action) in
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.savedPhotosAlbum)
+                {
+                    self.imagePicker.delegate = self
+                    self.imagePicker.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum
+                    self.imagePicker.allowsEditing = true
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                }
+            }
+            
+            let camera = UIAlertAction(title: "Camera", style: UIAlertAction.Style.default) { (action) in
+                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+                    self.imagePicker.delegate = self
+                    self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
+                    self.imagePicker.allowsEditing = true
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                }
+            }
+            myActionSheet.addAction(viewPicture)
+            myActionSheet.addAction(photoGallery)
+            myActionSheet.addAction(camera)
+            myActionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+            self.present(myActionSheet, animated: true, completion: nil)
         }
-        myActionSheet.addAction(viewPicture)
-        myActionSheet.addAction(photoGallery)
-        myActionSheet.addAction(camera)
-        myActionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-        self.present(myActionSheet, animated: true, completion: nil)
+       
+        
     }
     
     func setProfilePicture(imageView:UIImageView, imageToSet:UIImage)
@@ -101,17 +158,27 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         if let imageData: NSData = self.profileImage.image!.pngData()! as NSData
         {
-            let profileImageRef = storageRef.child("Users/\(self.user!.uid)/profile_pic")
-            if let user = user {
-                userRef = Database.database().reference().child("users").child(user.uid)
-                
-                let uploadTask = profileImageRef.putData(imageData as Data, metadata: nil)
-                {metadata, error in
+            let profileImageRef = storageRef.child("\(self.user!.uid)/profile_pic")
+            let userRef = Database.database().reference().child("profile_pics").child(user!.uid)
+           
+            if user != nil {
+                var UrlString = "Url_is_here"
+                let uploadTask = profileImageRef.putData(imageData as Data, metadata: nil){
+                    metadata, error in
                     if (error == nil) {
-                        let downloadURL = profileImageRef.downloadURL
-                        self.userRef.child("UserDetails").child("profile_pic").setValue(downloadURL)
-                        var profpic = downloadURL
-                        print("successful upload")
+                        profileImageRef.downloadURL { (URL, error) -> Void in
+                            if (error != nil) {
+                                // Handle any errors
+                                print(error?.localizedDescription)
+                            } else {
+                                UrlString = (URL?.absoluteString)!
+                                print("\n\n\(UrlString)+\n\n\n\n")
+                                // you will get the String of Url
+                                print("successful upload")
+                                userRef.setValue(UrlString)
+                            }
+                        }
+                        
                     }
                     else {
                         print(error?.localizedDescription)

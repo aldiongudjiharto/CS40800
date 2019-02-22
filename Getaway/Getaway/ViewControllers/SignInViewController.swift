@@ -43,6 +43,15 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         firstName.isHidden = true
         lastName.isHidden = true
         username.isHidden = true
+        
+        let connectedRef = Database.database().reference(withPath: ".info/connected")
+        connectedRef.observe(.value, with: { snapshot in
+            if let connected = snapshot.value as? Bool, connected {
+                print("\n\n\n\n\nConnected")
+            } else {
+                print("\n\n\n\n\n\nNot connected")
+            }
+        })
     }
     
     @IBAction func signInSelectorClicked(_ sender: UISegmentedControl) {
@@ -70,13 +79,17 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
             if isSignIn {
                 // Sign in user with firebase
                 if checkIfSignInFieldsAreFilled() == true {
-                    Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
+                    Auth.auth().signIn(withEmail: "d@c.com", password: "111111") { (user, error) in
                         if let u = user {
                             //user is found
                         self.performSegue(withIdentifier: "goHome", sender: self)
                             
                         } else {
-                            self.displayAlert(message: error?.localizedDescription)                        }
+                            let castedError = error! as NSError
+                            let firebaseError = AuthErrorCode(rawValue: castedError.code)!
+                            self.displayAlert(message: "\(firebaseError.rawValue)")
+                            print(error?.localizedDescription)
+                        }
                     }
                 } else {
                     // Empty fields
@@ -97,6 +110,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
 									
 								} else {
 									self.displayAlert(message: error?.localizedDescription)
+                                    print("E r r o  o o o  o r .")
 								}
 							})
 						}
