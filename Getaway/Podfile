@@ -9,6 +9,7 @@ target 'Getaway' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'FacebookCore'
+  pod 'Firebase/Storage'
   pod 'FacebookLogin'
   pod 'Firebase/Database'
   pod 'GoogleSignIn'
