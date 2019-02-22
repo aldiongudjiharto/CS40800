@@ -155,7 +155,7 @@
                                             <action selector="signInWithFacebookClicked:" destination="Rmw-Qx-P4b" eventType="touchUpInside" id="2RR-uY-Bav"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ck6-fw-I7r">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ck6-fw-I7r" customClass="GIDSignInButton">
                                         <rect key="frame" x="78" y="579" width="199" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>

@@ -39,6 +39,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        GIDSignIn.sharedInstance().uiDelegate=self
         firstName.isHidden = true
         lastName.isHidden = true
         username.isHidden = true
