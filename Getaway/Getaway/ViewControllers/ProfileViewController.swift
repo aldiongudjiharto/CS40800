@@ -108,11 +108,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 newImageView.contentMode = .center
                 newImageView.isUserInteractionEnabled = true
                 
-                self.view.addSubview(newImageView)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
-                    // Code you want to be delayed
+//                self.view.addSubview(newImageView)
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
+//                    // Code you want to be delayed
 //                    self.view.sendSubviebviewToBack(newImageView)
-                }
+//                }
                 
             }
             
@@ -176,6 +176,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                                 // you will get the String of Url
                                 print("successful upload")
                                 userRef.setValue(UrlString)
+                                self.hasPicture = true
                             }
                         }
                         
