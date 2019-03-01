@@ -161,6 +161,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
             switch result {
             case .success(grantedPermissions: _, declinedPermissions: _, token: _):
                 self.signIntoFirebase()
+				
             case .failed(let err):
                 print(err)
                 case .cancelled:
@@ -183,8 +184,18 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
                 print(err)
                 return
             }
-            print ("Successfully logged into Facebook")
-            self.performSegue(withIdentifier: "goHome", sender: self)
+			FirebaseClient().checkIfUserAlreadyExists(completion: { (userExists) in
+				if !userExists {
+					
+					let fullNameArr = user!.displayName!.components(separatedBy: " ")
+					
+					FirebaseClient().addUser(firstName: fullNameArr[0], lastName: fullNameArr[1], username: "defaultUsername")
+
+				}
+				
+				print ("Successfully logged into Facebook")
+				self.performSegue(withIdentifier: "goHome", sender: self)
+			})
         }
     }
     
