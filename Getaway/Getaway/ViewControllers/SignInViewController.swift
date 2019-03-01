@@ -79,7 +79,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
             if isSignIn {
                 // Sign in user with firebase
                 if checkIfSignInFieldsAreFilled() == true {
-                    Auth.auth().signIn(withEmail: "d@c.com", password: "111111") { (user, error) in
+                    Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
                         if let u = user {
                             //user is found
                         self.performSegue(withIdentifier: "goHome", sender: self)
@@ -87,7 +87,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
                         } else {
                             let castedError = error! as NSError
                             let firebaseError = AuthErrorCode(rawValue: castedError.code)!
-                            self.displayAlert(message: "\(firebaseError.rawValue)")
+                            self.displayAlert(message: error?.localizedDescription)
                             print(error?.localizedDescription)
                         }
                     }
