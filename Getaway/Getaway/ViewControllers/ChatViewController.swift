@@ -12,14 +12,54 @@ import JSQMessagesViewController
 
 class ChatViewController: JSQMessagesViewController {
     var messages = [JSQMessage]()
+    var ChatsRef = Database.database().reference()
     
     override func viewDidLoad(){
-        senderDisplayName = "Aldio"
-        senderId = "aldioCoolBoy"
+        super.viewDidLoad()
         
+        
+        //
+        senderDisplayName = "User"
+        senderId = "000"
+        
+        var userDictionary:[String: String] = ["":""]
+        FirebaseClient().retrieveUserInformation(completion: {(userDict) in
+            userDictionary = userDict
+            
+            self.senderDisplayName = "\(userDictionary["firstName"]!)" + " " +
+            "\(userDictionary["lastName"]!)"
+            self.senderId = userDictionary["username"]!
+            
+            title = "Chat: \(senderDisplayName!)"
+        })
+        //
+        
+        
+        inputToolbar.contentView.leftBarButtonItem = nil
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+        
+        let query = ChatsRef.child("Chats").queryLimited(toLast: 10)
+        
+        _ = query.observe(.childAdded, with: { [weak self] snapshot in
+            
+            if  let data        = snapshot.value as? [String: String],
+                let id          = data["sender_id"],
+                let name        = data["name"],
+                let text        = data["text"],
+                !text.isEmpty
+            {
+                if let message = JSQMessage(senderId: id, displayName: name, text: text)
+                {
+                    self?.messages.append(message)
+                    
+                    self?.finishReceivingMessage()
+                }
+            }
+        })
     }
+    
+    
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData!
     {
@@ -61,13 +101,14 @@ class ChatViewController: JSQMessagesViewController {
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!)
     {
-//        let ref = Database.database().childByAutoId()
-//
-//        let message = ["sender_id": senderId, "name": senderDisplayName, "text": text]
-//
-//        ref.setValue(message)
-//
-//        finishSendingMessage()
+        let ref = ChatsRef.child("Chats").childByAutoId()
+
+        let message = ["sender_id": senderId, "name": senderDisplayName, "text": text]
+
+        ref.setValue(message)
+
+        JSQSystemSoundPlayer.jsq_playMessageSentSound() 
+        finishSendingMessage()
     }
     
     

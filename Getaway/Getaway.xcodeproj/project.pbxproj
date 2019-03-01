@@ -60,6 +60,7 @@
 		CE277663F218C865F6700E97 /* Pods-Getaway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Getaway.release.xcconfig"; path = "Target Support Files/Pods-Getaway/Pods-Getaway.release.xcconfig"; sourceTree = "<group>"; };
 		D45902992228BFC60048D198 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D459029C2228C5BE0048D198 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chats.storyboard; sourceTree = "<group>"; };
+		D45902A02228D0F60048D198 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		D46A7F71220E779100683694 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D474F9F4221FD24B0016C821 /* entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 		D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 		E1EA9411220D4B4200A71626 = {
 			isa = PBXGroup;
 			children = (
+				D45902A02228D0F60048D198 /* Bridging-Header.h */,
 				E1EA941C220D4B4200A71626 /* Getaway */,
 				E1EA9434220D4B4200A71626 /* GetawayTests */,
 				E1EA943F220D4B4200A71626 /* GetawayUITests */,
@@ -726,6 +728,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.singh422.Getaway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -745,6 +748,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.singh422.Getaway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
