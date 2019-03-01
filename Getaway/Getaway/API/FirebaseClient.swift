@@ -27,6 +27,10 @@ class FirebaseClient {
 			userRef = Database.database().reference()
 			
 			self.userRef.child("users").child(user.uid).setValue(["email": user.email, "username": username, "firstName": firstName, "lastName": lastName])
+			
+			self.getAllUsers { (allUsersList) in
+				print("all users \(allUsersList)")
+			}
 		}
 	}
 
@@ -238,16 +242,18 @@ class FirebaseClient {
 		var usersDict = [String: String]()
 		if let user = user {
 			
-			let friendsRef = Database.database().reference().child("users")
+			let usersRef = Database.database().reference().child("users")
 			
-			friendsRef.observeSingleEvent(of: .value, with: { snapshot in
+			usersRef.observeSingleEvent(of: .value, with: { snapshot in
 				print(snapshot.key)
 				for child in snapshot.children {
+					
 					let snap = child as! DataSnapshot
-					let userDict = snapshot.value as! [String: String]
+					
+					let userDict = snap.value as! [String: String]
 					let friendUserId = snap.key
 					
-					usersDict[friendUserId] = userDict["username"]
+					usersDict[userDict["username"]!] = "\(userDict["firstName"]!) \(userDict["lastName"]!)"
 				}
 				completion(usersDict)
 			})
