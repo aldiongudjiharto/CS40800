@@ -10,7 +10,11 @@ import UIKit
 
 class FriendsAddViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     //Set it to usernames of current -non-friends
-    let list = ["Aldio", "Dhriti", "Avi", "Daniel", "Stef"]
+    
+
+    @IBOutlet weak var tableView: UITableView!
+    var friendsDict1:[String: String] = ["":""]
+    var list = [""]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
@@ -30,8 +34,18 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
         self.view.layer.masksToBounds = true;
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         
-
         // Do any additional setup after loading the view.
+        
+        FirebaseClient().getAllUsers(completion: {(friendsDict) in
+            self.friendsDict1 = friendsDict
+            self.list = Array(self.friendsDict1.keys)
+            print(self.list)
+            self.tableView.reloadData()
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
+        })
+        
+        
     }
     
 

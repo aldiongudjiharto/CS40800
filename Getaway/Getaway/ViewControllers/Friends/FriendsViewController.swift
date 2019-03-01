@@ -10,7 +10,9 @@ import UIKit
 
 class FriendsViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
 	let list = ["Aldio", "Dhriti", "Avi", "Daniel", "Stef"]
-	
+    var friendsDict1:[String: String] = ["":""]
+
+    
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return list.count
 	}
@@ -29,6 +31,11 @@ class FriendsViewController: UIViewController, UITabBarDelegate, UITableViewData
 		super.viewDidLoad()
 		
         // Do any additional setup after loading the view.
+        FirebaseClient().getAllFriends(completion: {(friendsDict) in
+            self.friendsDict1 = friendsDict
+            print(self.friendsDict1)
+        })
+        
 		
     }
     
