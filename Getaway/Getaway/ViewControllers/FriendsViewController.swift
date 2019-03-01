@@ -8,15 +8,26 @@
 
 import UIKit
 
-class FriendsViewController: UIViewController {
-
+class FriendsViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
+	let list = ["Aldio", "Dhriti", "Avi", "Daniel", "Stef"]
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return list.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		//let cell = UITableViewCell(style: UITableViewCell.CellStyle, reuseIdentifier: "cell")
+		return UITableViewCell 
+	}
+	
     
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+		super.viewDidLoad()
+		
         // Do any additional setup after loading the view.
+		
     }
-    
-
+	
+	
 }
