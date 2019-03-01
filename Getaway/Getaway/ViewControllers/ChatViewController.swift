@@ -30,7 +30,7 @@ class ChatViewController: JSQMessagesViewController {
             "\(userDictionary["lastName"]!)"
             self.senderId = userDictionary["username"]!
             
-            title = "Chat: \(senderDisplayName!)"
+            self.title = "Chat: \(self.senderDisplayName!)"
         })
         //
         
@@ -101,13 +101,14 @@ class ChatViewController: JSQMessagesViewController {
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!)
     {
+        JSQSystemSoundPlayer.jsq_playMessageSentSound()
         let ref = ChatsRef.child("Chats").childByAutoId()
 
         let message = ["sender_id": senderId, "name": senderDisplayName, "text": text]
 
         ref.setValue(message)
 
-        JSQSystemSoundPlayer.jsq_playMessageSentSound() 
+        
         finishSendingMessage()
     }
     
