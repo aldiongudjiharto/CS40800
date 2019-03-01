@@ -28,10 +28,18 @@ class FirebaseClient {
 
 			self.userRef.child("users").child(user.uid).setValue(["email": user.email, "username": username, "firstName": firstName, "lastName": lastName])
             
-            getUniqueIdFromUsername(username: "avinash498") { (userId) in
-                print(userId)
-            }
-			// ...
+			addFriend(friendUsername: "aah343") { (friendAdded) in
+				if friendAdded {
+					print("Friend Successfully added")
+					
+					self.getAllFriends(completion: { (friendsList) in
+						print("All the user Friends are")
+						print(friendsList)
+					})
+				}
+			}
+			
+			
 		}
 	}
 	
@@ -147,9 +155,6 @@ class FirebaseClient {
 		}
 	}
 	
-    
-    
-    
     func getUniqueIdFromUsername( username: String, completion: @escaping (String) -> ()){
         
         let usersRef = Database.database().reference().child("users")
@@ -159,7 +164,7 @@ class FirebaseClient {
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 var userInfoDict = snap.value as! [String: String]
-                var userNameVal = userInfoDict["username"]!
+				let userNameVal = userInfoDict["username"]!
                 print("here comes the user id!!")
 
                 if userNameVal == username {
@@ -192,10 +197,28 @@ class FirebaseClient {
     }
 	
     
-    func getAllFriends(completion: @escaping (Bool) -> ([String: String])){
-        
-        
-        
+    func getAllFriends(completion: @escaping ([String: String]) -> ()){
+		let user = Auth.auth().currentUser
+		var friendsDict = [String: String]()
+		if let user = user {
+
+			let friendsRef = Database.database().reference().child("friends").child(user.uid)
+
+			friendsRef.observeSingleEvent(of: .value, with: { snapshot in
+				print(snapshot.key)
+				for child in snapshot.children {
+					let snap = child as! DataSnapshot
+					let friendUsername = snap.value as! String
+					let friendUserId = snap.key
+					friendsDict[friendUserId] = friendUsername
+				}
+				completion(friendsDict)
+			})
+
+
+		}
+
+		
     }
 	
 	
