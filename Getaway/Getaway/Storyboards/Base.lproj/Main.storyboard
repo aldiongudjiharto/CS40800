@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PY7-OS-b1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="126" y="-262"/>
+            <point key="canvasLocation" x="2633" y="-1"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="Yjt-bF-bS8">
@@ -190,6 +190,7 @@
                         <outlet property="signInWithFacebook" destination="Rx5-GF-8OK" id="xxA-eK-cuw"/>
                         <outlet property="username" destination="Euz-wY-u8H" id="dqv-lJ-EoM"/>
                         <segue destination="z1h-fl-lcl" kind="show" identifier="goHome" id="gox-3q-LNb"/>
+                        <segue destination="a6v-wX-NnB" kind="show" id="sRN-Fa-AWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKo-Pb-EHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -226,10 +227,47 @@
                 <viewControllerPlaceholder storyboardName="MapView" id="z1h-fl-lcl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4LE-f3-ZgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="-483"/>
+            <point key="canvasLocation" x="2705" y="-450"/>
+        </scene>
+        <!--Select Username View Controller-->
+        <scene sceneID="qcj-xd-W8X">
+            <objects>
+                <viewController id="a6v-wX-NnB" customClass="SelectUsernameViewController" customModule="Getaway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OYn-Kc-FZD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please select a Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olp-HJ-avF">
+                                <rect key="frame" x="66" y="276" width="208" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQt-vS-80T">
+                                <rect key="frame" x="66" y="348" width="215" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5f-rO-EMp">
+                                <rect key="frame" x="111" y="440" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select Username">
+                                    <color key="titleColor" red="0.0" green="0.052235223429999998" blue="0.06838911802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oP6-h8-jvn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vVb-2o-QAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gox-3q-LNb"/>
+        <segue reference="ymG-Qg-kWc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -72,6 +72,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 					FirebaseClient().checkIfUserAlreadyExists(completion: { (userExists) in
 						if userExists {
 							//userAlreadyExistsDoNOthing
+							let storyBoard = UIStoryboard(name: "MapView", bundle: nil)
+							let vc = storyBoard.instantiateViewController(withIdentifier: "TabViewController")
+							self.window?.rootViewController = vc
 						}
 						else {
 							
@@ -80,12 +83,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 							//prompt for userName here!!
 							
 							FirebaseClient().addUser(firstName: fullNameArr[0], lastName: fullNameArr[1], username: "defaultUsername")
+							
+							let storyBoard = UIStoryboard(name: "MapView", bundle: nil)
+							let vc = storyBoard.instantiateViewController(withIdentifier: "SelectUserNameViewController")
+							self.window?.rootViewController = vc
 						}
 					})
 					
-					let storyBoard = UIStoryboard(name: "MapView", bundle: nil)
-					let vc = storyBoard.instantiateViewController(withIdentifier: "TabViewController")
-					self.window?.rootViewController = vc
+
 					
                 } else {
                     print(error?.localizedDescription)

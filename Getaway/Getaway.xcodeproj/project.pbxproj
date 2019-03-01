@@ -28,6 +28,7 @@
 		E1247BDE220E551000C33555 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BDD220E551000C33555 /* SignInViewController.swift */; };
 		E140D1C22214F2CA00A7A160 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140D1C12214F2CA00A7A160 /* FirebaseClient.swift */; };
 		E140D1C52214F4D100A7A160 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140D1C42214F4D100A7A160 /* User.swift */; };
+		E17E7A7D2229F73A001BB3A9 /* SelectUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E7A7C2229F73A001BB3A9 /* SelectUsernameViewController.swift */; };
 		E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA941D220D4B4200A71626 /* AppDelegate.swift */; };
 		E1EA9423220D4B4200A71626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EA9421220D4B4200A71626 /* Main.storyboard */; };
 		E1EA9428220D4B4200A71626 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1EA9427220D4B4200A71626 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		E1247BDD220E551000C33555 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E140D1C12214F2CA00A7A160 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		E140D1C42214F4D100A7A160 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E17E7A7C2229F73A001BB3A9 /* SelectUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUsernameViewController.swift; sourceTree = "<group>"; };
 		E1EA941A220D4B4200A71626 /* Getaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Getaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA941D220D4B4200A71626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1EA9422220D4B4200A71626 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				E1247BCA220E31C600C33555 /* LoginViewController.swift */,
 				E1247BCC220E321F00C33555 /* MapViewController.swift */,
 				E1247BDD220E551000C33555 /* SignInViewController.swift */,
+				E17E7A7C2229F73A001BB3A9 /* SelectUsernameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				E1247BDE220E551000C33555 /* SignInViewController.swift in Sources */,
 				D459029A2228BFC60048D198 /* ChatViewController.swift in Sources */,
 				D4E5ADAC22291AD700055F62 /* FriendCell.swift in Sources */,
+				E17E7A7D2229F73A001BB3A9 /* SelectUsernameViewController.swift in Sources */,
 				D4D71F7E2229BF2F003410F7 /* FriendsAddViewController.swift in Sources */,
 				E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */,
 				D4BEC6EF2229D55F00F72421 /* AddFriendsCell.swift in Sources */,
