@@ -11,6 +11,8 @@ import CoreData
 import Firebase
 import FBSDKCoreKit
 import GoogleSignIn
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -27,7 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance()?.delegate = self
-        
+		
+		GMSPlacesClient.provideAPIKey("AIzaSyAx-m5YSOX4wpVAFmCg6tFtR_KRR6G-WKw")
+		GMSServices.provideAPIKey("AIzaSyAx-m5YSOX4wpVAFmCg6tFtR_KRR6G-WKw")
+		
+		
         if Auth.auth().currentUser != nil {
             
             let storyBoard = UIStoryboard(name: "MapView", bundle: nil)
