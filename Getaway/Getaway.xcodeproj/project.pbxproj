@@ -14,8 +14,10 @@
 		D45902A42228E0FC0048D198 /* ChatNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45902A32228E0FC0048D198 /* ChatNavViewController.swift */; };
 		D46A7F72220E779100683694 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46A7F71220E779100683694 /* ProfileViewController.swift */; };
 		D474F9F5221FD24B0016C821 /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = D474F9F4221FD24B0016C821 /* entitlements.plist */; };
+		D4BEC6EF2229D55F00F72421 /* AddFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BEC6EE2229D55F00F72421 /* AddFriendsCell.swift */; };
 		D4C5DE2B221785F1006AA2A5 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */; };
 		D4C5DE2D22178D25006AA2A5 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5DE2C22178D23006AA2A5 /* FriendsViewController.swift */; };
+		D4D71F7E2229BF2F003410F7 /* FriendsAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D71F7D2229BF2F003410F7 /* FriendsAddViewController.swift */; };
 		D4E5ADAC22291AD700055F62 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5ADAB22291AD700055F62 /* FriendCell.swift */; };
 		D7E6973CAB97F2983931328A /* Pods_Getaway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F0614271172E0FA62F7063 /* Pods_Getaway.framework */; };
 		E1247BCB220E31C600C33555 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BCA220E31C600C33555 /* LoginViewController.swift */; };
@@ -68,8 +70,10 @@
 		D45902A32228E0FC0048D198 /* ChatNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatNavViewController.swift; sourceTree = "<group>"; };
 		D46A7F71220E779100683694 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D474F9F4221FD24B0016C821 /* entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
+		D4BEC6EE2229D55F00F72421 /* AddFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendsCell.swift; sourceTree = "<group>"; };
 		D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		D4C5DE2C22178D23006AA2A5 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		D4D71F7D2229BF2F003410F7 /* FriendsAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAddViewController.swift; sourceTree = "<group>"; };
 		D4E5ADAB22291AD700055F62 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		E1247BCA220E31C600C33555 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E1247BCC220E321F00C33555 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 			children = (
 				D4C5DE2C22178D23006AA2A5 /* FriendsViewController.swift */,
 				D4E5ADAB22291AD700055F62 /* FriendCell.swift */,
+				D4D71F7D2229BF2F003410F7 /* FriendsAddViewController.swift */,
+				D4BEC6EE2229D55F00F72421 /* AddFriendsCell.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -571,7 +577,9 @@
 				E1247BDE220E551000C33555 /* SignInViewController.swift in Sources */,
 				D459029A2228BFC60048D198 /* ChatViewController.swift in Sources */,
 				D4E5ADAC22291AD700055F62 /* FriendCell.swift in Sources */,
+				D4D71F7E2229BF2F003410F7 /* FriendsAddViewController.swift in Sources */,
 				E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */,
+				D4BEC6EF2229D55F00F72421 /* AddFriendsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
