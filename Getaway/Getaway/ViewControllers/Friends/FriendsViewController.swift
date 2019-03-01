@@ -31,6 +31,17 @@ class FriendsViewController: UIViewController, UITabBarDelegate, UITableViewData
         // Do any additional setup after loading the view.
 		
     }
+    
+    @IBAction func addNewFriends(_ sender: Any) {
+        let addFriendsPopUp:UIViewController = UIStoryboard(name: "MapView", bundle: nil).instantiateViewController(withIdentifier:"friendsPopUpID") as! FriendsAddViewController
+        self.addChild(addFriendsPopUp)
+        addFriendsPopUp.view.frame = self.view.frame
+        self.view.addSubview(addFriendsPopUp.view)
+        addFriendsPopUp.didMove(toParent: self)
+        
+
+    }
+    
 	
 	
 }
