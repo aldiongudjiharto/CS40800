@@ -174,6 +174,7 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
 		
 		FirebaseClient().addVisitedPlace(placeName: place.name!, coordinate: place.coordinate)
 		
+		mapView.setCenter(place.coordinate, animated: true)
 		dismiss(animated: true, completion: nil)
 	}
 	
