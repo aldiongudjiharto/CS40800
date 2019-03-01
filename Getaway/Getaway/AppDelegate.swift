@@ -35,11 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 		
 		
         if Auth.auth().currentUser != nil {
-            
+
             let storyBoard = UIStoryboard(name: "MapView", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "TabViewController")
             self.window?.rootViewController = vc
-            
+
         } else {
             //User Not logged in
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
