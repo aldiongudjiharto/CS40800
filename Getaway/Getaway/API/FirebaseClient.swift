@@ -27,22 +27,11 @@ class FirebaseClient {
 			userRef = Database.database().reference()
 			
 			self.userRef.child("users").child(user.uid).setValue(["email": user.email, "username": username, "firstName": firstName, "lastName": lastName])
-            
-//			addFriend(friendUsername: "aah343") { (friendAdded) in
-//				if friendAdded {
-//					print("Friend Successfully added")
-//
-//					self.getAllFriends(completion: { (friendsList) in
-//						print("All the user Friends are")
-//						print(friendsList)
-//					})
-//				}
-//			}
-			
 		}
 	}
-	
-	
+
+
+
 	func checkIfUserAlreadyExists(completion: @escaping (Bool) -> ()){
 		let user = Auth.auth().currentUser
 		if let user = user {
@@ -83,6 +72,8 @@ class FirebaseClient {
 			completion(["" : ""])
 		}
 	}
+	
+	
 	
 	func checkIfUserNameIsUnique(username: String, completion: @escaping (Bool) -> ()){
 		
@@ -240,6 +231,30 @@ class FirebaseClient {
 
 		
     }
+	
+	
+	func getAllUsers(completion: @escaping ([String: String]) -> ()){
+		let user = Auth.auth().currentUser
+		var usersDict = [String: String]()
+		if let user = user {
+			
+			let friendsRef = Database.database().reference().child("users")
+			
+			friendsRef.observeSingleEvent(of: .value, with: { snapshot in
+				print(snapshot.key)
+				for child in snapshot.children {
+					let snap = child as! DataSnapshot
+					let userDict = snapshot.value as! [String: String]
+					let friendUserId = snap.key
+					
+					usersDict[friendUserId] = userDict["username"]
+				}
+				completion(usersDict)
+			})
+			
+			
+		}
+	}
 	
 	
 }
