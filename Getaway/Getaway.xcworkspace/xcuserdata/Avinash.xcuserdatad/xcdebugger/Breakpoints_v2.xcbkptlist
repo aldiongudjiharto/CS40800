@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/AppDelegate.swift"
+            timestampString = "573170838.250744"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "sign(_:didSignInFor:withError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Getaway.AppDelegate.sign(_: Swift.Optional&lt;__C.GIDSignIn&gt;, didSignInFor: Swift.Optional&lt;__C.GIDGoogleUser&gt;, withError: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/AppDelegate.swift"
+                  timestampString = "573170386.914313"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "1569">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Getaway.AppDelegate.sign(_: Swift.Optional&lt;__C.GIDSignIn&gt;, didSignInFor: Swift.Optional&lt;__C.GIDGoogleUser&gt;, withError: Swift.Optional&lt;Swift.Error&gt;) -&gt; ()"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/AppDelegate.swift"
+                  timestampString = "573170386.91631"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

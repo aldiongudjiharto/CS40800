@@ -27,18 +27,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FirebaseApp.configure()
         FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance()?.delegate = self
+
 		
 		GMSPlacesClient.provideAPIKey("AIzaSyAx-m5YSOX4wpVAFmCg6tFtR_KRR6G-WKw")
 		GMSServices.provideAPIKey("AIzaSyAx-m5YSOX4wpVAFmCg6tFtR_KRR6G-WKw")
-		
+		try! Auth.auth().signOut()
 		
         if Auth.auth().currentUser != nil {
 
             let storyBoard = UIStoryboard(name: "MapView", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "TabViewController")
             self.window?.rootViewController = vc
+			
+			
+			print("the user logged in is:\(Auth.auth().currentUser?.displayName)")
 
         } else {
             //User Not logged in
@@ -47,6 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             self.window?.rootViewController = vc
             
         }
+		
+		GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+		GIDSignIn.sharedInstance()?.delegate = self
         
         return true
     }
@@ -62,6 +67,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 if error == nil {
                     print(result?.user.email)
                     print(result?.user.displayName)
+					print(result?.user.uid)
+					
+					FirebaseClient().checkIfUserAlreadyExists(completion: { (userExists) in
+						if userExists {
+							//userAlreadyExistsDoNOthing
+						}
+						else {
+							
+							let fullNameArr = result!.user.displayName!.components(separatedBy: " ")
+							
+							//prompt for userName here!!
+							
+							FirebaseClient().addUser(firstName: fullNameArr[0], lastName: fullNameArr[1], username: "defaultUsername")
+						}
+					})
+					
+					let storyBoard = UIStoryboard(name: "MapView", bundle: nil)
+					let vc = storyBoard.instantiateViewController(withIdentifier: "TabViewController")
+					self.window?.rootViewController = vc
+					
                 } else {
                     print(error?.localizedDescription)
                 }

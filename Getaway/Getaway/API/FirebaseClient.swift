@@ -25,21 +25,41 @@ class FirebaseClient {
 			// Do NOT use this value to authenticate with your backend server,
 			// if you have one. Use getTokenWithCompletion:completion: instead.
 			userRef = Database.database().reference()
-
+			
 			self.userRef.child("users").child(user.uid).setValue(["email": user.email, "username": username, "firstName": firstName, "lastName": lastName])
             
-			addFriend(friendUsername: "aah343") { (friendAdded) in
-				if friendAdded {
-					print("Friend Successfully added")
-					
-					self.getAllFriends(completion: { (friendsList) in
-						print("All the user Friends are")
-						print(friendsList)
-					})
-				}
-			}
+//			addFriend(friendUsername: "aah343") { (friendAdded) in
+//				if friendAdded {
+//					print("Friend Successfully added")
+//
+//					self.getAllFriends(completion: { (friendsList) in
+//						print("All the user Friends are")
+//						print(friendsList)
+//					})
+//				}
+//			}
 			
+		}
+	}
+	
+	
+	func checkIfUserAlreadyExists(completion: @escaping (Bool) -> ()){
+		let user = Auth.auth().currentUser
+		if let user = user {
+			print(user.uid)
+			userRef = Database.database().reference()
 			
+			self.userRef.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+					// Get user value
+					if snapshot.hasChild(user.uid) {
+						print("User Already exists")
+						completion(true)
+					}
+					else {
+						print("does not exist")
+						completion(false)
+					}
+				})
 		}
 	}
 	
