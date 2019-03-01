@@ -14,7 +14,6 @@ target 'Getaway' do
   pod 'Firebase/Database'
   pod 'GoogleSignIn'
   pod 'JSQMessagesViewController'
-  pod 'PopupDialog', '~> 0.9'
   pod 'GooglePlaces'
   pod 'GoogleMaps'
 
