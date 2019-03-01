@@ -10,6 +10,8 @@
 		584B11955CF1CF6E4B542C49 /* Pods_GetawayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5303C3641943857252CB9C5 /* Pods_GetawayTests.framework */; };
 		D459029A2228BFC60048D198 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45902992228BFC60048D198 /* ChatViewController.swift */; };
 		D459029D2228C5BE0048D198 /* Chats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D459029B2228C5BE0048D198 /* Chats.storyboard */; };
+		D45902A22228E0840048D198 /* AllChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45902A12228E0840048D198 /* AllChatsViewController.swift */; };
+		D45902A42228E0FC0048D198 /* ChatNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45902A32228E0FC0048D198 /* ChatNavViewController.swift */; };
 		D46A7F72220E779100683694 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46A7F71220E779100683694 /* ProfileViewController.swift */; };
 		D474F9F5221FD24B0016C821 /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = D474F9F4221FD24B0016C821 /* entitlements.plist */; };
 		D4C5DE2B221785F1006AA2A5 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */; };
@@ -61,6 +63,8 @@
 		D45902992228BFC60048D198 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D459029C2228C5BE0048D198 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chats.storyboard; sourceTree = "<group>"; };
 		D45902A02228D0F60048D198 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		D45902A12228E0840048D198 /* AllChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllChatsViewController.swift; sourceTree = "<group>"; };
+		D45902A32228E0FC0048D198 /* ChatNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatNavViewController.swift; sourceTree = "<group>"; };
 		D46A7F71220E779100683694 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D474F9F4221FD24B0016C821 /* entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 		D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */,
 				D4C5DE2C22178D23006AA2A5 /* FriendsViewController.swift */,
 				D45902992228BFC60048D198 /* ChatViewController.swift */,
+				D45902A12228E0840048D198 /* AllChatsViewController.swift */,
+				D45902A32228E0FC0048D198 /* ChatNavViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -526,11 +532,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45902A22228E0840048D198 /* AllChatsViewController.swift in Sources */,
 				D46A7F72220E779100683694 /* ProfileViewController.swift in Sources */,
 				D4C5DE2B221785F1006AA2A5 /* ProfileSettingsViewController.swift in Sources */,
 				E1247BCB220E31C600C33555 /* LoginViewController.swift in Sources */,
 				E1247BCD220E321F00C33555 /* MapViewController.swift in Sources */,
 				E140D1C52214F4D100A7A160 /* User.swift in Sources */,
+				D45902A42228E0FC0048D198 /* ChatNavViewController.swift in Sources */,
 				D4C5DE2D22178D25006AA2A5 /* FriendsViewController.swift in Sources */,
 				E140D1C22214F2CA00A7A160 /* FirebaseClient.swift in Sources */,
 				E1247BDE220E551000C33555 /* SignInViewController.swift in Sources */,
