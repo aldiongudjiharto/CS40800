@@ -13,6 +13,7 @@ target 'Getaway' do
   pod 'FacebookLogin'
   pod 'Firebase/Database'
   pod 'GoogleSignIn'
+  pod 'JSQMessagesViewController'
 
   target 'GetawayTests' do
     inherit! :search_paths

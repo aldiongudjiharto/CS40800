@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Getaway/Storyboards/Base.lproj/Chats.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:Getaway.xcodeproj">
    </FileRef>
    <FileRef

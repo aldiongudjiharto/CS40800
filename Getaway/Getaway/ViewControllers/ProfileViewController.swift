@@ -111,7 +111,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 //                self.view.addSubview(newImageView)
 //                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
 //                    // Code you want to be delayed
-//                    self.view.sendSubviebviewToBack(newImageView)
+//                    self.newImageView.sendSubviebviewToBack()
 //                }
                 
             }

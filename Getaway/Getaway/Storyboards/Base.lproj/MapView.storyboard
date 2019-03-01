@@ -216,22 +216,6 @@
             </objects>
             <point key="canvasLocation" x="4605.6000000000004" y="-1431.2807881773399"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="5EI-h8-Q1c">
-            <objects>
-                <viewController id="HFS-Ps-LyB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lcm-8H-2O5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="xHi-Pl-4x6"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-chat-bubble-50" selectedImage="icons8-chat-bubble-50" id="kb0-ZK-sSA"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9SX-9U-CBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3705" y="-741"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TCK-qR-Jkj">
             <objects>
@@ -243,7 +227,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="fYT-Zw-Wr3" kind="relationship" relationship="viewControllers" id="AHl-Ye-ERC"/>
-                        <segue destination="HFS-Ps-LyB" kind="relationship" relationship="viewControllers" id="dbE-Ls-irl"/>
+                        <segue destination="pqo-tm-wYS" kind="relationship" relationship="viewControllers" id="dbE-Ls-irl"/>
                         <segue destination="vUC-d9-1ca" kind="relationship" relationship="viewControllers" id="ZuS-0i-YcY"/>
                         <segue destination="VaN-n9-Cxu" kind="relationship" relationship="viewControllers" id="Cjd-rW-wuE"/>
                     </connections>
@@ -252,11 +236,20 @@
             </objects>
             <point key="canvasLocation" x="702" y="-352"/>
         </scene>
+        <!--Chats-->
+        <scene sceneID="amz-Wd-KlE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chats" id="pqo-tm-wYS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="zZa-KP-kwI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wz0-Tt-5fx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3705" y="-741"/>
+        </scene>
     </scenes>
     <resources>
         <image name="blank-profile-picture-973460_960_720" width="720" height="720"/>
         <image name="icons8-back-arrow-50" width="37.5" height="37.5"/>
-        <image name="icons8-chat-bubble-50" width="37.5" height="37.5"/>
         <image name="icons8-friends-80" width="60" height="60"/>
         <image name="icons8-map-marker-50" width="37.5" height="37.5"/>
         <image name="icons8-user-50" width="37.5" height="37.5"/>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YEm-as-2M1">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5EI-h8-Q1c">
+            <objects>
+                <viewController id="HFS-Ps-LyB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lcm-8H-2O5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xHi-Pl-4x6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="icons8-chat-bubble-50" selectedImage="icons8-chat-bubble-50" id="kb0-ZK-sSA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9SX-9U-CBS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3705" y="-741"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="9ue-KU-u4s">
+            <objects>
+                <viewController id="YEm-as-2M1" customClass="ChatViewController" customModule="Getaway" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V7b-st-hI4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rrU-cK-NhJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NLg-ea-haN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4506" y="-795"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-chat-bubble-50" width="37.5" height="37.5"/>
+    </resources>
+</document>

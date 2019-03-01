@@ -80,14 +80,13 @@ class FirebaseClient {
 		
 		let user = Auth.auth().currentUser
 		if let user = user {
-			self.userRef = Database.database().reference()
+            self.userRef = Database.database().reference()
 			self.userRef.child("users/\(user.uid)/username").setValue(username)
 			completion(true)
 		} else{
 			completion(false)
 		}
-	
-		
+        
 	}
 	
 	
