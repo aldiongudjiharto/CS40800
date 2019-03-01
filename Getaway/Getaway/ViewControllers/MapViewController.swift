@@ -48,6 +48,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         updateAnnotations()
         
     }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		updateAnnotations()
+	}
     
     @IBAction func mapSelectionChanged(_ sender: Any) {
         updateAnnotations()
@@ -75,13 +79,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 		
 		// Specify the place data types to return.
 		let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
-			UInt(GMSPlaceField.placeID.rawValue))!
+			UInt(GMSPlaceField.placeID.rawValue) | UInt(GMSPlaceField.coordinate.rawValue) )!
 		autocompleteController.placeFields = fields
 		
 		
 		// Specify a filter.
 		let filter = GMSAutocompleteFilter()
 		filter.type = .city
+		filter.type = .region
 		
 		autocompleteController.autocompleteFilter = filter
 		
@@ -104,9 +109,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func displayPersonalAnnotations() {
         print("mine")
-        
-        addAnnotationUsingCoordinate(lat: 37.3688, long: -122.0363, title: "Sunnyvale", subtitle: "Personal")
-
+		
+		FirebaseClient().retrieveCurrentUsersVisitedPlaces() { (visitedPlaces) in
+			
+				
+				print("comes here for places")
+				
+				for visitedPlace in visitedPlaces {
+					
+					
+					print(visitedPlace)
+					var place = visitedPlace.key
+					var coordinate = visitedPlace.value
+					self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: "Mine")
+				}
+		}
     }
     
     func removeAllAnnotations() {
@@ -151,6 +168,12 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
 		print("Place ID: \(place.placeID)")
 		print("Place attributions: \(place.attributions)")
 		print("Place Coordinates \(place.coordinate)")
+		
+		
+		
+		
+		FirebaseClient().addVisitedPlace(placeName: place.name!, coordinate: place.coordinate)
+		
 		dismiss(animated: true, completion: nil)
 	}
 	

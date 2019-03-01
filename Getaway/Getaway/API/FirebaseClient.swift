@@ -106,14 +106,13 @@ class FirebaseClient {
 			visitedRef.setValue(placeCoordinatedict)
 			// ...
 			
-			
 		}
 	}
 	
 
 	
 	
-	func retrieveCurrentUsersVisitedPlaces(){
+	func retrieveCurrentUsersVisitedPlaces(completion: @escaping ([String: CLLocationCoordinate2D]) -> ()){
 		let user = Auth.auth().currentUser
 		var visitedPlacesDict = [String: CLLocationCoordinate2D]()
 		if let user = user {
@@ -136,6 +135,7 @@ class FirebaseClient {
 					visitedPlacesDict[placeName] = CLLocationCoordinate2DMake(lat, long)
 				}
 				print(visitedPlacesDict)
+				completion(visitedPlacesDict)
 			})
 			
 			
