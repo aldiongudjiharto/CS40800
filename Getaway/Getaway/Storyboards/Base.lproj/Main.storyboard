@@ -50,8 +50,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="gQE-Wo-Z0R">
-                                <rect key="frame" x="10" y="136.66666666666663" width="355" height="629"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="gQE-Wo-Z0R">
+                                <rect key="frame" x="10" y="136.66666666666663" width="355" height="621"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kb7-ls-JDS">
                                         <rect key="frame" x="113" y="0.0" width="129" height="29"/>
@@ -65,13 +65,13 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAs-fi-2bx">
-                                        <rect key="frame" x="146.66666666666666" y="109.99999999999999" width="61.666666666666657" height="23.000000000000014"/>
+                                        <rect key="frame" x="146.66666666666666" y="85.999999999999986" width="61.666666666666657" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yEH-gd-qLx">
-                                        <rect key="frame" x="69" y="215" width="217" height="170"/>
+                                        <rect key="frame" x="69" y="167" width="217" height="170"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRG-sX-7Ht">
                                                 <rect key="frame" x="0.0" y="0.0" width="217" height="30"/>
@@ -149,16 +149,23 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx5-GF-8OK">
-                                        <rect key="frame" x="107" y="466.99999999999994" width="141" height="30"/>
+                                        <rect key="frame" x="107" y="395" width="141" height="30"/>
                                         <state key="normal" title="Login with Facebook"/>
                                         <connections>
                                             <action selector="signInWithFacebookClicked:" destination="Rmw-Qx-P4b" eventType="touchUpInside" id="2RR-uY-Bav"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ck6-fw-I7r" customClass="GIDSignInButton">
-                                        <rect key="frame" x="78" y="579" width="199" height="50"/>
+                                        <rect key="frame" x="78" y="482.99999999999994" width="199" height="50.000000000000057"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEk-tv-WRe">
+                                        <rect key="frame" x="116" y="591" width="123" height="30"/>
+                                        <state key="normal" title="Forgot Password?"/>
+                                        <connections>
+                                            <action selector="forgotPasswordClicked:" destination="Rmw-Qx-P4b" eventType="touchUpInside" id="7Ld-fh-qLe"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -174,6 +181,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="DZE-nM-z9X" id="59M-zr-Q5M"/>
                         <outlet property="firstName" destination="IWa-WT-Rnc" id="l3K-JP-UhM"/>
+                        <outlet property="forgetPasswordButton" destination="FEk-tv-WRe" id="FD5-Oi-VVF"/>
                         <outlet property="lastName" destination="QcC-eD-jWf" id="AD4-2H-i4D"/>
                         <outlet property="passwordTextField" destination="kON-7o-n0p" id="f3K-1o-wAp"/>
                         <outlet property="signInButton" destination="8Dk-R0-yau" id="jC4-X5-99d"/>
@@ -222,6 +230,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ymG-Qg-kWc"/>
+        <segue reference="gox-3q-LNb"/>
     </inferredMetricsTieBreakers>
 </document>

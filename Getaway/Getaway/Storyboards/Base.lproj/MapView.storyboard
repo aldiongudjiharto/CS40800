@@ -35,6 +35,17 @@
                                     <action selector="mapSelectionChanged:" destination="fYT-Zw-Wr3" eventType="valueChanged" id="hfD-w0-nfg"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gu-JM-0mI">
+                                <rect key="frame" x="324" y="84" width="35" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.0" green="0.052235223429999998" blue="0.06838911802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPlaceButtonClicked:" destination="fYT-Zw-Wr3" eventType="touchUpInside" id="gTg-UT-kET"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SSS-Gx-BLf"/>
