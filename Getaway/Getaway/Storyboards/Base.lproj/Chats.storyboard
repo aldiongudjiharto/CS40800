@@ -43,7 +43,7 @@
         <scene sceneID="9ue-KU-u4s">
             <objects>
                 <viewController id="YEm-as-2M1" customClass="ChatViewController" customModule="Getaway" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V7b-st-hI4">
+                    <view key="view" contentMode="top" id="V7b-st-hI4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

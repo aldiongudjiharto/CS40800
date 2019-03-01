@@ -17,6 +17,10 @@ class ChatViewController: JSQMessagesViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         
+//        if #available(iOS 11.0, *) {
+//           let bottomPadding = view.safeAreaInsets.bottom
+//            self.view.set        }
+        
         self.tabBarController?.tabBar.isHidden = true
         //
         senderDisplayName = "User"
@@ -52,7 +56,6 @@ class ChatViewController: JSQMessagesViewController {
                 if let message = JSQMessage(senderId: id, displayName: name, text: text)
                 {
                     self?.messages.append(message)
-                    
                     self?.finishReceivingMessage()
                 }
             }
@@ -72,11 +75,11 @@ class ChatViewController: JSQMessagesViewController {
     }
     
     lazy var outgoingBubble: JSQMessagesBubbleImage = {
-        return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+        return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor(red:0.2, green:0.6, blue:0.74, alpha:1.0))
     }()
     
     lazy var incomingBubble: JSQMessagesBubbleImage = {
-        return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+        return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor(red:0.5, green:0.2, blue:0.54, alpha:1.0))
     }()
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource!
@@ -107,8 +110,6 @@ class ChatViewController: JSQMessagesViewController {
         let message = ["sender_id": senderId, "name": senderDisplayName, "text": text]
 
         ref.setValue(message)
-
-        
         finishSendingMessage()
     }
     
