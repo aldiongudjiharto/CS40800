@@ -16,8 +16,11 @@ class FriendsViewController: UIViewController, UITabBarDelegate, UITableViewData
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		//let cell = UITableViewCell(style: UITableViewCell.CellStyle, reuseIdentifier: "cell")
-		return UITableViewCell 
+		let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendCell
+        
+        cell.friendNameLabel?.text = list[indexPath.row]
+        
+		return cell
 	}
 	
     

@@ -16,6 +16,7 @@
 		D474F9F5221FD24B0016C821 /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = D474F9F4221FD24B0016C821 /* entitlements.plist */; };
 		D4C5DE2B221785F1006AA2A5 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */; };
 		D4C5DE2D22178D25006AA2A5 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5DE2C22178D23006AA2A5 /* FriendsViewController.swift */; };
+		D4E5ADAC22291AD700055F62 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5ADAB22291AD700055F62 /* FriendCell.swift */; };
 		D7E6973CAB97F2983931328A /* Pods_Getaway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F0614271172E0FA62F7063 /* Pods_Getaway.framework */; };
 		E1247BCB220E31C600C33555 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BCA220E31C600C33555 /* LoginViewController.swift */; };
 		E1247BCD220E321F00C33555 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BCC220E321F00C33555 /* MapViewController.swift */; };
@@ -69,6 +70,7 @@
 		D474F9F4221FD24B0016C821 /* entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 		D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		D4C5DE2C22178D23006AA2A5 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		D4E5ADAB22291AD700055F62 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		E1247BCA220E31C600C33555 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E1247BCC220E321F00C33555 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E1247BD3220E353500C33555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapView.storyboard; sourceTree = "<group>"; };
@@ -149,18 +151,43 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E1247BD5220E3B9400C33555 /* ViewControllers */ = {
+		D4E5ADA822291A8200055F62 /* Chats */ = {
 			isa = PBXGroup;
 			children = (
-				E1247BCA220E31C600C33555 /* LoginViewController.swift */,
-				E1247BCC220E321F00C33555 /* MapViewController.swift */,
-				E1247BDD220E551000C33555 /* SignInViewController.swift */,
-				D46A7F71220E779100683694 /* ProfileViewController.swift */,
-				D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */,
-				D4C5DE2C22178D23006AA2A5 /* FriendsViewController.swift */,
 				D45902992228BFC60048D198 /* ChatViewController.swift */,
 				D45902A12228E0840048D198 /* AllChatsViewController.swift */,
 				D45902A32228E0FC0048D198 /* ChatNavViewController.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		D4E5ADA922291AA000055F62 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D46A7F71220E779100683694 /* ProfileViewController.swift */,
+				D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D4E5ADAA22291AC000055F62 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				D4C5DE2C22178D23006AA2A5 /* FriendsViewController.swift */,
+				D4E5ADAB22291AD700055F62 /* FriendCell.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		E1247BD5220E3B9400C33555 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4E5ADAA22291AC000055F62 /* Friends */,
+				D4E5ADA922291AA000055F62 /* Profile */,
+				D4E5ADA822291A8200055F62 /* Chats */,
+				E1247BCA220E31C600C33555 /* LoginViewController.swift */,
+				E1247BCC220E321F00C33555 /* MapViewController.swift */,
+				E1247BDD220E551000C33555 /* SignInViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -543,6 +570,7 @@
 				E140D1C22214F2CA00A7A160 /* FirebaseClient.swift in Sources */,
 				E1247BDE220E551000C33555 /* SignInViewController.swift in Sources */,
 				D459029A2228BFC60048D198 /* ChatViewController.swift in Sources */,
+				D4E5ADAC22291AD700055F62 /* FriendCell.swift in Sources */,
 				E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

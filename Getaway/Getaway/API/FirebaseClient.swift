@@ -27,6 +27,10 @@ class FirebaseClient {
 			userRef = Database.database().reference()
 
 			self.userRef.child("users").child(user.uid).setValue(["email": user.email, "username": username, "firstName": firstName, "lastName": lastName])
+            
+            getUniqueIdFromUsername(username: "avinash498") { (userId) in
+                print(userId)
+            }
 			// ...
 		}
 	}
@@ -143,20 +147,56 @@ class FirebaseClient {
 		}
 	}
 	
+    
+    
+    
+    func getUniqueIdFromUsername( username: String, completion: @escaping (String) -> ()){
+        
+        let usersRef = Database.database().reference().child("users")
+        print("here comes the user id!!")
+        usersRef.observeSingleEvent(of: .value, with: { snapshot in
+            print(snapshot.key)
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                var userInfoDict = snap.value as! [String: String]
+                var userNameVal = userInfoDict["username"]!
+                print("here comes the user id!!")
+
+                if userNameVal == username {
+                    print("here found the user id!!")
+                    print(snap.key)
+                    print(userInfoDict)
+                    completion(snap.key)
+                    return
+                }
+            }
+            
+        })
+    }
+    
 	
+    func addFriend(friendUsername: String, completion: @escaping (Bool) -> ()){
+        let user = Auth.auth().currentUser
+        
+        if let user = user {
+            getUniqueIdFromUsername(username: friendUsername) { (friendUserId) in
+                
+                let friendRef = Database.database().reference().child("friends").child(user.uid).child(friendUserId)
+                friendRef.setValue(friendUsername)
+                completion(true)
+                
+            }
+        }
+        
+        completion(false)
+    }
 	
-	
-	
-	func getUserDetails(success: @escaping (User) ->(), failure: @escaping (Error)->()){
-		
-		//        userRef.child(user).observeSingleEvent(of: .value, with: { (snapshot) in
-		//            if let userInfo = snapshot.value as? [String: Any]{
-		//                success(User(userInfo: userInfo))
-		//            }
-		//        })
-		
-	}
-	
+    
+    func getAllFriends(completion: @escaping (Bool) -> ([String: String])){
+        
+        
+        
+    }
 	
 	
 }
