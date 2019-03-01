@@ -118,6 +118,7 @@
                     <tabBarItem key="tabBarItem" title="" image="icons8-friends-80" selectedImage="icons8-friends-80" id="k50-Jr-6YQ"/>
                     <connections>
                         <outlet property="searchBar" destination="1pY-Yg-i95" id="0Qc-0L-UE4"/>
+                        <outlet property="tableView" destination="ebJ-ax-PZC" id="TTB-Ub-gTl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFa-rD-cPY" userLabel="First Responder" sceneMemberID="firstResponder"/>

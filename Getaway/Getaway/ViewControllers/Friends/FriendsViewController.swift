@@ -8,10 +8,12 @@
 
 import UIKit
 
-class FriendsViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
-	let list = ["Aldio", "Dhriti", "Avi", "Daniel", "Stef"]
+class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	
     var friendsDict1:[String: String] = ["":""]
-
+    var list = [""]
+    @IBOutlet weak var tableView: UITableView!
+    
     
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return list.count
@@ -31,12 +33,27 @@ class FriendsViewController: UIViewController, UITabBarDelegate, UITableViewData
 		super.viewDidLoad()
 		
         // Do any additional setup after loading the view.
+        fetchData()
+    }
+    
+    func fetchData(){
         FirebaseClient().getAllFriends(completion: {(friendsDict) in
             self.friendsDict1 = friendsDict
-            print(self.friendsDict1)
+            self.list = Array(self.friendsDict1.values)
+            print("-------")
+            print(self.list)
+            self.tableView.reloadData()
+            self.tableView.delegate = self
+            self.tableView.dataSource = self
         })
-        
-		
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        fetchData()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        fetchData()
     }
     
     @IBAction func addNewFriends(_ sender: Any) {
@@ -45,10 +62,8 @@ class FriendsViewController: UIViewController, UITabBarDelegate, UITableViewData
         addFriendsPopUp.view.frame = self.view.frame
         self.view.addSubview(addFriendsPopUp.view)
         addFriendsPopUp.didMove(toParent: self)
-        
+        fetchData()
 
     }
-    
-	
 	
 }
