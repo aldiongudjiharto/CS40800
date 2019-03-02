@@ -84,8 +84,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 							
 							FirebaseClient().addUser(firstName: fullNameArr[0], lastName: fullNameArr[1], username: "defaultUsername")
 							
-							let storyBoard = UIStoryboard(name: "MapView", bundle: nil)
+							let storyBoard = UIStoryboard(name: "Main", bundle: nil)
 							let vc = storyBoard.instantiateViewController(withIdentifier: "SelectUserNameViewController")
+							
 							self.window?.rootViewController = vc
 						}
 					})

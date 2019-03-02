@@ -7,16 +7,50 @@
 //
 
 import UIKit
+import Firebase
 
 class SelectUsernameViewController: UIViewController {
 
-    override func viewDidLoad() {
+	@IBOutlet weak var userNameTextField: UITextField!
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+	@IBAction func selectUsernameButtonClicked(_ sender: Any) {
+		if userNameTextField.text != "" {
+			FirebaseClient().checkIfUserNameIsUnique(username: userNameTextField.text!) { (userNameUnique) in
+				if userNameUnique == true {
+					var currentUser = Auth.auth().currentUser
+					FirebaseClient().editUserName(username: self.userNameTextField.text!, completion: { (userNameChanged) in
+						if userNameChanged {
+							
+							//perform segue to mapview
+							self.performSegue(withIdentifier: "goToHomePageSegue", sender: self)
+						}
+						else{
+							//show popup
+							self.displayAlert(message: "An error occured. Please try again.")
+						}
+					})
+					
+				}
+				else{
+					self.displayAlert(message: "Username is already taken. Please select a new one")
+				}
+			}
+		}
+	}
+	
+	func displayAlert(message:String? = "Please check your credentials"){
+		let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+		
+		alert.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
+		
+		self.present(alert, animated: true, completion: nil)
+	}
+	
     /*
     // MARK: - Navigation
 

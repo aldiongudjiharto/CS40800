@@ -232,42 +232,41 @@
         <!--Select Username View Controller-->
         <scene sceneID="qcj-xd-W8X">
             <objects>
-                <viewController id="a6v-wX-NnB" customClass="SelectUsernameViewController" customModule="Getaway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectUserNameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a6v-wX-NnB" customClass="SelectUsernameViewController" customModule="Getaway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OYn-Kc-FZD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please select a Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olp-HJ-avF">
-                                <rect key="frame" x="66" y="276" width="208" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mQt-vS-80T">
-                                <rect key="frame" x="66" y="348" width="215" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type username" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="mQt-vS-80T">
+                                <rect key="frame" x="54" y="343" width="267" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5f-rO-EMp">
-                                <rect key="frame" x="111" y="440" width="118" height="30"/>
+                                <rect key="frame" x="128" y="418" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select Username">
-                                    <color key="titleColor" red="0.0" green="0.052235223429999998" blue="0.06838911802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Select Username"/>
+                                <connections>
+                                    <action selector="selectUsernameButtonClicked:" destination="a6v-wX-NnB" eventType="touchUpInside" id="v4s-4Q-Iu9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oP6-h8-jvn"/>
                     </view>
+                    <connections>
+                        <outlet property="userNameTextField" destination="mQt-vS-80T" id="sZz-NJ-f0g"/>
+                        <segue destination="z1h-fl-lcl" kind="show" identifier="goToHomePageSegue" id="qEt-CL-1uj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVb-2o-QAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="22.906403940886701"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ymG-Qg-kWc"/>
+        <segue reference="qEt-CL-1uj"/>
     </inferredMetricsTieBreakers>
 </document>
