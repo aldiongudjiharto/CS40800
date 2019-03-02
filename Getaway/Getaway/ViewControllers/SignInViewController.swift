@@ -189,12 +189,19 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
 					
 					let fullNameArr = user!.displayName!.components(separatedBy: " ")
 					
+					
 					FirebaseClient().addUser(firstName: fullNameArr[0], lastName: fullNameArr[1], username: "defaultUsername")
+					
+					self.performSegue(withIdentifier:"selectUserNameSegue", sender: self)
+					
 
+				}
+				else {
+					self.performSegue(withIdentifier: "goHome", sender: self)
 				}
 				
 				print ("Successfully logged into Facebook")
-				self.performSegue(withIdentifier: "goHome", sender: self)
+				
 			})
         }
     }
