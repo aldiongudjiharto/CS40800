@@ -13,6 +13,7 @@ class ChatsTableViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableView: UITableView!
     var friendsDict1:[String: String] = ["":""]
     var list = [""]
+    var selectedIndex = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
@@ -58,6 +59,7 @@ class ChatsTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
         self.performSegue(withIdentifier: "friendChat", sender: self)
     }
     
@@ -66,10 +68,7 @@ class ChatsTableViewController: UIViewController, UITableViewDelegate, UITableVi
         if segue.identifier == "friendChat"
         {
             let viewController = segue.destination as! MyChatViewController
-            let cell = sender as! UITableViewCell
-            let indexPath = tableView.indexPath(for: cell)!
-           
-            let username = list[indexPath.row]
+            let username = list[selectedIndex]
             viewController.friendUsername = username
         }
     }

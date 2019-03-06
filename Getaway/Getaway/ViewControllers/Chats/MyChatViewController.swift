@@ -13,8 +13,13 @@ class MyChatViewController: JSQMessagesViewController {
     var friendUsername = ""
     var friendName = ""
     var myUsername = ""
+    
+    var friendsDict1:[String: String] = ["":""]
+    var list = [""]
     var messages = [JSQMessage]()
     var ChatsRef = Database.database().reference().child("Chats")
+    private var newMessageRefHandle: DatabaseHandle?
+    
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -35,9 +40,13 @@ class MyChatViewController: JSQMessagesViewController {
             self.senderDisplayName = "\(userDictionary["firstName"]!)" + " " +
             "\(userDictionary["lastName"]!)"
             self.senderId = userDictionary["username"]!
+            
             self.myUsername = userDictionary["username"]!
             
-            self.title = "Chat: \(self.friendUsername)"
+            self.title = "\(self.friendUsername)"
+            
+            self.observeMessages()
+            
         })
         //
         
@@ -65,6 +74,39 @@ class MyChatViewController: JSQMessagesViewController {
         })
     }
     
+    private func observeMessages() {
+        
+        let Ref = ChatsRef.child(myUsername).child(friendUsername)
+        
+        let messageQuery = Ref.queryLimited(toLast:25)
+        
+        // 2. We can use the observe method to listen for new
+        // messages being written to the Firebase DB
+        newMessageRefHandle = messageQuery.observe(.childAdded, with: { (snapshot) -> Void in
+            // 3
+            if let messageData = snapshot.value as? [String: String],
+                let id = messageData["senderId"] as! String!,
+                let name = messageData["senderName"] as! String!,
+                let time = messageData["time"] as! String!,
+                let text = messageData["text"] as! String!,
+                text.characters.count > 0 {
+                // 4
+                self.addMessage(withId: id, name: name, text: text)
+                
+                // 5
+                self.finishReceivingMessage()
+            } else {
+                print("Error! Could not decode message data")
+            }
+        })
+        
+    }
+    
+    private func addMessage(withId id: String, name: String, text: String) {
+        if let message = JSQMessage(senderId: id, displayName: name, text: text) {
+            messages.append(message)
+        }
+    }
     
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData!
@@ -107,17 +149,28 @@ class MyChatViewController: JSQMessagesViewController {
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!)
     {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
+        
+        let currTime = "\(date) \(hour):\(minutes):\(seconds)"
+        
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
-        var itemRef1 = ChatsRef.child(myUsername).child(friendUsername)
-        var itemRef2 = ChatsRef.child(friendUsername).child(myUsername)
+        Database.database().reference().child("Chats").child(myUsername).child(friendUsername).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            let itemRef1 = self.ChatsRef.child(self.myUsername).child(self.friendUsername).child("\(snapshot.childrenCount)")
+            let itemRef2 = self.ChatsRef.child(self.friendUsername).child(self.myUsername).child("\(snapshot.childrenCount)")
         
         
-        let message = ["sender_id": senderId, "name": senderDisplayName, "text": text]
+            let message = ["senderId": senderId, "senderName": senderDisplayName, "text": text,
+                           "time": currTime]
         
         itemRef1.setValue(message)
         itemRef2.setValue(message)
         
-        finishSendingMessage()
+        self.finishSendingMessage()
+        })
     }
     
     
