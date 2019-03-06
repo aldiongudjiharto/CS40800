@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="3704.8000000000002" y="232.75862068965517"/>
         </scene>
-        <!--Friends View Controller-->
+        <!--Friends Table View Controller-->
         <scene sceneID="JpG-0W-UO8">
             <objects>
-                <viewController id="vUC-d9-1ca" customClass="FriendsViewController" customModule="Getaway" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vUC-d9-1ca" customClass="FriendsTableViewController" customModule="Getaway" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oA7-4v-2Su">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

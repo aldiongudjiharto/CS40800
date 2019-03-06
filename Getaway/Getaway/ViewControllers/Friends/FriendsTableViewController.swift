@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FriendsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	
     var friendsDict1:[String: String] = ["":""]
     var list = [""]
