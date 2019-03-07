@@ -13,25 +13,39 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
     //Set it to usernames of current -non-friends
     
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var friendsDict1:[String: String] = ["":""]
     var list = [""]
+    var filteredArrayName = [String]()
+    var showSearchResults = false
     var selectednames = [String]()
     var myUsername = ""
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        if (showSearchResults) {
+            return filteredArrayName.count
+        }
+        else {
+            return list.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddFriendsCell", for: indexPath) as! AddFriendsCell
-        cell.friendUsername?.text = list[indexPath.row]
+        if (showSearchResults){
+            cell.friendUsername?.text = filteredArrayName[indexPath.row]
+        } else {
+            cell.friendUsername?.text = list[indexPath.row]
+        }
         return cell
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         selectednames.removeAll()
+        searchBar.delegate = self
+        
         tableView.allowsMultipleSelection = true
         self.view.layer.cornerRadius = 5;
         self.view.layer.masksToBounds = true;
@@ -59,20 +73,35 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let mySearch = searchBar.text!
+        filteredArrayName = list.filter({( name: String) -> Bool in
+            return name.lowercased().range(of:searchText.lowercased()) != nil
+        })
+        
+        if mySearch == "" {
+            showSearchResults = false
+            self.tableView.reloadData()
+        } else {
+            showSearchResults = true
+            self.tableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)!
         cell.accessoryType = .checkmark
-//        if (showSearchResults) {
-//            if (!selectednames.contains(filteredArrayName[indexPath.row])) {
-//                selectednames.append(filteredArrayName[indexPath.row])
-//            }
-//            else {
-//                cell.accessoryType = .none
-//                let a = selectednames.index(of: filteredArrayName[indexPath.row])
-//                selectednames.remove(at: a!)
-//            }
-//        }
-//        else {
+        if (showSearchResults) {
+            if (!selectednames.contains(filteredArrayName[indexPath.row])) {
+                selectednames.append(filteredArrayName[indexPath.row])
+            }
+            else {
+                cell.accessoryType = .none
+                let a = selectednames.index(of: filteredArrayName[indexPath.row])
+                selectednames.remove(at: a!)
+            }
+        }
+        else {
             if (!selectednames.contains(list[indexPath.row])) {
                 selectednames.append(list[indexPath.row])
             }
@@ -81,7 +110,7 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
                 let a = selectednames.index(of: list[indexPath.row])
                 selectednames.remove(at: a!)
             }
-//        }
+        }
         // cell.accessoryView.hidden = false // if using a custom image
     }
     
@@ -129,6 +158,16 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBAction func Cancel(_ sender: Any) {
         self.view.removeFromSuperview()
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        showSearchResults = true
+        searchBar.endEditing(true)
+        self.tableView.reloadData()
     }
     
     

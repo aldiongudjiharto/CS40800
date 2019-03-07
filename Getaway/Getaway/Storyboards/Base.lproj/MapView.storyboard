@@ -68,21 +68,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1pY-Yg-i95">
-                                <rect key="frame" x="0.0" y="44" width="325" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCX-D9-394">
-                                <rect key="frame" x="332" y="54" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="icons8-add-50"/>
-                                <connections>
-                                    <action selector="addNewFriends:" destination="vUC-d9-1ca" eventType="touchUpInside" id="vNW-yW-hhC"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ebJ-ax-PZC">
-                                <rect key="frame" x="0.0" y="100" width="375" height="629"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -115,15 +102,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="K5g-Nq-jIh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-friends-80" selectedImage="icons8-friends-80" id="k50-Jr-6YQ"/>
+                    <navigationItem key="navigationItem" id="yN9-Ak-Lzi">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Zmq-fJ-SPL">
+                            <connections>
+                                <action selector="addNewFriends:" destination="vUC-d9-1ca" id="rkj-aE-JsL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="1pY-Yg-i95" id="0Qc-0L-UE4"/>
                         <outlet property="tableView" destination="ebJ-ax-PZC" id="TTB-Ub-gTl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFa-rD-cPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4429.6000000000004" y="-270.44334975369458"/>
+            <point key="canvasLocation" x="5372" y="-270.44334975369458"/>
         </scene>
         <!--Friends Add View Controller-->
         <scene sceneID="Fhq-bG-chG">
@@ -134,10 +126,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbk-fH-B5e">
-                                <rect key="frame" x="62.666666666666657" y="286" width="249.99999999999997" height="240"/>
+                                <rect key="frame" x="62.666666666666657" y="250" width="249.99999999999997" height="312"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5G-NF-ZQw">
-                                        <rect key="frame" x="131" y="202" width="110" height="30"/>
+                                        <rect key="frame" x="131" y="276" width="110" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <state key="normal" title="Add">
@@ -148,7 +140,7 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tmW-It-LMF">
-                                        <rect key="frame" x="5" y="61" width="240" height="137"/>
+                                        <rect key="frame" x="5" y="61" width="240" height="207"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -179,7 +171,7 @@
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qVk-xs-zr3">
-                                        <rect key="frame" x="7" y="203" width="116" height="30"/>
+                                        <rect key="frame" x="7" y="277" width="116" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Cancel">
@@ -197,8 +189,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.50736549799999997" green="0.69447472779999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="BTk-Qe-NB2"/>
-                                    <constraint firstAttribute="width" constant="250" id="oEU-8f-qiH"/>
+                                    <constraint firstAttribute="height" constant="312" id="CDh-z8-pDA"/>
+                                    <constraint firstAttribute="width" constant="250" id="RUJ-Ua-otE"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
@@ -207,18 +199,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nbk-fH-B5e" firstAttribute="centerY" secondItem="jbi-cS-wsQ" secondAttribute="centerY" id="Px6-vb-WRX"/>
-                            <constraint firstItem="nbk-fH-B5e" firstAttribute="centerX" secondItem="jbi-cS-wsQ" secondAttribute="centerX" id="a44-Ho-Nkl"/>
+                            <constraint firstItem="nbk-fH-B5e" firstAttribute="centerX" secondItem="jbi-cS-wsQ" secondAttribute="centerX" id="GgH-W2-4Dc"/>
+                            <constraint firstItem="nbk-fH-B5e" firstAttribute="centerY" secondItem="jbi-cS-wsQ" secondAttribute="centerY" id="rPa-4k-HNc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dod-cW-ujE"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="WuQ-mb-6Mz" id="3yi-6f-BGY"/>
                         <outlet property="tableView" destination="tmW-It-LMF" id="qpe-Xt-ppT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WG7-JO-xDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5392.8000000000002" y="-272.66009852216752"/>
+            <point key="canvasLocation" x="6335.1999999999998" y="-272.66009852216752"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="lLy-hJ-YvQ">
@@ -373,7 +366,7 @@
                     <connections>
                         <segue destination="fYT-Zw-Wr3" kind="relationship" relationship="viewControllers" id="AHl-Ye-ERC"/>
                         <segue destination="pqo-tm-wYS" kind="relationship" relationship="viewControllers" id="dbE-Ls-irl"/>
-                        <segue destination="vUC-d9-1ca" kind="relationship" relationship="viewControllers" id="ZuS-0i-YcY"/>
+                        <segue destination="DI1-yP-leS" kind="relationship" relationship="viewControllers" id="ZuS-0i-YcY"/>
                         <segue destination="VaN-n9-Cxu" kind="relationship" relationship="viewControllers" id="Cjd-rW-wuE"/>
                     </connections>
                 </tabBarController>
@@ -391,10 +384,28 @@
             </objects>
             <point key="canvasLocation" x="3705" y="-741"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AgN-8M-IvA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DI1-yP-leS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-friends-80" selectedImage="icons8-friends-80" id="k50-Jr-6YQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fVg-Ux-sEZ">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vUC-d9-1ca" kind="relationship" relationship="rootViewController" id="0z7-Rx-ia2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SSO-r7-4zS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4429.6000000000004" y="-270.44334975369458"/>
+        </scene>
     </scenes>
     <resources>
         <image name="blank-profile-picture-973460_960_720" width="720" height="720"/>
-        <image name="icons8-add-50" width="37.5" height="37.5"/>
         <image name="icons8-back-arrow-50" width="37.5" height="37.5"/>
         <image name="icons8-friends-80" width="60" height="60"/>
         <image name="icons8-map-marker-50" width="37.5" height="37.5"/>

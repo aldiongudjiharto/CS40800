@@ -8,32 +8,69 @@
 
 import UIKit
 
-class FriendsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FriendsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 	
     var friendsDict1:[String: String] = ["":""]
     var list = [""]
+    var filteredArrayName = [String]()
+    var showSearchResults = false
+    let searchBar = UISearchBar()
     @IBOutlet weak var tableView: UITableView!
     
     
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return list.count
-	}
+        if (showSearchResults) {
+            return filteredArrayName.count
+        }
+        else {
+            return list.count
+        }
+    }
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendCell
-        
-        cell.friendNameLabel?.text = list[indexPath.row]
-        
+        if (showSearchResults){
+            cell.friendNameLabel?.text = filteredArrayName[indexPath.row]
+        } else {
+            cell.friendNameLabel?.text = list[indexPath.row]
+        }
 		return cell
 	}
 	
     
-    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
 		super.viewDidLoad()
 		
         // Do any additional setup after loading the view.
         fetchData()
+        createSearchBar()
+        self.title = "Chats"
+    }
+    
+    func createSearchBar() {
+        
+        searchBar.showsCancelButton = false
+        searchBar.placeholder = "Search a friend...."
+        searchBar.delegate = self
+        
+        self.navigationItem.titleView = searchBar
+        
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let mySearch = searchBar.text!
+        filteredArrayName = list.filter({( name: String) -> Bool in
+            return name.lowercased().range(of:searchText.lowercased()) != nil
+        })
+        
+        if mySearch == "" {
+            showSearchResults = false
+            self.tableView.reloadData()
+        } else {
+            showSearchResults = true
+            self.tableView.reloadData()
+        }
     }
     
     func fetchData(){
@@ -45,6 +82,16 @@ class FriendsTableViewController: UIViewController, UITableViewDelegate, UITable
             self.tableView.delegate = self
             self.tableView.dataSource = self
         })
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        showSearchResults = true
+        searchBar.endEditing(true)
+        self.tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,5 +111,5 @@ class FriendsTableViewController: UIViewController, UITableViewDelegate, UITable
         fetchData()
 
     }
-	
+    
 }
