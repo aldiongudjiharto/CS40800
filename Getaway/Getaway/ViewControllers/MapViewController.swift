@@ -89,6 +89,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         switch mapSelectionSegmentedControl.selectedSegmentIndex {
         case 0:
 			displayGlobalAnnotations()
+			displayFriendsAnnotations()
+			displayPersonalAnnotations()
         case 1:
             displayFriendsAnnotations()
         case 2:
@@ -124,25 +126,34 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         print("public")
 		
 		FirebaseClient().retrieveAllUsersVisitedPlaces { (usersVisitedPlaces) in
+
+			usersVisitedPlaces.sorted(by: { $0.placeName < $1.placeName })
+
 			print("done with global users request")
 			for visitedPlace in usersVisitedPlaces {
 				var place = visitedPlace.placeName
 				var coordinate = visitedPlace.coordinates
 				
-				FirebaseClient().userAreFriends(friendId: visitedPlace.userID, completion: { (isFriend) in
+				FirebaseClient().userAreFriends(friendId: visitedPlace.userID, completion: { (userRelation) in
 					
-					if isFriend {
-						self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.yellow)
+					if userRelation == "CurrentUser" {
+						self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.blue)
 					}
-					else{
+					else if userRelation == "Friend" {
+						self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.green)
+
+					}
+					else if userRelation == "GlobalUser" {
 						self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.red)
 					}
+			
 				})
 				
 				
 			}
 		}
     }
+	
     
     func displayFriendsAnnotations() {
         print("friends")
@@ -152,7 +163,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 			for visitedPlace in friendsVisitedPlaces {
 				var place = visitedPlace.placeName
 				var coordinate = visitedPlace.coordinates
-				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.yellow)
+				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.green)
 			}
 		}
     }

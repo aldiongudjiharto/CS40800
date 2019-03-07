@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 		
 		GMSPlacesClient.provideAPIKey("AIzaSyAx-m5YSOX4wpVAFmCg6tFtR_KRR6G-WKw")
 		GMSServices.provideAPIKey("AIzaSyAx-m5YSOX4wpVAFmCg6tFtR_KRR6G-WKw")
-        //try! Auth.auth().signOut()
+//        try! Auth.auth().signOut()
 		
         if Auth.auth().currentUser != nil {
 

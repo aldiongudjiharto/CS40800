@@ -26,7 +26,7 @@ class FirebaseClient {
 			// if you have one. Use getTokenWithCompletion:completion: instead.
 			userRef = Database.database().reference()
 			
-			self.userRef.child("users").child(user.uid).setValue(["email": user.email, "username": username, "firstName": firstName, "lastName": lastName])
+			self.userRef.child("users").child(user.uid).setValue(["email": user.email, "username": username, "firstName": firstName, "lastName": lastName, "userBio": ""])
 			
 			self.getAllUsers { (allUsersList) in
 				print("all users \(allUsersList)")
@@ -55,6 +55,8 @@ class FirebaseClient {
 				})
 		}
 	}
+	
+	
 	
 	func retrieveUserInformation(completion: @escaping ([String: String]) -> ()) {
 		let user = Auth.auth().currentUser
@@ -388,35 +390,65 @@ class FirebaseClient {
 	}
 	
 	
-	func userAreFriends(friendId: String, completion: @escaping (Bool) -> ()) {
+	func userAreFriends(friendId: String, completion: @escaping (String) -> ()) {
 		let user = Auth.auth().currentUser
+		
+		
 		
 		if let user = user {
 			
-			let friendsRef = Database.database().reference().child("friends").child(user.uid)
+			if user.uid == friendId {
+				
+				completion("CurrentUser")
+			}
+			else {
+				
+				
+				let friendsRef = Database.database().reference().child("friends").child(user.uid)
+				
+				friendsRef.observeSingleEvent(of: .value, with: { (snapshot) in
+					
+					if snapshot.hasChild(friendId){
+						
+						print("users are friends")
+						completion("Friend")
+						
+					}
+					else {
+						
+						print("false room doesn't exist")
+						completion("GlobalUser")
+					}
+					
+					
+				})
+				
+			}
 			
-			friendsRef.observeSingleEvent(of: .value, with: { (snapshot) in
-				
-				if snapshot.hasChild(friendId){
-					
-					print("users are friends")
-					completion(true)
-					
-				}
-				else {
-					
-					print("false room doesn't exist")
-					completion(false)
-				}
-				
-				
-			})
 			
 			
 		}
 		
 		
 	}
+
+	
+	func UpdateUserBio(userBio: String, completion: @escaping (Bool) -> ()) {
+		
+		let user = Auth.auth().currentUser
+		
+		if let user = user {
+			self.userRef = Database.database().reference()
+			self.userRef.child("users/\(user.uid)/userBio").setValue(userBio)
+			completion(true)
+		}
+		else{
+			completion(false)
+		}
+		
+	}
+	
+
 	
 	
 }
