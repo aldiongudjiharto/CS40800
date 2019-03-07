@@ -110,11 +110,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 newImageView.contentMode = .center
                 newImageView.isUserInteractionEnabled = true
                 
-//                self.view.addSubview(newImageView)
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
-//                    // Code you want to be delayed
-//                    self.newImageView.sendSubviebviewToBack()
-//                }
+                let addFriendsPopUp:UIViewController = UIStoryboard(name: "MapView", bundle: nil).instantiateViewController(withIdentifier:"friendsPopUpID") as! FriendsAddViewController
+                self.addChild(addFriendsPopUp)
+                addFriendsPopUp.view.frame = self.view.frame
+                self.view.addSubview(addFriendsPopUp.view)
+                addFriendsPopUp.didMove(toParent: self)
                 
             }
             
