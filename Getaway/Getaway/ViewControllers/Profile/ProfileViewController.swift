@@ -103,19 +103,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             //the guy has a picture currently
             let viewPicture = UIAlertAction(title: "View Picture", style: UIAlertAction.Style.default) { (action) in
                 let imageView = self.profileImage as UIImageView
-                let newImageView = UIImageView(image: imageView.image)
                 
-                newImageView.frame = self.view.frame
-                newImageView.backgroundColor = UIColor.white
-                newImageView.contentMode = .center
-                newImageView.isUserInteractionEnabled = true
+                let addPicPopUp = UIStoryboard(name: "MapView", bundle: nil).instantiateViewController(withIdentifier:"picPopUpID") as! ProfilePictureViewController
                 
-                let addPicPopUp:UIViewController = UIStoryboard(name: "MapView", bundle: nil).instantiateViewController(withIdentifier:"picPopUpID") as! ProfilePictureViewController
-                //addPicPopUp.delegate = self
-                
+                addPicPopUp.picFromPreviousVC = self.profileImage.image
                 self.addChild(addPicPopUp)
                 addPicPopUp.view.frame = self.view.frame
-                // Add the image to send it 
+                
                 self.view.addSubview(addPicPopUp.view)
                 addPicPopUp.didMove(toParent: self)
                 
