@@ -110,11 +110,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 newImageView.contentMode = .center
                 newImageView.isUserInteractionEnabled = true
                 
-                let addFriendsPopUp:UIViewController = UIStoryboard(name: "MapView", bundle: nil).instantiateViewController(withIdentifier:"friendsPopUpID") as! FriendsAddViewController
-                self.addChild(addFriendsPopUp)
-                addFriendsPopUp.view.frame = self.view.frame
-                self.view.addSubview(addFriendsPopUp.view)
-                addFriendsPopUp.didMove(toParent: self)
+                let addPicPopUp:UIViewController = UIStoryboard(name: "MapView", bundle: nil).instantiateViewController(withIdentifier:"picPopUpID") as! ProfilePictureViewController
+                //addPicPopUp.delegate = self
+                
+                self.addChild(addPicPopUp)
+                addPicPopUp.view.frame = self.view.frame
+                // Add the image to send it 
+                self.view.addSubview(addPicPopUp.view)
+                addPicPopUp.didMove(toParent: self)
                 
             }
             
