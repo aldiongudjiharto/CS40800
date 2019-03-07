@@ -2,4 +2,246 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/ViewControllers/MapViewController.swift"
+            timestampString = "573613263.137237"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "displayFriendsAnnotations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/ViewControllers/MapViewController.swift"
+            timestampString = "573613263.13731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "displayFriendsAnnotations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/API/FirebaseClient.swift"
+            timestampString = "573613263.137365"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "retrieveCurrentUsersFriendsVisitedPlaces(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/API/FirebaseClient.swift"
+            timestampString = "573613263.138001"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "retrieveCurrentUsersFriendsVisitedPlaces(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; () in closure #1 (Swift.Dictionary&lt;Swift.String, Swift.String&gt;) -&gt; () in Getaway.FirebaseClient.retrieveCurrentUsersFriendsVisitedPlaces(completion: (Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/API/FirebaseClient.swift"
+                  timestampString = "573611613.3666821"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;, (key: Swift.String, value: __C.CLLocationCoordinate2D)) -&gt; () in closure #1 (Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; () in closure #1 (Swift.Dictionary&lt;Swift.String, Swift.String&gt;) -&gt; () in Getaway.FirebaseClient.retrieveCurrentUsersFriendsVisitedPlaces(completion: (Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/API/FirebaseClient.swift"
+                  timestampString = "573611613.36891"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "43">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/API/FirebaseClient.swift"
+            timestampString = "573613263.138484"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "retrieveCurrentUsersFriendsVisitedPlaces(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/API/FirebaseClient.swift"
+            timestampString = "573613263.138948"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "retrieveAllUsersVisitedPlaces(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Getaway.FirebaseClient.retrieveAllUsersVisitedPlaces(completion: (Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/API/FirebaseClient.swift"
+                  timestampString = "573613188.536581"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "207"
+                  endingLineNumber = "207"
+                  offsetFromSymbolStart = "531">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.String&gt;) -&gt; () in Getaway.FirebaseClient.retrieveAllUsersVisitedPlaces(completion: (Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/API/FirebaseClient.swift"
+                  timestampString = "573613188.541333"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
+                  offsetFromSymbolStart = "63">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/API/FirebaseClient.swift"
+            timestampString = "573613263.1393729"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "retrieveAllUsersVisitedPlaces(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/API/FirebaseClient.swift"
+            timestampString = "573613263.139791"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "retrieveAllUsersVisitedPlaces(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; () in closure #1 (Swift.Dictionary&lt;Swift.String, Swift.String&gt;) -&gt; () in Getaway.FirebaseClient.retrieveAllUsersVisitedPlaces(completion: (Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/API/FirebaseClient.swift"
+                  timestampString = "573613188.546741"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;, (key: Swift.String, value: __C.CLLocationCoordinate2D)) -&gt; () in closure #1 (Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; () in closure #1 (Swift.Dictionary&lt;Swift.String, Swift.String&gt;) -&gt; () in Getaway.FirebaseClient.retrieveAllUsersVisitedPlaces(completion: (Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/API/FirebaseClient.swift"
+                  timestampString = "573613188.548694"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "43">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/API/FirebaseClient.swift"
+            timestampString = "573613263.140206"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "retrieveAllUsersVisitedPlaces(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

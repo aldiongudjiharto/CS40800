@@ -97,14 +97,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func displayGlobalAnnotations() {
         print("public")
-        addAnnotationUsingCoordinate(lat: 22.5726, long: 88.3639, title: "Kolkata", subtitle: "GlobalUser1")
-        addAnnotationUsingCoordinate(lat: 28.7041, long: 77.1025, title: "Delhi", subtitle: "GlobalUser2")
+		FirebaseClient().retrieveAllUsersVisitedPlaces { (usersVisitedPlaces) in
+			print("done with global users request")
+			for visitedPlace in usersVisitedPlaces {
+				print(visitedPlace)
+				var place = visitedPlace.key
+				var coordinate = visitedPlace.value
+				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: "Global User")
+			}
+		}
     }
     
     func displayFriendsAnnotations() {
         print("friends")
-        addAnnotationUsingCoordinate(lat: 40.4637, long: 3.7492, title: "Spain", subtitle: "FriendUser1")
-        addAnnotationUsingCoordinate(lat: 40.2672, long: -86.1349, title: "Indiana", subtitle: "FriendUser2")
+		FirebaseClient().retrieveCurrentUsersFriendsVisitedPlaces { (friendsVisitedPlaces) in
+			
+			print("done with friends request")
+			for visitedPlace in friendsVisitedPlaces {
+				print(visitedPlace)
+				var place = visitedPlace.key
+				var coordinate = visitedPlace.value
+				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: "Friend")
+			}
+		}
     }
     
     func displayPersonalAnnotations() {
