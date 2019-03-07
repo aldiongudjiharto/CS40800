@@ -76,7 +76,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let myActionSheet = UIAlertController(title: "Profile Picture", message: "Please select one of the following:", preferredStyle: UIAlertController.Style.actionSheet)
         if (hasPicture == false){
             //the guy has no picture currently
-            let photoGallery = UIAlertAction(title: "Photos", style: UIAlertAction.Style.default) { (action) in
+            let photoGallery = UIAlertAction(title: "Add Picture", style: UIAlertAction.Style.default) { (action) in
                 if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.savedPhotosAlbum)
                 {
                     self.imagePicker.delegate = self
@@ -86,16 +86,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 }
             }
             
-            let camera = UIAlertAction(title: "Camera", style: UIAlertAction.Style.default) { (action) in
-                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-                    self.imagePicker.delegate = self
-                    self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
-                    self.imagePicker.allowsEditing = true
-                    self.present(self.imagePicker, animated: true, completion: nil)
-                }
-            }
             myActionSheet.addAction(photoGallery)
-            myActionSheet.addAction(camera)
             myActionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
             self.present(myActionSheet, animated: true, completion: nil)
             
@@ -115,7 +106,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 
             }
             
-            let photoGallery = UIAlertAction(title: "Photos", style: UIAlertAction.Style.default) { (action) in
+            let photoGallery = UIAlertAction(title: "Add Picture", style: UIAlertAction.Style.default) { (action) in
                 if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.savedPhotosAlbum)
                 {
                     self.imagePicker.delegate = self
@@ -125,17 +116,30 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 }
             }
             
-            let camera = UIAlertAction(title: "Camera", style: UIAlertAction.Style.default) { (action) in
-                if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-                    self.imagePicker.delegate = self
-                    self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
-                    self.imagePicker.allowsEditing = true
-                    self.present(self.imagePicker, animated: true, completion: nil)
+            let delete = UIAlertAction(title: "Delete Picture", style: UIAlertAction.Style.default) { (action) in
+                //DO STUFF FOR DELETING
+                self.userRef.child("profile_pics").child(self.user!.uid).removeValue()
+                self.hasPicture = false
+                
+                // Create a reference to the file to delete
+                let desertRef = self.storageRef.child("\(self.user!.uid)/profile_pic")
+                
+                // Delete the file
+                desertRef.delete { error in
+                    if let error = error {
+                        // Uh-oh, an error occurred!
+                    } else {
+                        // File deleted successfully
+                    }
                 }
+                
+                self.profileImage.image = UIImage(named: "blank-profile-picture-973460_960_720")
+                
+                
             }
             myActionSheet.addAction(viewPicture)
             myActionSheet.addAction(photoGallery)
-            myActionSheet.addAction(camera)
+            myActionSheet.addAction(delete)
             myActionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
             self.present(myActionSheet, animated: true, completion: nil)
         }
