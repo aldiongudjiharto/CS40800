@@ -20,7 +20,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var myUserName: UILabel!
     @IBOutlet weak var myBio: UITextView!
-    @IBOutlet weak var bioButton: UIButton!
     var imagePicker = UIImagePickerController()
     var userRef = Database.database().reference()
     var hasPicture = false
@@ -28,6 +27,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		self.myBio.endEditing(true)
         // Do any additional setup after loading the view.
 		var userDict1:[String: String] = ["":""]
 		FirebaseClient().retrieveUserInformation(completion: {(userDict) in
@@ -59,6 +59,20 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             
         }
     }
+	
+	
+	
+	
+	
+	func updateUserInformation() {
+		FirebaseClient().retrieveUserInformation(completion: {(userDict) in
+			if userDict != nil {
+				self.setUserDetails(userDictionary: userDict)
+			}
+			
+		})
+	}
+	
         
     
     func setUserDetails(userDictionary: [String: String]){
@@ -67,6 +81,17 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         print(fullName)
         myName.text = fullName
         myUserName.text = userDictionary["username"]!
+		
+		
+		var bioText = userDictionary["userBio"]!.trimmingCharacters(in: .whitespaces)
+		if  bioText != nil && bioText != "" {
+			myBio.text = userDictionary["userBio"]!
+		}
+		else {
+			myBio.text = "*Enter your bio here*"
+		}
+		
+		updateBioPlaceHolder()
         
     }
     
@@ -146,6 +171,45 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
        
         
     }
+	
+	@IBAction func saveBioButtonClicked(_ sender: Any) {
+		self.myBio.endEditing(true)
+		
+		if myBio.text != "*Enter your bio here*" {
+			
+			FirebaseClient().UpdateUserBio(userBio: myBio.text!) { (bioUpdated) in
+				if bioUpdated == true {
+					self.displayAlert(message: "Bio Updated Successfully!")
+					
+					self.updateUserInformation()
+				}
+				else{
+					self.displayAlert(message: "Error Occured")
+				}
+			}
+		}
+		
+	}
+	
+	
+	func updateBioPlaceHolder() {
+		var bio = myBio.text.trimmingCharacters(in: .whitespaces)
+		bio = bio.replacingOccurrences(of: "\n", with: "")
+		
+		if bio == nil || bio == "" {
+			myBio.text = "*Enter your bio here*"
+		}
+	}
+	
+	
+	func displayAlert(message:String? = "Error Occured"){
+		let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+		
+		alert.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
+		
+		self.present(alert, animated: true, completion: nil)
+	}
+	
     
     func setProfilePicture(imageView:UIImageView, imageToSet:UIImage)
     {
@@ -154,7 +218,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         imageView.layer.masksToBounds = true
         imageView.image = imageToSet
     }
-    
+	
+	
+	@IBAction func tapGestureRecognizerClicked(_ sender: Any) {
+		myBio.endEditing(true)
+	}
+	
+	
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         setProfilePicture(imageView: self.profileImage, imageToSet: image)
         

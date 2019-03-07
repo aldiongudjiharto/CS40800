@@ -232,6 +232,9 @@
                                 <state key="normal" title="Save bio">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveBioButtonClicked:" destination="VaN-n9-Cxu" eventType="touchUpInside" id="QmS-8r-tIM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7I-85-HVh">
                                 <rect key="frame" x="131" y="340" width="115" height="21"/>
@@ -276,11 +279,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="xje-HM-YCx"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="CnQ-oJ-k5R" appends="YES" id="Azp-iS-q1d"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="icons8-user-50" selectedImage="icons8-user-50" id="TsJ-Ex-9zs"/>
                     <connections>
-                        <outlet property="bioButton" destination="efd-Rd-GlH" id="xHG-ha-x99"/>
                         <outlet property="myBio" destination="wkn-8x-nJ3" id="V22-7g-063"/>
                         <outlet property="myName" destination="W8n-3f-tWP" id="OLf-Yj-217"/>
                         <outlet property="myUserName" destination="z7I-85-HVh" id="DwE-tc-Un5"/>
@@ -288,6 +294,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xht-Ev-sA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="CnQ-oJ-k5R">
+                    <connections>
+                        <action selector="tapGestureRecognizerClicked:" destination="VaN-n9-Cxu" id="5EF-1f-pDU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3704.8000000000002" y="-1431.2807881773399"/>
         </scene>
