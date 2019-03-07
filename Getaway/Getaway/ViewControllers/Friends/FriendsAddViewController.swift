@@ -17,6 +17,7 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
     var friendsDict1:[String: String] = ["":""]
     var list = [""]
     var selectednames = [String]()
+    var myUsername = ""
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
@@ -24,9 +25,7 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddFriendsCell", for: indexPath) as! AddFriendsCell
-        
         cell.friendUsername?.text = list[indexPath.row]
-        
         return cell
     }
 
@@ -38,16 +37,26 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
         self.view.layer.masksToBounds = true;
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         
-        // Do any additional setup after loading the view.
         
+        var userDict1:[String: String] = ["":""]
+        FirebaseClient().retrieveUserInformation(completion: {(userDict) in
+            userDict1 = userDict
+            self.myUsername = userDict1["username"]!
+            print(self.myUsername)
+        })
+        
+        // Do any additional setup after loading the view.
         FirebaseClient().getAllUsers(completion: {(friendsDict) in
             self.friendsDict1 = friendsDict
             self.list = Array(self.friendsDict1.keys)
+            self.list.remove(at: self.list.firstIndex(of: self.myUsername)!)
             print(self.list)
             self.tableView.reloadData()
             self.tableView.delegate = self
             self.tableView.dataSource = self
         })
+        
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

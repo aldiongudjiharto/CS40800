@@ -40,8 +40,7 @@ class FriendsTableViewController: UIViewController, UITableViewDelegate, UITable
         FirebaseClient().getAllFriends(completion: {(friendsDict) in
             self.friendsDict1 = friendsDict
             self.list = Array(self.friendsDict1.values)
-            print("-------")
-            print(self.list)
+
             self.tableView.reloadData()
             self.tableView.delegate = self
             self.tableView.dataSource = self
