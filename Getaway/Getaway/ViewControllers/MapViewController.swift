@@ -100,10 +100,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 		FirebaseClient().retrieveAllUsersVisitedPlaces { (usersVisitedPlaces) in
 			print("done with global users request")
 			for visitedPlace in usersVisitedPlaces {
-				print(visitedPlace)
-				var place = visitedPlace.key
-				var coordinate = visitedPlace.value
-				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: "Global User")
+				var place = visitedPlace.placeName
+				var coordinate = visitedPlace.coordinates
+				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName)
 			}
 		}
     }
@@ -114,10 +113,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 			
 			print("done with friends request")
 			for visitedPlace in friendsVisitedPlaces {
-				print(visitedPlace)
-				var place = visitedPlace.key
-				var coordinate = visitedPlace.value
-				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: "Friend")
+				var place = visitedPlace.placeName
+				var coordinate = visitedPlace.coordinates
+				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName)
 			}
 		}
     }
@@ -131,12 +129,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 				print("comes here for places")
 				
 				for visitedPlace in visitedPlaces {
-					
-					
+
 					print(visitedPlace)
-					var place = visitedPlace.key
-					var coordinate = visitedPlace.value
-					self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: "Mine")
+					var place = visitedPlace.placeName
+					var coordinate = visitedPlace.coordinates
+					self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName)
 				}
 		}
     }

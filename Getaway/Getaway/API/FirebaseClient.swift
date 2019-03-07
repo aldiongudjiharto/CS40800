@@ -136,52 +136,61 @@ class FirebaseClient {
 		}
 	}
 	
-	func retrieveCurrentUsersVisitedPlaces(completion: @escaping ([String: CLLocationCoordinate2D]) -> ()){
+	func retrieveCurrentUsersVisitedPlaces(completion: @escaping ([Place]) -> ()){
 		let user = Auth.auth().currentUser
-		var visitedPlacesDict = [String: CLLocationCoordinate2D]()
+//		var visitedPlacesDict = [String: CLLocationCoordinate2D]()
+		var visitedPlacesDict = [Place]()
 		if let user = user {
 			// The user's ID, unique to the Firebase project.
 			// Do NOT use this value to authenticate with your backend server,
 			// if you have one. Use getTokenWithCompletion:completion: instead.
 			
-			let visitedRef = Database.database().reference().child("visited").child(user.uid)
-			
-			visitedRef.observeSingleEvent(of: .value, with: { snapshot in
-				print(snapshot.key)
-				for child in snapshot.children {
-					let snap = child as! DataSnapshot
-					let placeDict = snap.value as! [String: Any]
-					let lat = placeDict["lat"] as! CLLocationDegrees
-					let long = placeDict["long"] as! CLLocationDegrees
-					var placeName = snap.key
-					print(snap.key)
-					print(lat, long)
-					visitedPlacesDict[placeName] = CLLocationCoordinate2DMake(lat, long)
-				}
-				print(visitedPlacesDict)
-				completion(visitedPlacesDict)
-			})
-			
+			retrieveUserInformation { (currentUserInfo) in
+				
+				let visitedRef = Database.database().reference().child("visited").child(user.uid)
+				
+				visitedRef.observeSingleEvent(of: .value, with: { snapshot in
+					print(snapshot.key)
+					for child in snapshot.children {
+						let snap = child as! DataSnapshot
+						let placeDict = snap.value as! [String: Any]
+						let lat = placeDict["lat"] as! CLLocationDegrees
+						let long = placeDict["long"] as! CLLocationDegrees
+						var placeName = snap.key
+						print(snap.key)
+						print(lat, long)
+						visitedPlacesDict.append(Place(placeName: placeName, coordinates: CLLocationCoordinate2DMake(lat, long), userID: user.uid, userName: currentUserInfo["username"]!))
+						//					visitedPlacesDict[placeName] = CLLocationCoordinate2DMake(lat, long)
+					}
+					print(visitedPlacesDict)
+					completion(visitedPlacesDict)
+				})
+				
+		
+			}
+	
 			
 			// ...
 		}
 	}
 	
 	
-	func retrieveCurrentUsersFriendsVisitedPlaces(completion: @escaping ([String: CLLocationCoordinate2D]) -> ()) {
-		var visitedPlacesDict = [String: CLLocationCoordinate2D]()
+	func retrieveCurrentUsersFriendsVisitedPlaces(completion: @escaping ([Place]) -> ()) {
+		var visitedPlacesDict = [Place]()
 		var count = 0
 		getAllFriends { (friendList) in
 			for friend in friendList {
 				print(friend)
 				count = count + 1
-				FirebaseClient().getVisitedPlacesForUser(userId: friend.key, completion: { (friendVisitedPlaces) in
+				FirebaseClient().getVisitedPlacesForUser(userId: friend.key, username: friend.value, completion: { (friendVisitedPlaces) in
 					if friendVisitedPlaces.isEmpty {
 						//not sure about this one
 						
 					}
 					else {
-						visitedPlacesDict = visitedPlacesDict.reduce(into: friendVisitedPlaces) { (r, e) in r[e.0] = e.1 }
+						
+						visitedPlacesDict.append(contentsOf: friendVisitedPlaces)
+//						visitedPlacesDict = visitedPlacesDict.reduce(into: friendVisitedPlaces) { (r, e) in r[e.0] = e.1 }
 						
 						if friendList.count == count {
 							completion(visitedPlacesDict)
@@ -199,8 +208,10 @@ class FirebaseClient {
 	}
 	
 	
-	func retrieveAllUsersVisitedPlaces(completion: @escaping ([String: CLLocationCoordinate2D]) -> ()) {
-		var visitedPlacesDict = [String: CLLocationCoordinate2D]()
+	func retrieveAllUsersVisitedPlaces(completion: @escaping ([Place]) -> ()) {
+		var visitedPlacesDict = [Place]()
+		
+
 		var count = 0
 		
 		print("coming to all users")
@@ -208,14 +219,14 @@ class FirebaseClient {
 			for user in userList {
 				print(user)
 				count = count + 1
-				FirebaseClient().getVisitedPlacesForUser(userId: user.key, completion: { (userVisitedPlaces) in
+				FirebaseClient().getVisitedPlacesForUser(userId: user.key, username: user.value, completion: { (userVisitedPlaces) in
 					if userVisitedPlaces.isEmpty {
 						//not sure about this one
 						
 					}
 					else {
-						visitedPlacesDict = visitedPlacesDict.reduce(into: userVisitedPlaces) { (r, e) in r[e.0] = e.1 }
-						
+//						visitedPlacesDict = visitedPlacesDict.reduce(into: userVisitedPlaces) { (r, e) in r[e.0] = e.1 }
+						visitedPlacesDict.append(contentsOf: userVisitedPlaces)
 						if userList.count == count {
 							completion(visitedPlacesDict)
 						}
@@ -233,9 +244,9 @@ class FirebaseClient {
 	
 	
 	
-	func getVisitedPlacesForUser(userId: String ,completion: @escaping ([String: CLLocationCoordinate2D]) -> ()) {
+	func getVisitedPlacesForUser(userId: String, username: String, completion: @escaping ([Place]) -> ()) {
 		
-		var visitedPlacesDict = [String: CLLocationCoordinate2D]()
+		var visitedPlacesDict = [Place]()
 		
 		let visitedRef = Database.database().reference().child("visited").child(userId)
 		
@@ -249,7 +260,8 @@ class FirebaseClient {
 				var placeName = snap.key
 				//print(snap.key)
 				//print(lat, long)
-				visitedPlacesDict[placeName] = CLLocationCoordinate2DMake(lat, long)
+				visitedPlacesDict.append(Place(placeName: placeName, coordinates: CLLocationCoordinate2DMake(lat, long), userID: userId, userName: username))
+//				visitedPlacesDict[placeName] = CLLocationCoordinate2DMake(lat, long)
 			}
 			//					print(visitedPlacesDict)
 			

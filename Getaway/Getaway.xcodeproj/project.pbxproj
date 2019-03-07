@@ -21,6 +21,7 @@
 		D4D71F7E2229BF2F003410F7 /* FriendsAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D71F7D2229BF2F003410F7 /* FriendsAddViewController.swift */; };
 		D4E5ADAC22291AD700055F62 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5ADAB22291AD700055F62 /* FriendCell.swift */; };
 		D7E6973CAB97F2983931328A /* Pods_Getaway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F0614271172E0FA62F7063 /* Pods_Getaway.framework */; };
+		E10405282230A77200A0809C /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10405272230A77200A0809C /* Place.swift */; };
 		E1247BCB220E31C600C33555 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BCA220E31C600C33555 /* LoginViewController.swift */; };
 		E1247BCD220E321F00C33555 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BCC220E321F00C33555 /* MapViewController.swift */; };
 		E1247BD4220E353500C33555 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1247BD2220E353500C33555 /* MapView.storyboard */; };
@@ -78,6 +79,7 @@
 		D4C5DE2C22178D23006AA2A5 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		D4D71F7D2229BF2F003410F7 /* FriendsAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAddViewController.swift; sourceTree = "<group>"; };
 		D4E5ADAB22291AD700055F62 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		E10405272230A77200A0809C /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		E1247BCA220E31C600C33555 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E1247BCC220E321F00C33555 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E1247BD3220E353500C33555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapView.storyboard; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				E140D1C42214F4D100A7A160 /* User.swift */,
+				E10405272230A77200A0809C /* Place.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				E17E7A7D2229F73A001BB3A9 /* SelectUsernameViewController.swift in Sources */,
 				D4D71F7E2229BF2F003410F7 /* FriendsAddViewController.swift in Sources */,
 				E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */,
+				E10405282230A77200A0809C /* Place.swift in Sources */,
 				D4BF5CE022305804005672ED /* MyChatViewController.swift in Sources */,
 				D4BEC6EF2229D55F00F72421 /* AddFriendsCell.swift in Sources */,
 			);
