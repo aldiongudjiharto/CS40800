@@ -333,6 +333,9 @@ class FirebaseClient {
     }
 	
 	
+	
+	
+	
 	func getAllUsersWithUserId(completion: @escaping ([String: String]) -> ()){
 		let user = Auth.auth().currentUser
 		var usersDict = [String: String]()
@@ -382,6 +385,37 @@ class FirebaseClient {
 			
 			
 		}
+	}
+	
+	
+	func userAreFriends(friendId: String, completion: @escaping (Bool) -> ()) {
+		let user = Auth.auth().currentUser
+		
+		if let user = user {
+			
+			let friendsRef = Database.database().reference().child("friends").child(user.uid)
+			
+			friendsRef.observeSingleEvent(of: .value, with: { (snapshot) in
+				
+				if snapshot.hasChild(friendId){
+					
+					print("users are friends")
+					completion(true)
+					
+				}
+				else {
+					
+					print("false room doesn't exist")
+					completion(false)
+				}
+				
+				
+			})
+			
+			
+		}
+		
+		
 	}
 	
 	
