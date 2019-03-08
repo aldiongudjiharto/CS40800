@@ -17,6 +17,7 @@
 		D4BF5CDE22305376005672ED /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BF5CDD22305376005672ED /* ChatCell.swift */; };
 		D4BF5CE022305804005672ED /* MyChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BF5CDF22305804005672ED /* MyChatViewController.swift */; };
 		D4BF5CE22230C9ED005672ED /* ProfilePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BF5CE12230C9EC005672ED /* ProfilePictureViewController.swift */; };
+		D4BF5CE42231FC98005672ED /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BF5CE32231FC98005672ED /* FriendProfileViewController.swift */; };
 		D4C5DE2B221785F1006AA2A5 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */; };
 		D4C5DE2D22178D25006AA2A5 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C5DE2C22178D23006AA2A5 /* FriendsTableViewController.swift */; };
 		D4D71F7E2229BF2F003410F7 /* FriendsAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D71F7D2229BF2F003410F7 /* FriendsAddViewController.swift */; };
@@ -77,6 +78,7 @@
 		D4BF5CDD22305376005672ED /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		D4BF5CDF22305804005672ED /* MyChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatViewController.swift; sourceTree = "<group>"; };
 		D4BF5CE12230C9EC005672ED /* ProfilePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureViewController.swift; sourceTree = "<group>"; };
+		D4BF5CE32231FC98005672ED /* FriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
 		D4C5DE2A221785F0006AA2A5 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		D4C5DE2C22178D23006AA2A5 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		D4D71F7D2229BF2F003410F7 /* FriendsAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAddViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				D4E5ADAB22291AD700055F62 /* FriendCell.swift */,
 				D4D71F7D2229BF2F003410F7 /* FriendsAddViewController.swift */,
 				D4BEC6EE2229D55F00F72421 /* AddFriendsCell.swift */,
+				D4BF5CE32231FC98005672ED /* FriendProfileViewController.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BF5CE42231FC98005672ED /* FriendProfileViewController.swift in Sources */,
 				D45902A22228E0840048D198 /* ChatsTableViewController.swift in Sources */,
 				D4BF5CE22230C9ED005672ED /* ProfilePictureViewController.swift in Sources */,
 				D46A7F72220E779100683694 /* ProfileViewController.swift in Sources */,

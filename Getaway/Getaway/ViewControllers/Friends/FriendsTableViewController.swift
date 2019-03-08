@@ -15,6 +15,7 @@ class FriendsTableViewController: UIViewController, UITableViewDelegate, UITable
     var filteredArrayName = [String]()
     var showSearchResults = false
     let searchBar = UISearchBar()
+    var selectedIndex = 0
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -44,7 +45,6 @@ class FriendsTableViewController: UIViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view.
         fetchData()
         createSearchBar()
-        self.title = "Chats"
     }
     
     func createSearchBar() {
@@ -84,6 +84,11 @@ class FriendsTableViewController: UIViewController, UITableViewDelegate, UITable
         })
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: "viewProfile", sender: self)
+    }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         searchBar.endEditing(true)
     }
@@ -110,6 +115,21 @@ class FriendsTableViewController: UIViewController, UITableViewDelegate, UITable
         addFriendsPopUp.didMove(toParent: self)
         fetchData()
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewProfile" {
+            let viewController = segue.destination as! FriendProfileViewController
+            // Setup new view controller
+            if (showSearchResults){
+                let username = filteredArrayName[selectedIndex]
+                viewController.username = username
+            } else {
+                let username = list[selectedIndex]
+                viewController.username = username
+                
+            }
+        }
     }
     
 }

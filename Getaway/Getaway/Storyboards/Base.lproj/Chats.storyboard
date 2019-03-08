@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ntd-mk-r4W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5740" y="-734"/>
+            <point key="canvasLocation" x="5737" y="-742"/>
         </scene>
         <!--Chat Nav View Controller-->
         <scene sceneID="7RO-Tp-Pn0">

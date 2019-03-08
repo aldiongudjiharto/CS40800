@@ -32,6 +32,7 @@ class ChatsTableViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         self.tabBarController?.tabBar.isHidden = false
+        self.title = "Chats"
         fetchData()
 
         // Do any additional setup after loading the view.

@@ -79,8 +79,21 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
             return name.lowercased().range(of:searchText.lowercased()) != nil
         })
         
-        if mySearch == "" {
+         if mySearch == "" && selectednames.count == 0 {
             showSearchResults = false
+            self.tableView.reloadData()
+        } else if mySearch == ""  {
+            showSearchResults = false
+//            print(selectednames)
+//            var num: Int
+//            for name in selectednames{
+//                num = list.firstIndex(of: name)!
+//                let myIndexPath = IndexPath(row: num, section: 0)
+//                print(num)
+//                let cell = tableView.cellForRow(at: myIndexPath)!
+//                cell.accessoryType = .checkmark
+//            }
+            
             self.tableView.reloadData()
         } else {
             showSearchResults = true
