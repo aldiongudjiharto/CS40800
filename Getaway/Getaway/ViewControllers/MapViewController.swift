@@ -34,7 +34,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     let locationManager = CLLocationManager()
     
-    
+	var usersVisited: [User]!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -77,7 +78,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 			locationAnnotation.titleVisibility = .adaptive
 			locationAnnotation.subtitleVisibility = .adaptive
 			locationAnnotation.markerTintColor = color
-			
+			locationAnnotation.canShowCallout = true
 			return locationAnnotation
 		}
 		
@@ -99,6 +100,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             break
         }
     }
+	
+	
     
 	@IBAction func addPlaceButtonClicked(_ sender: Any) {
 		let autocompleteController = GMSAutocompleteViewController()
@@ -376,9 +379,51 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
 	
+	func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+		print("Annotation selected")
+		
+		let customGesture = UITapGestureRecognizer(target: self, action: #selector(calloutTapped(sender:)))
+		view.addGestureRecognizer(customGesture)
+		
+
+	}
+	
+	
+	@objc func calloutTapped(sender:UITapGestureRecognizer) {
+		guard let annotation = (sender.view as? MKAnnotationView)?.annotation as? LocationAnnotation else { return }
+		usersVisited = annotation.usersVisitedList
+		
+		let annotationView = (sender.view as? MKAnnotationView)!
+//		annotationView.removeGestureRecognizer(sender)
+		
+		self.performSegue(withIdentifier: "annotationClickedSegue", sender: nil)
+		
+	}
+	
+	func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+		
+		print("coming here")
+		//navigationController?.pushViewController(viewControllerToCommit, animated: true)
+	}
+	
+	
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		
+		if segue.identifier == "annotationClickedSegue" {
+			let vc = segue.destination as! VisitedUsersViewController
+			vc.usersVisitedList = usersVisited
+		}
+	}
+	
+//	func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+//		print("Pin clicked");
+//	}
 
     
 }
+
+
 
 
 extension MapViewController: GMSAutocompleteViewControllerDelegate {

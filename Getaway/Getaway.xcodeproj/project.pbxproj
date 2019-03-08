@@ -32,6 +32,8 @@
 		E1247BDE220E551000C33555 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1247BDD220E551000C33555 /* SignInViewController.swift */; };
 		E140D1C22214F2CA00A7A160 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140D1C12214F2CA00A7A160 /* FirebaseClient.swift */; };
 		E140D1C52214F4D100A7A160 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140D1C42214F4D100A7A160 /* User.swift */; };
+		E170236A22321E390008490D /* VisitedUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170236922321E390008490D /* VisitedUsersViewController.swift */; };
+		E170236D223223800008490D /* UserProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170236C223223800008490D /* UserProfileTableViewCell.swift */; };
 		E17E7A7D2229F73A001BB3A9 /* SelectUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E7A7C2229F73A001BB3A9 /* SelectUsernameViewController.swift */; };
 		E1EA941E220D4B4200A71626 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EA941D220D4B4200A71626 /* AppDelegate.swift */; };
 		E1EA9423220D4B4200A71626 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1EA9421220D4B4200A71626 /* Main.storyboard */; };
@@ -92,6 +94,8 @@
 		E1247BDD220E551000C33555 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		E140D1C12214F2CA00A7A160 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		E140D1C42214F4D100A7A160 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E170236922321E390008490D /* VisitedUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedUsersViewController.swift; sourceTree = "<group>"; };
+		E170236C223223800008490D /* UserProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCell.swift; sourceTree = "<group>"; };
 		E17E7A7C2229F73A001BB3A9 /* SelectUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUsernameViewController.swift; sourceTree = "<group>"; };
 		E1EA941A220D4B4200A71626 /* Getaway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Getaway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EA941D220D4B4200A71626 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 				D4E5ADA922291AA000055F62 /* Profile */,
 				D4E5ADA822291A8200055F62 /* Chats */,
 				E1247BCA220E31C600C33555 /* LoginViewController.swift */,
+				E170236B2232232E0008490D /* UsersList */,
 				E1247BCC220E321F00C33555 /* MapViewController.swift */,
 				E1247BDD220E551000C33555 /* SignInViewController.swift */,
 				E17E7A7C2229F73A001BB3A9 /* SelectUsernameViewController.swift */,
@@ -238,6 +243,15 @@
 				E10405272230A77200A0809C /* Place.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E170236B2232232E0008490D /* UsersList */ = {
+			isa = PBXGroup;
+			children = (
+				E170236922321E390008490D /* VisitedUsersViewController.swift */,
+				E170236C223223800008490D /* UserProfileTableViewCell.swift */,
+			);
+			path = UsersList;
 			sourceTree = "<group>";
 		};
 		E1EA9411220D4B4200A71626 = {
@@ -586,7 +600,9 @@
 				D46A7F72220E779100683694 /* ProfileViewController.swift in Sources */,
 				D4C5DE2B221785F1006AA2A5 /* ProfileSettingsViewController.swift in Sources */,
 				D4BF5CDE22305376005672ED /* ChatCell.swift in Sources */,
+				E170236A22321E390008490D /* VisitedUsersViewController.swift in Sources */,
 				E1247BCB220E31C600C33555 /* LoginViewController.swift in Sources */,
+				E170236D223223800008490D /* UserProfileTableViewCell.swift in Sources */,
 				E1247BCD220E321F00C33555 /* MapViewController.swift in Sources */,
 				E140D1C52214F4D100A7A160 /* User.swift in Sources */,
 				D45902A42228E0FC0048D198 /* ChatNavViewController.swift in Sources */,
