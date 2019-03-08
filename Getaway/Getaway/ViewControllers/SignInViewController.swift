@@ -147,6 +147,13 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         return true
     }
     
+    func checkIfEmailFieldIsFilled() -> (Bool) {
+        if emailTextField.text == "" {
+            return false
+        }
+        return true
+    }
+    
     func displayAlert(message:String? = "Please check your credentials"){
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
         
@@ -209,59 +216,27 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
     
     @IBAction func forgotPasswordClicked(_ sender: UIButton) {
         let title = "Forgot Password?"
-        
         let message = "Insert your email address below to reset password"
-        
-        
-        
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        
-        
         alertController.addTextField { (nameTextField) in
-            
-            
-            
             nameTextField.placeholder = "Email"
-            
             self.emailTextField = nameTextField
-            
         }
-        
-        
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            
         }
-        
-        
-        
         let sendAction = UIAlertAction(title: "Send", style: .default) { (action) in
-            
-            Auth.auth().sendPasswordReset(withEmail: self.emailTextField.text!, completion: { (error) in
-                
+            if self.checkIfEmailFieldIsFilled() == true {
+                Auth.auth().sendPasswordReset(withEmail: self.emailTextField.text!, completion: { (error) in
                 print("error")
-                
-            })
-            
-            
-            
+                })
+            } else {
+                self.displayAlert(message: "Please make sure email field is filled")
+            }
         }
-        
-        
-        
         alertController.addAction(cancelAction)
-        
         alertController.addAction(sendAction)
-        
-        
-        
-        self.present(alertController, animated: true, completion: nil)
-        
-        
-        
-        
-        
+        self.present(alertController, animated: true, completion: nil)  
     }
     
     
