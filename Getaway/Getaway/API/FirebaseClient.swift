@@ -190,11 +190,9 @@ class FirebaseClient {
 					print(visitedPlacesDict)
 					completion(visitedPlacesDict)
 				})
-				
-		
+
 			}
-	
-			
+
 			// ...
 		}
 	}
@@ -206,8 +204,9 @@ class FirebaseClient {
 		getAllFriends { (friendList) in
 			for friend in friendList {
 				print(friend)
-				count = count + 1
+				
 				FirebaseClient().getVisitedPlacesForUser(userId: friend.key, username: friend.value, completion: { (friendVisitedPlaces) in
+					count = count + 1
 					if friendVisitedPlaces.isEmpty {
 						//not sure about this one
 						
@@ -301,26 +300,29 @@ class FirebaseClient {
 	}
 	
     func getUniqueIdFromUsername( username: String, completion: @escaping (String) -> ()){
-        
-        let usersRef = Database.database().reference().child("users")
-        print("here comes the user id!!")
-        usersRef.observeSingleEvent(of: .value, with: { snapshot in
-            print(snapshot.key)
-            for child in snapshot.children {
-                let snap = child as! DataSnapshot
-                var userInfoDict = snap.value as! [String: String]
-				let userNameVal = userInfoDict["username"]!
-                print("here comes the user id!!")
-
-                if userNameVal == username {
-                    print("here found the user id!!")
-                    print(snap.key)
-                    print(userInfoDict)
-                    completion(snap.key)
-                    return
-                }
-            }
-        })
+		let user = Auth.auth().currentUser
+		
+		if let user = user {
+			
+			let usersRef = Database.database().reference().child("users")
+			
+			usersRef.observeSingleEvent(of: .value, with: { snapshot in
+				print(snapshot.key)
+				for child in snapshot.children {
+					
+					let snap = child as! DataSnapshot
+					
+					let userDict = snap.value as! [String: String]
+					let userId = snap.key
+					
+					if userDict["username"] == username {
+						completion(userId)
+					}
+				}
+			})
+			
+			
+		}
     }
     
 	
