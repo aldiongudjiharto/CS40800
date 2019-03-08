@@ -171,6 +171,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 			var placeUserListMap = [String : [User]]()
 			var placeCoordinateDict = [String: CLLocationCoordinate2D]()
 			var i = 0
+			
 			for visitedPlace in visitedPlaces {
 				
 				placeCoordinateDict[visitedPlace.placeName] = visitedPlace.coordinates
@@ -191,7 +192,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 						(placeUserListMap[visitedPlace.placeName]!).append(currentPlaceUser)
 					}
 					
-					if i == visitedPlaces.count - 1 {
+					if i == visitedPlaces.count {
 						
 						print("creating maps over")
 						//print(placeUserListMap)

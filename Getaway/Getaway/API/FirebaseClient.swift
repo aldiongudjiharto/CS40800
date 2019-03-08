@@ -231,7 +231,7 @@ class FirebaseClient {
 					else {
 //						visitedPlacesDict = visitedPlacesDict.reduce(into: userVisitedPlaces) { (r, e) in r[e.0] = e.1 }
 						visitedPlacesDict.append(contentsOf: userVisitedPlaces)
-						if userList.count - 1 == count {
+						if userList.count == count {
 //							print("all users search completed:")
 //							for place in visitedPlacesDict {
 //								print(place.placeName)
