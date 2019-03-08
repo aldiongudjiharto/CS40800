@@ -11,7 +11,7 @@ import UIKit
 class VisitedUsersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	
-
+    var selectedIndex = 0
 	var usersVisitedList : [User]!
 	
 	@IBOutlet weak var usersTableView: UITableView!
@@ -49,19 +49,22 @@ class VisitedUsersViewController: UIViewController, UITableViewDelegate, UITable
 		return cell
 		
 	}
-	
-	
-	
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: "viewProfiles", sender: self)
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewProfiles" {
+            let viewController = segue.destination as! UserProfileViewController
+            // Setup new view controller
+            
+            let username = usersVisitedList[selectedIndex]
+            print(usersVisitedList)
+            viewController.username = username.name
+            
+        }
+    }
 
 }

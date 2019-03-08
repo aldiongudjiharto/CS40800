@@ -34,6 +34,7 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddFriendsCell", for: indexPath) as! AddFriendsCell
         if (showSearchResults){
+            
             cell.friendUsername?.text = filteredArrayName[indexPath.row]
         } else {
             cell.friendUsername?.text = list[indexPath.row]
@@ -84,15 +85,6 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
             self.tableView.reloadData()
         } else if mySearch == ""  {
             showSearchResults = false
-//            print(selectednames)
-//            var num: Int
-//            for name in selectednames{
-//                num = list.firstIndex(of: name)!
-//                let myIndexPath = IndexPath(row: num, section: 0)
-//                print(num)
-//                let cell = tableView.cellForRow(at: myIndexPath)!
-//                cell.accessoryType = .checkmark
-//            }
             
             self.tableView.reloadData()
         } else {
@@ -104,6 +96,7 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)!
         cell.accessoryType = .checkmark
+        print(indexPath)
         if (showSearchResults) {
             if (!selectednames.contains(filteredArrayName[indexPath.row])) {
                 selectednames.append(filteredArrayName[indexPath.row])
