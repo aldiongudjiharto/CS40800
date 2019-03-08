@@ -150,10 +150,12 @@ class FirebaseClient {
 			// The user's ID, unique to the Firebase project.
 			// Do NOT use this value to authenticate with your backend server,
 			// if you have one. Use getTokenWithCompletion:completion: instead.
+			var newPlaceName = placeName.replacingOccurrences(of: ".", with: "")
+			
 			userRef = Database.database().reference().child("visited")
 			//			let visitedRef = userRef.child(user.uid).childByAutoId()
 			//			var placeCoordinatedict:NSDictionary = [placeName : ["lat" : coordinate.latitude, "long" :coordinate.longitude]]
-			let visitedRef = userRef.child(user.uid).child(placeName)
+			let visitedRef = userRef.child(user.uid).child(newPlaceName)
 			var placeCoordinatedict:NSDictionary = ["lat" : coordinate.latitude, "long" :coordinate.longitude]
 			visitedRef.setValue(placeCoordinatedict)
 			// ...

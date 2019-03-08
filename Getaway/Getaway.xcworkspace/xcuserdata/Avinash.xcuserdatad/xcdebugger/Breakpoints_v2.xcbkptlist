@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/API/FirebaseClient.swift"
-            timestampString = "573709465.735805"
+            timestampString = "573716249.337739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "221"
+            endingLineNumber = "221"
             landmarkName = "retrieveCurrentUsersFriendsVisitedPlaces(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/API/FirebaseClient.swift"
-            timestampString = "573709465.736014"
+            timestampString = "573716249.338106"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "retrieveCurrentUsersFriendsVisitedPlaces(completion:)"
             landmarkType = "7">
             <Locations>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/API/FirebaseClient.swift"
-            timestampString = "573709465.736109"
+            timestampString = "573716249.338367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "retrieveCurrentUsersFriendsVisitedPlaces(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/API/FirebaseClient.swift"
-            timestampString = "573709465.7361881"
+            timestampString = "573716249.338626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "retrieveAllUsersVisitedPlaces(completion:)"
             landmarkType = "7">
             <Locations>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/API/FirebaseClient.swift"
-            timestampString = "573709465.736266"
+            timestampString = "573716249.338878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "retrieveAllUsersVisitedPlaces(completion:)"
             landmarkType = "7">
             <Locations>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/API/FirebaseClient.swift"
-            timestampString = "573709465.736343"
+            timestampString = "573716249.3391269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "retrieveAllUsersVisitedPlaces(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/API/FirebaseClient.swift"
-            timestampString = "573709465.736407"
+            timestampString = "573716249.339372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "retrieveAllUsersVisitedPlaces(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.272041"
+            timestampString = "573716249.339618"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.272121"
+            timestampString = "573716249.339677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -246,11 +246,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.272177"
+            timestampString = "573716249.339727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
@@ -259,33 +259,33 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Getaway.MapViewController.displayGlobalAnnotations() -&gt; ()"
                   moduleName = "Getaway"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/ViewControllers/MapViewController.swift"
-                  timestampString = "573703490.111047"
+                  timestampString = "573716157.022341"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "129"
-                  endingLineNumber = "129"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
                   offsetFromSymbolStart = "244">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.Array&lt;Getaway.User&gt;&gt;, Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; () in Getaway.MapViewController.displayGlobalAnnotations() -&gt; ()"
                   moduleName = "Getaway"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/ViewControllers/MapViewController.swift"
-                  timestampString = "573703490.112914"
+                  timestampString = "573716157.027115"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
                   offsetFromSymbolStart = "116">
                </Location>
             </Locations>
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.272226"
+            timestampString = "573716249.339776"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "134"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.272275"
+            timestampString = "573716249.339825"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.272323"
+            timestampString = "573716249.339872"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "201"
@@ -346,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.2723989"
+            timestampString = "573716249.339919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "202"
@@ -362,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.27245"
+            timestampString = "573716249.3399709"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
@@ -374,11 +374,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.272499"
+            timestampString = "573716249.340017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "173"
@@ -387,33 +387,33 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Getaway.MapViewController.filterDataForGlobalUsers(completion: (Swift.Dictionary&lt;Swift.String, Swift.Array&lt;Getaway.User&gt;&gt;, Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Getaway"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/ViewControllers/MapViewController.swift"
-                  timestampString = "573703490.127122"
+                  timestampString = "573716169.789901"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "170"
-                  endingLineNumber = "170"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
                   offsetFromSymbolStart = "35">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Array&lt;Getaway.Place&gt;) -&gt; () in Getaway.MapViewController.filterDataForGlobalUsers(completion: (Swift.Dictionary&lt;Swift.String, Swift.Array&lt;Getaway.User&gt;&gt;, Swift.Dictionary&lt;Swift.String, __C.CLLocationCoordinate2D&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Getaway"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Avinash/Desktop/Spring2019/CS408/CS40800/Getaway/Getaway/ViewControllers/MapViewController.swift"
-                  timestampString = "573703490.134922"
+                  timestampString = "573716169.793481"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "171"
-                  endingLineNumber = "171"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
                   offsetFromSymbolStart = "128">
                </Location>
             </Locations>
@@ -422,11 +422,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.272568"
+            timestampString = "573716249.340064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "189"
@@ -438,11 +438,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.272617"
+            timestampString = "573716249.340112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
@@ -454,15 +454,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/MapViewController.swift"
-            timestampString = "573715858.272663"
+            timestampString = "573716249.3401591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
             endingLineNumber = "178"
+            landmarkName = "filterDataForGlobalUsers(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/API/FirebaseClient.swift"
+            timestampString = "573716249.340205"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "addVisitedPlace(placeName:coordinate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/API/FirebaseClient.swift"
+            timestampString = "573716249.340457"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "addVisitedPlace(placeName:coordinate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/ViewControllers/MapViewController.swift"
+            timestampString = "573716249.340703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "filterDataForGlobalUsers(completion:)"
             landmarkType = "7">
          </BreakpointContent>
