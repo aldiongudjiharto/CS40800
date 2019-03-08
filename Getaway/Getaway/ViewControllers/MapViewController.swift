@@ -272,6 +272,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 		
 		filterDataForFriends { (placeUserDict, placeCoordinateDict) in
 			
+			print("FriendsuserPlaceMap")
+			
+			for key in placeUserDict.keys {
+				print("\(key) : \(placeUserDict[key]!)")
+			}
+			
+			print("FriendsplaceCoordinateMap")
+			
+			for key in placeCoordinateDict.keys {
+				print("\(key) : \(placeCoordinateDict[key]!)")
+			}
+			
 			for key in placeUserDict.keys {
 				
 				var subtitle = self.getSubtitleAndAnnotationColor(userVisitedList: placeUserDict[key]!)
@@ -301,6 +313,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 			
 			
 			print("done with friends request")
+			
+			
+			
 			for visitedPlace in friendsVisitedPlaces {
 				
 				placeCoordinateDict[visitedPlace.placeName] = visitedPlace.coordinates

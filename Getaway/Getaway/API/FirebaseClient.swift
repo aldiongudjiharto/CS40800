@@ -204,8 +204,9 @@ class FirebaseClient {
 		getAllFriends { (friendList) in
 			for friend in friendList {
 				print(friend)
-				count = count + 1
+				
 				FirebaseClient().getVisitedPlacesForUser(userId: friend.key, username: friend.value, completion: { (friendVisitedPlaces) in
+					count = count + 1
 					if friendVisitedPlaces.isEmpty {
 						//not sure about this one
 						
