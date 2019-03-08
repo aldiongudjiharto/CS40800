@@ -270,24 +270,55 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func displayFriendsAnnotations() {
         print("friends")
 		
-
-		FirebaseClient().retrieveCurrentUsersFriendsVisitedPlaces { (friendsVisitedPlaces) in
-			var placeUserListMap = [String : [User]]()
-			var placeCoordinateDict = [String: CLLocationCoordinate2D]()
+		filterDataForFriends { (placeUserDict, placeCoordinateDict) in
 			
-			print("done with friends request")
-			for visitedPlace in friendsVisitedPlaces {
+			for key in placeUserDict.keys {
 				
-				var place = visitedPlace.placeName
-				var coordinate = visitedPlace.coordinates
-				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.green, userList: [User]())
+				var subtitle = self.getSubtitleAndAnnotationColor(userVisitedList: placeUserDict[key]!)
+				var color = UIColor.red
+				var coordinate = placeCoordinateDict[key]!
+				
+				if subtitle.contains("You"){
+					color = UIColor.blue
+				}
+				else if subtitle.contains("friend") {
+					color = UIColor.green
+				}
+				
+				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: key, subtitle: subtitle, color: color, userList: placeUserDict[key]! )
+				
 			}
 		}
+
+
     }
 	
 	func filterDataForFriends(completion: @escaping ([String : [User]], [String: CLLocationCoordinate2D]) -> ()) {
 		
-		
+		FirebaseClient().retrieveCurrentUsersFriendsVisitedPlaces { (friendsVisitedPlaces) in
+			var placeUserListMap = [String : [User]]()
+			var placeCoordinateDict = [String: CLLocationCoordinate2D]()
+			
+			
+			print("done with friends request")
+			for visitedPlace in friendsVisitedPlaces {
+				
+				placeCoordinateDict[visitedPlace.placeName] = visitedPlace.coordinates
+				var currentPlaceUser = User(uid: visitedPlace.userID, name: visitedPlace.userName, relation: "Friend")
+				
+				if placeUserListMap[visitedPlace.placeName] == nil {
+					//add a new arrayList
+					placeUserListMap[visitedPlace.placeName] = [currentPlaceUser]
+				}
+				else {
+					
+					(placeUserListMap[visitedPlace.placeName]!).append(currentPlaceUser)
+				}
+			}
+			
+			completion(placeUserListMap, placeCoordinateDict)
+			
+		}
 		
 	}
 	
