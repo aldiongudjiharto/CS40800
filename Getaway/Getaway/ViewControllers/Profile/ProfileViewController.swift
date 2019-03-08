@@ -37,7 +37,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         profViewPicRef = Storage.storage().reference().child(user!.uid).child("profile_pic")
         
-        
         self.userRef.child("profile_pics").child(user!.uid).observeSingleEvent(of: .value) {
             (snapshot: DataSnapshot) in
             if snapshot.exists(){
@@ -80,7 +79,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         "\(userDictionary["lastName"]!)"
         print(fullName)
         myName.text = fullName
-        myUserName.text = userDictionary["username"]!
+        myUserName.text = "@\(userDictionary["username"]!)"
 		
 		
 		var bioText = userDictionary["userBio"]!.trimmingCharacters(in: .whitespaces)

@@ -365,7 +365,27 @@ class FirebaseClient {
 		}
     }
 	
-	
+    func getAllFriendsByUID(uid: String, completion: @escaping ([String: String]) -> ()){
+        let user = Auth.auth().currentUser
+        var friendsDict = [String: String]()
+        if let user = user {
+            
+            let friendsRef = Database.database().reference().child("friends").child(uid)
+            
+            friendsRef.observeSingleEvent(of: .value, with: { snapshot in
+                print(snapshot.key)
+                for child in snapshot.children {
+                    let snap = child as! DataSnapshot
+                    let friendUsername = snap.value as! String
+                    let friendUserId = snap.key
+                    friendsDict[friendUserId] = friendUsername
+                }
+                completion(friendsDict)
+            })
+            
+            
+        }
+    }
 	
 	
 	
