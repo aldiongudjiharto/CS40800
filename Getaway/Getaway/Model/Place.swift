@@ -11,9 +11,9 @@ import Foundation
 
 class Place {
 	
-	var placeName: String!
-	var userID: String!
-	var userName: String!
+	var placeName: String
+	var userID: String
+	var userName: String
 	var coordinates: CLLocationCoordinate2D
 	//    var photo: String!
 	//    var imageUrl: String

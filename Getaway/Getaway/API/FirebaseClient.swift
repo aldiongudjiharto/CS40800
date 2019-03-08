@@ -211,17 +211,19 @@ class FirebaseClient {
 	
 	
 	func retrieveAllUsersVisitedPlaces(completion: @escaping ([Place]) -> ()) {
-		var visitedPlacesDict = [Place]()
-		
 
-		var count = 0
 		
 		print("coming to all users")
 		getAllUsersWithUserId { (userList) in
+			
+			var visitedPlacesDict = [Place]()
+			var count = 0
+			
 			for user in userList {
 				print(user)
-				count = count + 1
-				FirebaseClient().getVisitedPlacesForUser(userId: user.key, username: user.value, completion: { (userVisitedPlaces) in
+				
+				self.getVisitedPlacesForUser(userId: user.key, username: user.value, completion: { (userVisitedPlaces) in
+					count = count + 1
 					if userVisitedPlaces.isEmpty {
 						//not sure about this one
 						
@@ -229,14 +231,18 @@ class FirebaseClient {
 					else {
 //						visitedPlacesDict = visitedPlacesDict.reduce(into: userVisitedPlaces) { (r, e) in r[e.0] = e.1 }
 						visitedPlacesDict.append(contentsOf: userVisitedPlaces)
-						if userList.count == count {
+						if userList.count - 1 == count {
+//							print("all users search completed:")
+//							for place in visitedPlacesDict {
+//								print(place.placeName)
+//							}
 							completion(visitedPlacesDict)
 						}
 					}
 				})
 				
 			}
-			print("all users search completed:")
+
 			//print(visitedPlacesDict)
 			
 		}

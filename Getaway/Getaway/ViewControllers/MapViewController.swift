@@ -16,11 +16,13 @@ final class LocationAnnotation: NSObject, MKAnnotation{
     var title: String?
     var subtitle: String?
 	var color: UIColor
-	init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?, color: UIColor) {
+	var usersVisitedList: [User]
+	init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?, color: UIColor, usersVisitedList: [User]) {
         self.coordinate = coordinate
         self.title = title
         self.subtitle = subtitle
 		self.color = color
+		self.usersVisitedList = usersVisitedList
     }
 }
 
@@ -89,8 +91,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         switch mapSelectionSegmentedControl.selectedSegmentIndex {
         case 0:
 			displayGlobalAnnotations()
-			displayFriendsAnnotations()
-			displayPersonalAnnotations()
         case 1:
             displayFriendsAnnotations()
         case 2:
@@ -125,35 +125,146 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func displayGlobalAnnotations() {
         print("public")
 		
-		FirebaseClient().retrieveAllUsersVisitedPlaces { (usersVisitedPlaces) in
-
-			usersVisitedPlaces.sorted(by: { $0.placeName < $1.placeName })
-
-			print("done with global users request")
-			for visitedPlace in usersVisitedPlaces {
-				var place = visitedPlace.placeName
-				var coordinate = visitedPlace.coordinates
-				
-				FirebaseClient().userAreFriends(friendId: visitedPlace.userID, completion: { (userRelation) in
-					
-					if userRelation == "CurrentUser" {
-						self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.blue)
-					}
-					else if userRelation == "Friend" {
-						self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.green)
-
-					}
-					else if userRelation == "GlobalUser" {
-						self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.red)
-					}
+		
+		filterDataForGlobalUsers { (userPlaceMap, placeCoordinateMap) in
 			
-				})
+			print("userPlaceMap")
+			
+			for key in userPlaceMap.keys {
+				print("\(key) : \(userPlaceMap[key]!)")
+			}
+			
+			print("placeCoordinateMap")
+			
+			for key in placeCoordinateMap.keys {
+				print("\(key) : \(placeCoordinateMap[key]!)")
+			}
+			
+			for key in userPlaceMap.keys {
 				
+				var subtitle = self.getSubtitleAndAnnotationColor(userVisitedList: userPlaceMap[key]!)
+				var color = UIColor.red
+				var coordinate = placeCoordinateMap[key]!
+				
+				if subtitle.contains("You"){
+					color = UIColor.blue
+				}
+				else if subtitle.contains("friend") {
+					color = UIColor.green
+				}
+				
+				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: key, subtitle: subtitle, color: color, userList: userPlaceMap[key]! )
+
 				
 			}
+			
 		}
     }
 	
+	
+	
+	func filterDataForGlobalUsers(completion: @escaping ([String : [User]], [String: CLLocationCoordinate2D]) -> ()) {
+		
+
+		
+		FirebaseClient().retrieveAllUsersVisitedPlaces { (visitedPlaces) in
+			var placeUserListMap = [String : [User]]()
+			var placeCoordinateDict = [String: CLLocationCoordinate2D]()
+			var i = 0
+			for visitedPlace in visitedPlaces {
+				
+				placeCoordinateDict[visitedPlace.placeName] = visitedPlace.coordinates
+				print("current visited place \(visitedPlace.placeName)")
+				
+				FirebaseClient().userAreFriends(friendId: visitedPlace.userID, completion: { (userRelation) in
+					
+					i = i + 1
+					
+					var currentPlaceUser = User(uid: visitedPlace.userID, name: visitedPlace.userName, relation: userRelation)
+					
+					if placeUserListMap[visitedPlace.placeName] == nil {
+						//add a new arrayList
+						placeUserListMap[visitedPlace.placeName] = [currentPlaceUser]
+					}
+					else {
+						
+						(placeUserListMap[visitedPlace.placeName]!).append(currentPlaceUser)
+					}
+					
+					if i == visitedPlaces.count - 1 {
+						
+						print("creating maps over")
+						//print(placeUserListMap)
+						//print(placeCoordinateDict)
+						completion(placeUserListMap, placeCoordinateDict)
+					}
+				})
+				
+				
+
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	func getSubtitleAndAnnotationColor(userVisitedList:[User]) -> String {
+		//
+		var currentUser = 0
+		var friends = 0
+		var globalUser = 0
+		
+		for user in userVisitedList {
+			if user.relation == "CurrentUser" {
+				currentUser = 1
+			}
+			else if user.relation == "Friend" {
+				friends = friends + 1
+			}
+			else {
+				globalUser = globalUser + 1
+			}
+		}
+		
+		var subtitleText : String = ""
+		
+		if currentUser == 1 {
+			subtitleText = "You "
+		}
+		
+		if friends != 0 {
+			if currentUser == 1 {
+				subtitleText = "\(subtitleText), "
+			}
+			
+			if friends == 1 {
+				subtitleText = "\(subtitleText)\(friends) friend"
+			}
+			else{
+				subtitleText = "\(subtitleText)\(friends) friends"
+			}
+			
+		}
+		
+		if globalUser != 0 {
+			
+			if currentUser == 1 || friends != 0 {
+				subtitleText = "\(subtitleText), "
+			}
+			
+			if globalUser == 1 {
+				subtitleText = "\(subtitleText)\(globalUser) user"
+			}
+			else {
+				subtitleText = "\(subtitleText)\(globalUser) users"
+			}
+		}
+		
+		return subtitleText
+		
+	}
     
     func displayFriendsAnnotations() {
         print("friends")
@@ -163,7 +274,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 			for visitedPlace in friendsVisitedPlaces {
 				var place = visitedPlace.placeName
 				var coordinate = visitedPlace.coordinates
-				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.green)
+				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.green, userList: [User]())
 			}
 		}
     }
@@ -181,7 +292,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 					print(visitedPlace)
 					var place = visitedPlace.placeName
 					var coordinate = visitedPlace.coordinates
-					self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.blue)
+					self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.blue, userList: [User]())
 				}
 		}
     }
@@ -194,11 +305,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-	func addAnnotationUsingCoordinate(lat : CLLocationDegrees, long : CLLocationDegrees, title: String?, subtitle: String?, color: UIColor){
+	func addAnnotationUsingCoordinate(lat : CLLocationDegrees, long : CLLocationDegrees, title: String?, subtitle: String?, color: UIColor, userList: [User]){
         
   
         let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
-		let annotation = LocationAnnotation(coordinate: coordinate, title: title, subtitle: subtitle, color: color)
+		let annotation = LocationAnnotation(coordinate: coordinate, title: title, subtitle: subtitle, color: color, usersVisitedList: userList)
 		
         mapView.addAnnotation(annotation)
         

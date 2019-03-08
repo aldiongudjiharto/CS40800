@@ -13,15 +13,13 @@ class User {
     static var current: User?
     var uid: String!
     var name: String!
-    var email: String!
-    //    var photo: String!
-//    var imageUrl: String
-    
-    init(userInfo: [String: Any]) {
-        uid = (userInfo["uid"] as! String)
-        name = (userInfo["name"] as! String)
-        email = (userInfo["email"] as! String)
-        //        photo = userInfo["photo"] as! String
-//        imageUrl = userInfo["profile_image_url_https"] as! String
+	var relation: String!
+	
+	init(uid: String, name: String, relation: String) {
+		
+		self.uid = uid
+		self.name = name
+		self.relation = relation
+
     }
 }
