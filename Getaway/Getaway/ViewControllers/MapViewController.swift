@@ -269,16 +269,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func displayFriendsAnnotations() {
         print("friends")
+		
+
 		FirebaseClient().retrieveCurrentUsersFriendsVisitedPlaces { (friendsVisitedPlaces) in
+			var placeUserListMap = [String : [User]]()
+			var placeCoordinateDict = [String: CLLocationCoordinate2D]()
 			
 			print("done with friends request")
 			for visitedPlace in friendsVisitedPlaces {
+				
 				var place = visitedPlace.placeName
 				var coordinate = visitedPlace.coordinates
 				self.addAnnotationUsingCoordinate(lat: coordinate.latitude, long: coordinate.longitude, title: place, subtitle: visitedPlace.userName, color: UIColor.green, userList: [User]())
 			}
 		}
     }
+	
+	func filterDataForFriends(completion: @escaping ([String : [User]], [String: CLLocationCoordinate2D]) -> ()) {
+		
+		
+		
+	}
+	
+	
+	
     
     func displayPersonalAnnotations() {
         print("mine")

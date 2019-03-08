@@ -81,6 +81,29 @@ class FirebaseClient {
 	
 	
 	
+	func retrieveUserInformationByUID(userID: String, completion: @escaping ([String: String]) -> ()) {
+		let user = Auth.auth().currentUser
+		if let user = user {
+			// The user's ID, unique to the Firebase project.
+			// Do NOT use this value to authenticate with your backend server,
+			// if you have one. Use getTokenWithCompletion:completion: instead.
+			userRef = Database.database().reference().child("users").child(userID)
+			
+			userRef.observeSingleEvent(of: .value, with: { snapshot in
+				print(snapshot.key)
+				let userDict = snapshot.value as! [String: String]
+				print(userDict)
+				completion(userDict)
+			})
+			
+		}
+		else{
+			completion(["" : ""])
+		}
+	}
+	
+	
+	
 	func checkIfUserNameIsUnique(username: String, completion: @escaping (Bool) -> ()){
 		
 		print(username)
