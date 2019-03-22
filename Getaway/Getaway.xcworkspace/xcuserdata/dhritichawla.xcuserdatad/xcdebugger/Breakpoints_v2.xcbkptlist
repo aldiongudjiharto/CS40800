@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Getaway/ViewControllers/Friends/FriendsAddViewController.swift"
-            timestampString = "573727497.417515"
+            timestampString = "574986811.163661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -129,6 +129,162 @@
             endingLineNumber = "308"
             landmarkName = "getUniqueIdFromUsername(username:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/ViewControllers/Chats/ChatsTableViewController.swift"
+            timestampString = "574986922.503975"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "ChatsTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Getaway.ChatsTableViewController.list.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhritichawla/Desktop/CS%20408/CS40800/Getaway/Getaway/ViewControllers/Chats/ChatsTableViewController.swift"
+                  timestampString = "574986925.0544831"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Getaway.ChatsTableViewController.list.setter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhritichawla/Desktop/CS%20408/CS40800/Getaway/Getaway/ViewControllers/Chats/ChatsTableViewController.swift"
+                  timestampString = "574986925.06505"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Getaway.ChatsTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Getaway.ChatsTableViewController"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhritichawla/Desktop/CS%20408/CS40800/Getaway/Getaway/ViewControllers/Chats/ChatsTableViewController.swift"
+                  timestampString = "574986925.0691"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "469">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Getaway.ChatsTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Getaway.ChatsTableViewController&gt;"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhritichawla/Desktop/CS%20408/CS40800/Getaway/Getaway/ViewControllers/Chats/ChatsTableViewController.swift"
+                  timestampString = "574986925.075266"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "440">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Getaway/ViewControllers/Chats/ChatsTableViewController.swift"
+            timestampString = "574986923.620365"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "ChatsTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Getaway.ChatsTableViewController.strangerList.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhritichawla/Desktop/CS%20408/CS40800/Getaway/Getaway/ViewControllers/Chats/ChatsTableViewController.swift"
+                  timestampString = "574986926.308943"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Getaway.ChatsTableViewController.strangerList.setter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhritichawla/Desktop/CS%20408/CS40800/Getaway/Getaway/ViewControllers/Chats/ChatsTableViewController.swift"
+                  timestampString = "574986926.311377"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Getaway.ChatsTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Getaway.ChatsTableViewController"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhritichawla/Desktop/CS%20408/CS40800/Getaway/Getaway/ViewControllers/Chats/ChatsTableViewController.swift"
+                  timestampString = "574986926.3154401"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "665">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Getaway.ChatsTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Getaway.ChatsTableViewController&gt;"
+                  moduleName = "Getaway"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dhritichawla/Desktop/CS%20408/CS40800/Getaway/Getaway/ViewControllers/Chats/ChatsTableViewController.swift"
+                  timestampString = "574986926.317337"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "636">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -64,7 +64,7 @@ class FriendsAddViewController: UIViewController, UITableViewDataSource, UITable
         FirebaseClient().getAllUsers(completion: {(friendsDict) in
             self.friendsDict1 = friendsDict
             self.list = Array(self.friendsDict1.keys)
-            self.list.remove(at: self.list.firstIndex(of: self.myUsername)!)
+            //self.list.remove(at: self.list.firstIndex(of: self.myUsername)!)  [BUG]
             print(self.list)
             self.tableView.reloadData()
             self.tableView.delegate = self

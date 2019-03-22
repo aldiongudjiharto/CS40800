@@ -159,7 +159,7 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         
         alert.addAction(UIAlertAction(title: "OK!", style: UIAlertAction.Style.default, handler: nil))
         
-        self.present(alert, animated: true, completion: nil)
+       // self.present(alert, animated: true, completion: nil)  [BUG]
     }
     
     @IBAction func signInWithFacebookClicked(_ sender: UIButton) {
@@ -226,13 +226,13 @@ class SignInViewController: UIViewController, GIDSignInUIDelegate {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
         }
         let sendAction = UIAlertAction(title: "Send", style: .default) { (action) in
-            if self.checkIfEmailFieldIsFilled() == true {
-                Auth.auth().sendPasswordReset(withEmail: self.emailTextField.text!, completion: { (error) in
-                print("error")
-                })
-            } else {
-                self.displayAlert(message: "Please make sure email field is filled")
-            }
+//            if self.checkIfEmailFieldIsFilled() == true {
+//                Auth.auth().sendPasswordReset(withEmail: self.emailTextField.text!, completion: { (error) in
+//                print("error")
+//                })
+//            } else {
+//                self.displayAlert(message: "Please make sure email field is filled")
+//            }
         }
         alertController.addAction(cancelAction)
         alertController.addAction(sendAction)

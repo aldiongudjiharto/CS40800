@@ -29,22 +29,23 @@ class ProfileSettingsViewController: UIViewController {
 		}
 		else {
 			
-			FirebaseClient().checkIfUserNameIsUnique(username: newUsername.text!) { (userNameUnique) in
-				if userNameUnique == true {
-					FirebaseClient().editUserName(username: self.newUsername.text!) { (userNameChanged) in
-						if userNameChanged {
-							self.displayAlert(message: "Username changed successfully!")
-						}
-						else {
-							self.displayAlert(message: "Username could not be changed. Please try again!")
-						}
-					}
-				}
-				else {
-					self.displayAlert(message: "Username already exists. Please select a new one!")
-				}
-			}
-			
+//            FirebaseClient().checkIfUserNameIsUnique(username: newUsername.text!) { (userNameUnique) in
+//                if userNameUnique == true {
+//                    FirebaseClient().editUserName(username: self.newUsername.text!) { (userNameChanged) in
+//                        if userNameChanged {
+//                            self.displayAlert(message: "Username changed successfully!")
+//                        }
+//                        else {
+//                            self.displayAlert(message: "Username could not be changed. Please try again!")
+//                        }
+//                    }
+//                }
+//                else {
+//                    self.displayAlert(message: "Username already exists. Please select a new one!")
+//                }
+//            }       [BUG]  [BUG]   [BUG]   [BUG]
+            
+//
 		}
 	}
 	

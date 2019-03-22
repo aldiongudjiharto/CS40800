@@ -90,7 +90,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 			myBio.text = "*Enter your bio here*"
 		}
 		
-		updateBioPlaceHolder()
+		//updateBioPlaceHolder()  [BUG]
         
     }
     

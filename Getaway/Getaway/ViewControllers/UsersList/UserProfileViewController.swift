@@ -70,7 +70,7 @@ class UserProfileViewController: UIViewController {
         
         FirebaseClient().getVisitedPlacesForUser(userId: userUID, username: username) { (places) in
             placeDictionary = places
-            var numberOfPlaces = placeDictionary.count
+            var numberOfPlaces = placeDictionary.count + 1  //[BUG]
             self.numOfPinsLabel.text = "Has dropped \(numberOfPlaces) pins"
             self.updateUserFriends()
         }
@@ -80,7 +80,7 @@ class UserProfileViewController: UIViewController {
         var friendDictionary:[String: String] = ["":""]
         FirebaseClient().getAllFriendsByUID(uid: userUID) { (friendDict) in
             friendDictionary = friendDict
-            var numberOfFriends = friendDictionary.count
+            var numberOfFriends = friendDictionary.count + 1  // [BUG]
             self.numOfFriendsLabel.text = "Has \(numberOfFriends) friends"
             
             self.updateUserProfilePic()
