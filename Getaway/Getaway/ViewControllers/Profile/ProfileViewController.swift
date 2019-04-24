@@ -228,38 +228,38 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         setProfilePicture(imageView: self.profileImage, imageToSet: image)
         
         
-        if let imageData: NSData = self.profileImage.image!.pngData()! as NSData
-        {
-            let profileImageRef = storageRef.child("\(self.user!.uid)/profile_pic")
-            let userRef = Database.database().reference().child("profile_pics").child(user!.uid)
-           
-            if user != nil {
-                var UrlString = "Url_is_here"
-                let uploadTask = profileImageRef.putData(imageData as Data, metadata: nil){
-                    metadata, error in
-                    if (error == nil) {
-                        profileImageRef.downloadURL { (URL, error) -> Void in
-                            if (error != nil) {
-                                // Handle any errors
-                                print(error?.localizedDescription)
-                            } else {
-                                UrlString = (URL?.absoluteString)!
-                                print("\n\n\(UrlString)+\n\n\n\n")
-                                // you will get the String of Url
-                                print("successful upload")
-                                userRef.setValue(UrlString)
-                                self.hasPicture = true
-                            }
-                        }
-                        
-                    }
-                    else {
-                        print(error?.localizedDescription)
-                    }
-                    //self.imageLoader.stopAnimating()
-                }
-            }
-        }
+//        if let imageData: NSData = self.profileImage.image!.pngData()! as NSData
+//        {
+//            let profileImageRef = storageRef.child("\(self.user!.uid)/profile_pic")
+//            let userRef = Database.database().reference().child("profile_pics").child(user!.uid)
+//           
+//            if user != nil {
+//                var UrlString = "Url_is_here"
+//                let uploadTask = profileImageRef.putData(imageData as Data, metadata: nil){
+//                    metadata, error in
+//                    if (error == nil) {
+//                        profileImageRef.downloadURL { (URL, error) -> Void in
+//                            if (error != nil) {
+//                                // Handle any errors
+//                                print(error?.localizedDescription)
+//                            } else {
+//                                UrlString = (URL?.absoluteString)!
+//                                print("\n\n\(UrlString)+\n\n\n\n")
+//                                // you will get the String of Url
+//                                print("successful upload")
+//                                userRef.setValue(UrlString)
+//                                self.hasPicture = true
+//                            }
+//                        }
+//                        
+//                    }
+//                    else {
+//                        print(error?.localizedDescription)
+//                    }
+//                    //self.imageLoader.stopAnimating()
+//                }
+//            }
+//        }
         self.dismiss(animated: true, completion: nil)
     }
     

@@ -54,9 +54,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
 	
-	override func viewDidAppear(_ animated: Bool) {
-		updateAnnotations()
-	}
+//	override func viewDidAppear(_ animated: Bool) {
+//		updateAnnotations()
+//	}
     
     @IBAction func mapSelectionChanged(_ sender: Any) {
         updateAnnotations()
@@ -235,14 +235,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 		var subtitleText : String = ""
 		
 		if currentUser == 1 {
-			subtitleText = "You "
+			subtitleText = "You, "
 		}
-		
+//		subtitleText = "\(subtitleText), "
 		if friends != 0 {
-			if currentUser == 1 {
-				subtitleText = "\(subtitleText), "
-			}
-			
+//			if currentUser == 1 {
+//
+//			}
+		
 			if friends == 1 {
 				subtitleText = "\(subtitleText)\(friends) friend"
 			}

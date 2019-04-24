@@ -99,10 +99,10 @@ class FriendsTableViewController: UIViewController, UITableViewDelegate, UITable
         self.tableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        fetchData()
-    }
-    
+//    override func viewDidAppear(_ animated: Bool) {
+//        fetchData()
+//    }
+//    
     override func viewDidLayoutSubviews() {
         fetchData()
     }

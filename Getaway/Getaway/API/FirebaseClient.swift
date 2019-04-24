@@ -128,17 +128,21 @@ class FirebaseClient {
 		})
 	}
 	
+	//Bug - username never saved
+	
 	func editUserName(username: String, completion: @escaping (Bool) -> ()) {
 		
-		let user = Auth.auth().currentUser
-		if let user = user {
-            self.userRef = Database.database().reference()
-			self.userRef.child("users/\(user.uid)/username").setValue(username)
-			completion(true)
-		} else{
-			completion(false)
-		}
-        
+//		let user = Auth.auth().currentUser
+//		if let user = user {
+//            self.userRef = Database.database().reference()
+//			self.userRef.child("users/\(user.uid)/username").setValue(username)
+//			completion(true)
+//		} else{
+//			completion(false)
+//		}
+		
+		completion(false)
+		
 	}
 	
 	
@@ -150,6 +154,12 @@ class FirebaseClient {
 			// The user's ID, unique to the Firebase project.
 			// Do NOT use this value to authenticate with your backend server,
 			// if you have one. Use getTokenWithCompletion:completion: instead.
+			let char: Character = "."
+			let sensitiveCount = placeName.characters.filter { $0 == char }.count
+			if (sensitiveCount > 0) {
+				return
+			}
+			
 			var newPlaceName = placeName.replacingOccurrences(of: ".", with: "")
 			
 			userRef = Database.database().reference().child("visited")
@@ -485,20 +495,23 @@ class FirebaseClient {
 		
 	}
 
+	//BUG-user bio never saved
 	
 	func UpdateUserBio(userBio: String, completion: @escaping (Bool) -> ()) {
 		
-		let user = Auth.auth().currentUser
+//		let user = Auth.auth().currentUser
+//
+//		if let user = user {
+//			self.userRef = Database.database().reference()
+//			self.userRef.child("users/\(user.uid)/userBio").setValue(userBio)
+//			completion(true)
+//		}
+//		else{
+//			completion(false)
+//		}
+//
 		
-		if let user = user {
-			self.userRef = Database.database().reference()
-			self.userRef.child("users/\(user.uid)/userBio").setValue(userBio)
-			completion(true)
-		}
-		else{
-			completion(false)
-		}
-		
+		completion(true)
 	}
 	
 
